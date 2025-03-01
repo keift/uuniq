@@ -1,0 +1,34 @@
+{
+  "name": "uuniq",
+  "author": "keift",
+  "version": "1.0.0",
+  "description": "Unique IDs that will last for thousands of years.",
+  "license": "MIT",
+  "main": "main.js",
+  "scripts": {
+    "dev:snowflake": "nodemon --ignore *.json* ./test/test_snowflake.js",
+    "dev:symbolic": "nodemon --ignore *.json* ./test/test_symbolic.js"
+  },
+  "dependencies": {
+    "base62": "^2.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "engines": {
+    "node": ">= 14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keift/uuniq.git"
+  },
+  "keywords": [
+    "id",
+    "unique",
+    "unique-id",
+    "snowflake",
+    "snowflake-id",
+    "symbolic",
+    "symbolic-id"
+  ]
+}

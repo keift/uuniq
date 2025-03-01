@@ -1,0 +1,10 @@
+**/.github
+**/assets
+**/bun.lock
+**/CHANGELOG.md
+**/install.bat
+**/node_modules
+**/package-lock.json
+**/run.bat
+**/test
+**/uuniq.code-workspace
