@@ -95,13 +95,13 @@ Briefly as follows.
 >   }
 > */
 >
-> Symbolic.generate(); // "3iqEsohf_"
-> Symbolic.generate(); // "3iqEsohf-"
+> Symbolic.generate(); // "4XLFYfKPu"
+> Symbolic.generate(); // "4XLFYgTrM"
 >
-> Symbolic.resolve("3iqEsohf_");
+> Symbolic.resolve("4XLFYfKPu");
 > /*
 >   {
->     created_at: "2025-03-01T01:33:47.048Z",
+>     created_at: "2025-03-01T18:10:58.530Z",
 >     place_id: 0,
 >     sequence: 0
 >   }
@@ -114,7 +114,7 @@ Briefly as follows.
 
 `new Snowflake(options?)`
 
-Generate Snowflake IDs developed by Twitter(X) in 2010. This can generate IDs for approximately 4,463 years according to the specified epoch. Unique IDs can be generated in distributed systems by specifying Place IDs.
+Generate Snowflake IDs developed by Twitter (X) in 2010. This can generate IDs for approximately 4,463 years according to the specified epoch. Unique IDs can be generated in distributed systems by specifying Place IDs.
 
 > | Parameter | Default | Description |
 > | --- | --- | --- |
@@ -122,7 +122,7 @@ Generate Snowflake IDs developed by Twitter(X) in 2010. This can generate IDs fo
 > | options.epoch | `"2025-01-01T00:00:00.000Z"` | [String] \| [Number] \| [Date] (optional)<br/>Date of epoch. |
 > | options.place_id | `0` | [Number] (optional)<br/>Place ID for distributed systems. |
 >
-> returns [String]
+> returns [Object]
 >
 >
 > Example:
@@ -145,9 +145,9 @@ Generate unique IDs like YouTube's video IDs. This can generate IDs for approxim
 > | options | | [Object] (optional)<br/>Constructor's options. |
 > | options.epoch | `"2025-01-01T00:00:00.000Z"` | [String] \| [Number] \| [Date] (optional)<br/>Date of epoch. |
 > | options.place_id | `0` | [Number] (optional)<br/>Place ID for distributed systems. |
-> | options.charset | `"123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-"` | [String] (optional)<br/>Character set of IDs. |
+> | options.charset | `"123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"` | [String] (optional)<br/>Character set of IDs. |
 >
-> returns [String]
+> returns [Object]
 >
 >
 > Example:
@@ -156,7 +156,7 @@ Generate unique IDs like YouTube's video IDs. This can generate IDs for approxim
 > const Symbolic = new Uuniq.Symbolic({
 >   epoch: "2025-01-01T00:00:00.000Z",
 >   place_id: 0,
->   charset: "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-"
+>   charset: "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 > });
 > ```
 
@@ -164,7 +164,7 @@ Generate unique IDs like YouTube's video IDs. This can generate IDs for approxim
 
 `Snowflake.generate()`
 
-Generate Snowflake IDs developed by Twitter(X) in 2010. This can generate IDs for approximately 4,463 years according to the specified epoch.
+Generate Snowflake IDs developed by Twitter (X) in 2010. This can generate IDs for approximately 4,463 years according to the specified epoch.
 
 > | Parameter | Default | Description |
 > | --- | --- | --- |
@@ -222,8 +222,8 @@ Generate unique IDs like YouTube's video IDs. This can generate IDs for approxim
 > Example:
 >
 > ```js
-> Symbolic.generate(); // "3iqEsohf_"
-> Symbolic.generate(); // "3iqEsohf-"
+> Symbolic.generate(); // "4XLFYfKPu"
+> Symbolic.generate(); // "4XLFYgTrM"
 > ```
 
 <br/>
@@ -242,10 +242,10 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 > Example:
 >
 > ```js
-> Symbolic.resolve("3iqEsohf_");
+> Symbolic.resolve("4XLFYfKPu");
 > /*
 >   {
->     created_at: "2025-03-01T01:33:47.048Z",
+>     created_at: "2025-03-01T18:10:58.530Z",
 >     place_id: 0,
 >     sequence: 0
 >   }
