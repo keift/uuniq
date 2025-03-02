@@ -1,7 +1,7 @@
 {
   "name": "uuniq",
   "author": "keift",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Unique IDs that will last for thousands of years.",
   "license": "MIT",
   "main": "main.js",
