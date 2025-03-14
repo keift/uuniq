@@ -7,11 +7,11 @@ console.log("\n".repeat(50));
 const generate = () => {
   let id = Snowflake.generate();
 
-  console.log(id, Snowflake.resolve(id));
+  console.log(id, JSON.stringify(Snowflake.resolve(id)));
 };
 
-for (let i = 0; i < 5; i++) generate();
-
 setInterval(() => {
-  for (let i = 0; i < 1; i++) generate();
+  console.log("\n".repeat(1));
+
+  for (let i = 0; i < 5; i++) generate();
 }, 1000);

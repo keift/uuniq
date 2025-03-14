@@ -32,7 +32,7 @@
 
 ## About
 
-Unique IDs that will last for thousands of years.
+Unique Snowflake IDs and Symbolic IDs that can be generated for thousands of years.
 
 ## Features
 
@@ -83,25 +83,25 @@ Briefly as follows.
 > const Snowflake = new Uuniq.Snowflake();
 > const Symbolic = new Uuniq.Symbolic();
 >
-> Snowflake.generate(); // "668874142515200"
-> Snowflake.generate(); // "668874142515201"
+> Snowflake.generate(); // "102604921389056"
+> Snowflake.generate(); // "102604921389057"
 >
-> Snowflake.resolve("668874142515200");
+> Snowflake.resolve("102604921389056");
 > /*
 >   {
->     created_at: "2025-03-01T01:31:44.725Z",
+>     created_at: "2025-03-14T11:35:07.409Z",
 >     place_id: 0,
 >     sequence: 0
 >   }
 > */
 >
-> Symbolic.generate(); // "4XLFYfKPu"
-> Symbolic.generate(); // "4XLFYgTrM"
+> Symbolic.generate(); // "T8Qu56ki"
+> Symbolic.generate(); // "T8Qu56kj"
 >
-> Symbolic.resolve("4XLFYfKPu");
+> Symbolic.resolve("T8Qu56ki");
 > /*
 >   {
->     created_at: "2025-03-01T18:10:58.530Z",
+>     created_at: "2025-03-14T11:36:05.528Z",
 >     place_id: 0,
 >     sequence: 0
 >   }
@@ -145,7 +145,7 @@ Generate unique IDs like YouTube's video IDs. This can generate IDs for approxim
 > | options | | [Object] (optional)<br/>Constructor's options. |
 > | options.epoch | `"2025-01-01T00:00:00.000Z"` | [String] \| [Number] \| [Date] (optional)<br/>Date of epoch. |
 > | options.place_id | `0` | [Number] (optional)<br/>Place ID for distributed systems. |
-> | options.charset | `"123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"` | [String] (optional)<br/>Character set of IDs. |
+> | options.charset | `"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"` | [String] (optional)<br/>Character set of IDs. |
 >
 > returns [Object]
 >
@@ -156,7 +156,7 @@ Generate unique IDs like YouTube's video IDs. This can generate IDs for approxim
 > const Symbolic = new Uuniq.Symbolic({
 >   epoch: "2025-01-01T00:00:00.000Z",
 >   place_id: 0,
->   charset: "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+>   charset: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 > });
 > ```
 
@@ -176,8 +176,8 @@ Generate Snowflake IDs developed by Twitter (X) in 2010. This can generate IDs f
 > Example:
 >
 > ```js
-> Snowflake.generate(); // "668874142515200"
-> Snowflake.generate(); // "668874142515201"
+> Snowflake.generate(); // "102604921389056"
+> Snowflake.generate(); // "102604921389057"
 > ```
 
 <br/>
@@ -196,10 +196,10 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 > Example:
 >
 > ```js
-> Snowflake.resolve("668874142515200");
+> Snowflake.resolve("102604921389056");
 > /*
 >   {
->     created_at: "2025-03-01T01:31:44.725Z",
+>     created_at: "2025-03-14T11:35:07.409Z",
 >     place_id: 0,
 >     sequence: 0
 >   }
@@ -222,8 +222,8 @@ Generate unique IDs like YouTube's video IDs. This can generate IDs for approxim
 > Example:
 >
 > ```js
-> Symbolic.generate(); // "4XLFYfKPu"
-> Symbolic.generate(); // "4XLFYgTrM"
+> Symbolic.generate(); // "T8Qu56ki"
+> Symbolic.generate(); // "T8Qu56kj"
 > ```
 
 <br/>
@@ -242,10 +242,10 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 > Example:
 >
 > ```js
-> Symbolic.resolve("4XLFYfKPu");
+> Symbolic.resolve("T8Qu56ki");
 > /*
 >   {
->     created_at: "2025-03-01T18:10:58.530Z",
+>     created_at: "2025-03-14T11:36:05.528Z",
 >     place_id: 0,
 >     sequence: 0
 >   }

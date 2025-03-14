@@ -1,8 +1,8 @@
 {
   "name": "uuniq",
   "author": "keift",
-  "version": "1.0.2",
-  "description": "Unique IDs that will last for thousands of years.",
+  "version": "1.1.0",
+  "description": "Unique Snowflake IDs and Symbolic IDs that can be generated for thousands of years.",
   "license": "MIT",
   "main": "main.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "dev:symbolic": "nodemon --ignore *.json* ./test/test_symbolic.js"
   },
   "dependencies": {
-    "base62": "^2.0.2"
+    "any-base": "^1.1.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
