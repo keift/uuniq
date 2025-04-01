@@ -1,5 +1,5 @@
 echo off
 cls
 :loop
-npm run dev
+npm run dev:snowflake
 goto loop
