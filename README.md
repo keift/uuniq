@@ -11,7 +11,7 @@
 
 <div align="center">
   <br/>
-  <img src="https://i.ibb.co/GvJ1ZRF0/logo.png" width="350px"/>
+  <img src="https://i.ibb.co/GvJ1ZRF0/logo.png?v=2" width="350px"/>
   <br/>
   <br/>
   <img src="https://img.shields.io/npm/v/uuniq?label=version&color=%23633BFF"/>
