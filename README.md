@@ -36,11 +36,11 @@ Unique Snowflake IDs and Symbolic IDs that can be generated for thousands of yea
 
 ## Features
 
-  * The possibility of collision is impossible
-  * Suitable for distributed systems
-  * Suitable for sorting and database indexes
-  * Snowflake IDs developed by Twitter (X) can be generated
-  * Shorter IDs can be generated like YouTube's video IDs
+- The possibility of collision is impossible
+- Suitable for distributed systems
+- Suitable for sorting and database indexes
+- Snowflake IDs developed by Twitter (X) can be generated
+- Shorter IDs can be generated like YouTube's video IDs
 
 ## Installation
 
