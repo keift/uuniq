@@ -124,6 +124,7 @@ Generate Snowflake IDs developed by Twitter (X) in 2010. This can generate IDs f
 >
 > returns [Object]
 >
+>
 > Example:
 >
 > ```javascript
@@ -148,6 +149,7 @@ Generate unique IDs like YouTube's video IDs. This can generate IDs for approxim
 >
 > returns [Object]
 >
+>
 > Example:
 >
 > ```javascript
@@ -170,6 +172,7 @@ Generate Snowflake IDs developed by Twitter (X) in 2010. This can generate IDs f
 >
 > returns [String]
 >
+>
 > Example:
 >
 > ```javascript
@@ -188,6 +191,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 > | id | | [String]<br/> ID to be resolved. |
 >
 > returns [Object]
+>
 >
 > Example:
 >
@@ -214,6 +218,7 @@ Generate unique IDs like YouTube's video IDs. This can generate IDs for approxim
 >
 > returns [String]
 >
+>
 > Example:
 >
 > ```javascript
@@ -232,6 +237,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 > | id | | [String]<br/> ID to be resolved. |
 >
 > returns [Object]
+>
 >
 > Example:
 >
