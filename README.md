@@ -46,31 +46,31 @@ Unique Snowflake IDs and Symbolic IDs that can be generated for thousands of yea
 
 NPM
 
-```sh-session
+```shell
 npm install uuniq
 ```
 
 PNPM
 
-```sh-session
+```shell
 pnpm install uuniq
 ```
 
 Yarn
 
-```sh-session
+```shell
 yarn add uuniq
 ```
 
 Bun
 
-```sh-session
+```shell
 bun add uuniq
 ```
 
 Deno
 
-```sh-session
+```shell
 deno install npm:uuniq
 ```
 
@@ -78,35 +78,35 @@ deno install npm:uuniq
 
 Briefly as follows.
 
-> ```javascript
-> const Uuniq = require("uuniq");
-> const Snowflake = new Uuniq.Snowflake();
-> const Symbolic = new Uuniq.Symbolic();
->
-> Snowflake.generate(); // "102604921389056"
-> Snowflake.generate(); // "102604921389057"
->
-> Snowflake.resolve("102604921389056");
-> /*
->   {
->     created_at: "2025-03-14T11:35:07.409Z",
->     place_id: 0,
->     sequence: 0
->   }
-> */
->
-> Symbolic.generate(); // "T8Qu56ki"
-> Symbolic.generate(); // "T8Qu56kj"
->
-> Symbolic.resolve("T8Qu56ki");
-> /*
->   {
->     created_at: "2025-03-14T11:36:05.528Z",
->     place_id: 0,
->     sequence: 0
->   }
-> */
-> ```
+```javascript
+const Uuniq = require("uuniq");
+const Snowflake = new Uuniq.Snowflake();
+const Symbolic = new Uuniq.Symbolic();
+
+Snowflake.generate(); // "102604921389056"
+Snowflake.generate(); // "102604921389057"
+
+Snowflake.resolve("102604921389056");
+/*
+  {
+    created_at: "2025-03-14T11:35:07.409Z",
+    place_id: 0,
+    sequence: 0
+  }
+*/
+
+Symbolic.generate(); // "T8Qu56ki"
+Symbolic.generate(); // "T8Qu56kj"
+
+Symbolic.resolve("T8Qu56ki");
+/*
+  {
+    created_at: "2025-03-14T11:36:05.528Z",
+    place_id: 0,
+    sequence: 0
+  }
+*/
+```
 
 ## Documentation
 
