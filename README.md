@@ -46,31 +46,31 @@ Unique Snowflake IDs and Symbolic IDs that can be generated for thousands of yea
 
 NPM
 
-```shell
+```sh-session
 npm install uuniq
 ```
 
 PNPM
 
-```shell
+```sh-session
 pnpm install uuniq
 ```
 
 Yarn
 
-```shell
+```sh-session
 yarn add uuniq
 ```
 
 Bun
 
-```shell
+```sh-session
 bun add uuniq
 ```
 
 Deno
 
-```shell
+```sh-session
 deno install npm:uuniq
 ```
 
@@ -127,7 +127,7 @@ Generate Snowflake IDs developed by Twitter (X) in 2010. This can generate IDs f
 >
 > Example:
 >
-> ```js
+> ```javascript
 > const Snowflake = new Uuniq.Snowflake({
 >   epoch: "2025-01-01T00:00:00.000Z",
 >   place_id: 0
@@ -152,7 +152,7 @@ Generate unique IDs like YouTube's video IDs. This can generate IDs for approxim
 >
 > Example:
 >
-> ```js
+> ```javascript
 > const Symbolic = new Uuniq.Symbolic({
 >   epoch: "2025-01-01T00:00:00.000Z",
 >   place_id: 0,
@@ -175,7 +175,7 @@ Generate Snowflake IDs developed by Twitter (X) in 2010. This can generate IDs f
 >
 > Example:
 >
-> ```js
+> ```javascript
 > Snowflake.generate(); // "102604921389056"
 > Snowflake.generate(); // "102604921389057"
 > ```
@@ -195,7 +195,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 >
 > Example:
 >
-> ```js
+> ```javascript
 > Snowflake.resolve("102604921389056");
 > /*
 >   {
@@ -221,7 +221,7 @@ Generate unique IDs like YouTube's video IDs. This can generate IDs for approxim
 >
 > Example:
 >
-> ```js
+> ```javascript
 > Symbolic.generate(); // "T8Qu56ki"
 > Symbolic.generate(); // "T8Qu56kj"
 > ```
@@ -241,7 +241,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 >
 > Example:
 >
-> ```js
+> ```javascript
 > Symbolic.resolve("T8Qu56ki");
 > /*
 >   {
