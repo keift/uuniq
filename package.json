@@ -3,6 +3,9 @@
   "version": "1.2.0",
   "description": "Unique Snowflake IDs and Symbolic IDs that can be generated for thousands of years.",
   "license": "MIT",
+  "main": "./dist/main.js",
+	"module": "./dist/main.mjs",
+	"types": "./dist/main.d.ts",
   "scripts": {
     "dev:snowflake": "nodemon ./test/test_snowflake.js",
     "dev:symbolic": "nodemon ./test/test_symbolic.js",
