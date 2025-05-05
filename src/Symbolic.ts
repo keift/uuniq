@@ -13,12 +13,12 @@ interface Resolve {
   sequence: number;
 };
 
-export default class {
+class Symbolic {
   private _Snowflake: Snowflake;
   private _encode: (value: number) => string;
   private _decode: (value: string) => number;
 
-  constructor(Options: Options) {
+  constructor(Options: Options = {}) {
     Options = {
       epoch: new Date("2025-01-01T00:00:00.000Z").getTime(),
       place_id: 0,
@@ -44,3 +44,5 @@ export default class {
     return this._Snowflake.resolve(BigInt(this._decode(id)));
   }
 };
+
+export default Symbolic;

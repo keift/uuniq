@@ -7,9 +7,12 @@
 	"module": "./dist/main.mjs",
 	"types": "./dist/main.d.ts",
   "scripts": {
-    "dev:snowflake": "nodemon ./test/test_snowflake.js",
-    "dev:symbolic": "nodemon ./test/test_symbolic.js",
-    "build": "tsup ./main.ts --dts --clean --external=any-base --format esm,cjs --out-dir ./dist"
+    "dev:snowflake": "bun run --watch ./examples/snowflake.ts",
+    "dev:symbolic": "bun run --watch ./examples/symbolic.ts",
+    "test": "bun run build && npm run test:snowflake && npm run test:symbolic",
+    "test:snowflake": "npm run ./test/snowflake.ts",
+    "test:symbolic": "npm run ./test/symbolic.ts",
+    "build": "tsup ./main.ts --dts --clean --format esm,cjs --out-dir ./dist"
   },
   "dependencies": {
     "any-base": "^1.1.0"

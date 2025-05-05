@@ -18,7 +18,7 @@ type Options = {
 };
 
 const parts: Parts = {
-  timestamp: 53,
+  timestamp: 54,
   place_id: 4,
   sequence: 10
 };
@@ -29,7 +29,7 @@ const calculateLimits = (parts: Parts): Limits => {
   for (const field in parts) {
     const key = field as keyof Parts;
 
-    limits[key] = Math.pow(2, parts[key]);
+    limits[key] = Math.pow(2, parts[key]) - 1;
   }
 
   return limits;
@@ -39,7 +39,7 @@ const calculateShifts = (parts: Parts): Shifts => {
   const shifts = {} as Shifts;
   let shift = 0;
 
-  const keys = Object.keys(parts).reverse() as (keyof Parts)[];
+  const keys: (keyof Parts)[] = ["sequence", "place_id", "timestamp"];
 
   for (const key of keys) {
     shifts[key] = shift;
@@ -52,31 +52,25 @@ const calculateShifts = (parts: Parts): Shifts => {
 const limits = calculateLimits(parts);
 const shifts = calculateShifts(parts);
 
-export default class Snowflake {
+class Snowflake {
   private _epoch: number;
   private _place_id: number;
   private _sequence: number;
   private _last_timestamp: number;
 
-  constructor(Options: Options) {
-    Options = {
-      epoch: new Date("2025-01-01T00:00:00.000Z").getTime(),
-      place_id: 0,
-
-      ...Options
-    }
-
-    const place_id = Options.place_id ?? 0;
-
-    if (place_id < 0 || place_id > limits.place_id) throw new Error(`Field place_id must be between 0 and ${limits.place_id}`);
-
-    if (Options.epoch instanceof Date) {
-      this._epoch = Options.epoch.getTime();
-    } else if (typeof Options.epoch === "string" || typeof Options.epoch === "number") {
-      this._epoch = new Date(Options.epoch).getTime();
-    } else this._epoch = new Date("2025-01-01T00:00:00.000Z").getTime();
-
-    this._place_id = place_id & limits.place_id;
+  constructor(Options: Options = {}) {
+    this._epoch =
+      Options.epoch instanceof Date
+        ? Options.epoch.getTime()
+        : typeof Options.epoch === "string" || typeof Options.epoch === "number"
+          ? new Date(Options.epoch).getTime()
+          : new Date("2025-01-01T00:00:00.000Z").getTime();
+  
+    this._place_id = Options.place_id ?? 0;
+  
+    if (this._place_id < 0 || this._place_id > limits.place_id) throw new Error("Field place_id must be between 0 and " + limits.place_id);
+  
+    this._place_id = this._place_id & limits.place_id;
     this._sequence = 0;
     this._last_timestamp = -1;
   }
@@ -125,3 +119,5 @@ export default class Snowflake {
     }
   }
 };
+
+export default Snowflake;
