@@ -1,10 +1,9 @@
 **/.github
 **/assets
-**/bun.lock
+**/bun.lock*
 **/CHANGELOG.md
-**/install.bat
 **/node_modules
 **/package-lock.json
-**/run.bat
+**/src
 **/test
-**/uuniq.code-workspace
+**/tsconfig.json

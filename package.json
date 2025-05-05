@@ -1,18 +1,19 @@
 {
   "name": "uuniq",
-  "version": "1.1.5",
+  "version": "1.2.0",
   "description": "Unique Snowflake IDs and Symbolic IDs that can be generated for thousands of years.",
   "license": "MIT",
-  "main": "main.js",
   "scripts": {
     "dev:snowflake": "nodemon ./test/test_snowflake.js",
-    "dev:symbolic": "nodemon ./test/test_symbolic.js"
+    "dev:symbolic": "nodemon ./test/test_symbolic.js",
+    "build": "tsup ./main.ts --dts --clean --external=any-base --format esm,cjs --out-dir ./dist"
   },
   "dependencies": {
     "any-base": "^1.1.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
   },
   "engines": {
     "node": ">= 14.0.0"
