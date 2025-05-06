@@ -11,6 +11,8 @@
 
 [Limits]: /src/types/Limits.ts
 
+[Limits]
+
 <div align="center">
   <br/>
   <img src="https://i.ibb.co/GvJ1ZRF0/unknown.png" width="350px"/>
