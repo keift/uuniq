@@ -10,8 +10,13 @@
 [Void]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined
 
 [Limits]: ./src/types/Limits.ts
+[Parts]: ./src/types/Parts.ts
+[Shifts]: ./src/types/Shifts.ts
+[SnowflakeOptions]: ./src/types/SnowflakeOptions.ts
+[SnowflakeResolve]: ./src/types/SnowflakeResolve.ts
+[SymbolicOptions]: ./src/types/SymbolicOptions.ts
+[SymbolicResolve]: ./src/types/SymbolicResolve.ts
 
-[Limits]
 
 <div align="center">
   <br/>
