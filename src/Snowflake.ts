@@ -17,6 +17,12 @@ type SnowflakeOptions = {
   place_id?: number;
 };
 
+interface SnowflakeResolve {
+  created_at: string;
+  place_id: number;
+  sequence: number;
+};
+
 const parts: Parts = {
   timestamp: 53,
   place_id: 4,
@@ -109,7 +115,7 @@ class Snowflake {
     ).toString()
   }
 
-  public resolve(id: string | bigint) {
+  public resolve(id: string | bigint): SnowflakeResolve {
     const bigint_id = BigInt(id);
 
     return {
