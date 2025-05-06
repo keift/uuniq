@@ -54,31 +54,31 @@ Unique Snowflake IDs and Symbolic IDs that can be generated for thousands of yea
 
 NPM
 
-```sh-session
+```shell
 npm install uuniq
 ```
 
 PNPM
 
-```sh-session
+```shell
 pnpm install uuniq
 ```
 
 Yarn
 
-```sh-session
+```shell
 yarn add uuniq
 ```
 
 Bun
 
-```sh-session
+```shell
 bun add uuniq
 ```
 
 Deno
 
-```sh-session
+```shell
 deno install npm:uuniq
 ```
 
