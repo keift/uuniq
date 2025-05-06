@@ -9,7 +9,7 @@
 [Buffer]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer
 [Void]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined
 
-[Limits]: /src/types/Limits.ts
+[Limits]: ./src/types/Limits.ts
 
 [Limits]
 
