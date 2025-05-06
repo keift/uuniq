@@ -1,27 +1,4 @@
-type Parts = {
-  timestamp: number;
-  place_id: number;
-  sequence: number;
-};
-
-type Limits = {
-  [K in keyof Parts]: number;
-};
-
-type Shifts = {
-  [K in keyof Parts]: number;
-};
-
-type SnowflakeOptions = {
-  epoch?: string | number | Date;
-  place_id?: number;
-};
-
-interface SnowflakeResolve {
-  created_at: string;
-  place_id: number;
-  sequence: number;
-};
+import { Limits, Parts, Shifts, SnowflakeOptions, SnowflakeResolve } from "./types/main";
 
 const parts: Parts = {
   timestamp: 53,
