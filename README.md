@@ -87,15 +87,15 @@ deno install npm:uuniq
 Briefly as follows.
 
 ```typescript
-import Uuniq, { Types as UuniqTypes } from "uuniq";
+import Uuniq from "uuniq";
 
 const Snowflake = new Uuniq.Snowflake();
 const Symbolic = new Uuniq.Symbolic();
 
-const id_0: string = Snowflake.generate(); // "102604921389056"
-const id_1: string = Snowflake.generate(); // "102604921389057"
+Snowflake.generate(); // "102604921389056"
+Snowflake.generate(); // "102604921389057"
 
-const resolve_0: UuniqTypes.SnowflakeResolve = Snowflake.resolve("102604921389056");
+Snowflake.resolve("102604921389056");
 /*
   {
     created_at: "2025-03-14T11:35:07.409Z",
@@ -104,10 +104,10 @@ const resolve_0: UuniqTypes.SnowflakeResolve = Snowflake.resolve("10260492138905
   }
 */
 
-const id_2: string = Symbolic.generate(); // "T8Qu56ki"
-const id_3: string = Symbolic.generate(); // "T8Qu56kj"
+Symbolic.generate(); // "T8Qu56ki"
+Symbolic.generate(); // "T8Qu56kj"
 
-const resolve_1: UuniqTypes.SymbolicResolve = Symbolic.resolve("T8Qu56ki");
+Symbolic.resolve("T8Qu56ki");
 /*
   {
     created_at: "2025-03-14T11:36:05.528Z",
