@@ -1,6 +1,7 @@
 **/.github
 **/assets
 **/bun.lock*
+**/bunfig.toml
 **/CHANGELOG.md
 **/examples
 **/node_modules
