@@ -12,7 +12,7 @@ type Shifts = {
   [K in keyof Parts]: number;
 };
 
-type Options = {
+type SnowflakeOptions = {
   epoch?: string | number | Date;
   place_id?: number;
 };
@@ -58,14 +58,14 @@ class Snowflake {
   private _sequence: number;
   private _last_timestamp: number;
 
-  constructor(Options: Options = {}) {
+  constructor(options: SnowflakeOptions = {}) {
     this._epoch =
-      Options.epoch instanceof Date
-        ? Options.epoch.getTime()
-        : typeof Options.epoch === "string" || typeof Options.epoch === "number"
-          ? new Date(Options.epoch).getTime()
+    options.epoch instanceof Date
+        ? options.epoch.getTime()
+        : typeof options.epoch === "string" || typeof options.epoch === "number"
+          ? new Date(options.epoch).getTime()
           : new Date("2025-01-01T00:00:00.000Z").getTime();
-    this._place_id = Options.place_id ?? 0;
+    this._place_id = options.place_id ?? 0;
 
     if (this._place_id < 0 || this._place_id > limits.place_id) throw new Error("Field place_id must be between 0 and " + limits.place_id);
 

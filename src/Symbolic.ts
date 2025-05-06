@@ -1,13 +1,13 @@
 import Anybase from "any-base";
 import Snowflake from "./Snowflake";
 
-interface Options {
+type SymbolicOptions = {
   epoch?: string | number | Date;
   place_id?: number;
   charset?: string;
 };
 
-interface Resolve {
+interface SymbolicResolve {
   created_at: string;
   place_id: number;
   sequence: number;
@@ -22,15 +22,15 @@ class Symbolic {
   private _encode: (value: string) => string;
   private _decode: (value: string) => string;
 
-  constructor(Options: Options = {}) {
+  constructor(options: SymbolicOptions = {}) {
     this._epoch =
-      Options.epoch instanceof Date
-        ? Options.epoch.getTime()
-        : typeof Options.epoch === "string" || typeof Options.epoch === "number"
-          ? new Date(Options.epoch).getTime()
+      options.epoch instanceof Date
+        ? options.epoch.getTime()
+        : typeof options.epoch === "string" || typeof options.epoch === "number"
+          ? new Date(options.epoch).getTime()
           : new Date("2025-01-01T00:00:00.000Z").getTime();
-    this._place_id = Options.place_id ?? 0;
-    this._charset = Options.charset ?? "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    this._place_id = options.place_id ?? 0;
+    this._charset = options.charset ?? "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
     this._Snowflake = new Snowflake({
       epoch: this._epoch,
@@ -45,7 +45,7 @@ class Symbolic {
     return this._encode(this._Snowflake.generate());
   }
 
-  resolve(id: string): Resolve {
+  resolve(id: string): SymbolicResolve {
     return this._Snowflake.resolve(BigInt(this._decode(id)));
   }
 };
