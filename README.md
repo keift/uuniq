@@ -9,6 +9,8 @@
 [Buffer]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer
 [Void]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined
 
+[Limits]: /src/types/Limits.ts
+
 <div align="center">
   <br/>
   <img src="https://i.ibb.co/GvJ1ZRF0/unknown.png" width="350px"/>
