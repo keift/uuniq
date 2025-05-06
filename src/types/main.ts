@@ -1,7 +1,7 @@
-export Limits from "./Limits";
-export Parts from "./Parts";
-export Shifts from "./Shifts";
-export SnowflakeOptions from "./SnowflakeOptions";
-export SnowflakeResolve from "./SnowflakeResolve";
-export SymbolicOptions from "./SymbolicOptions";
-export SymbolicResolve from "./SymbolicResolve";
+export { default as Limits } from "./Limits";
+export { default as Parts } from "./Parts";
+export { default as Shifts } from "./Shifts";
+export { default as SnowflakeOptions } from "./SnowflakeOptions";
+export { default as SnowflakeResolve } from "./SnowflakeResolve";
+export { default as SymbolicOptions } from "./SymbolicOptions";
+export { default as SymbolicResolve } from "./SymbolicResolve";
