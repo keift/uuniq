@@ -1,9 +1,9 @@
-import Uuniq from "../../src/main";
+import Uuniq, { Types } from "../../src";
 
 const Snowflake = new Uuniq.Snowflake();
 
 const id = Snowflake.generate();
-const resolve = Snowflake.resolve(id);
+const resolve: Types.SnowflakeOptions = Snowflake.resolve(id);
 
 console.log(id, JSON.stringify(resolve));
 

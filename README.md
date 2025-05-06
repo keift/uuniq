@@ -17,7 +17,6 @@
 [SymbolicOptions]: ./src/types/SymbolicOptions.ts
 [SymbolicResolve]: ./src/types/SymbolicResolve.ts
 
-
 <div align="center">
   <br/>
   <img src="https://i.ibb.co/GvJ1ZRF0/unknown.png" width="350px"/>
@@ -87,16 +86,16 @@ deno install npm:uuniq
 
 Briefly as follows.
 
-```javascript
-import Uuniq from "uuniq";
+```typescript
+import Uuniq, { Types as UuniqTypes } from "uuniq";
 
 const Snowflake = new Uuniq.Snowflake();
 const Symbolic = new Uuniq.Symbolic();
 
-Snowflake.generate(); // "102604921389056"
-Snowflake.generate(); // "102604921389057"
+const id_0: string = Snowflake.generate(); // "102604921389056"
+const id_1: string = Snowflake.generate(); // "102604921389057"
 
-Snowflake.resolve("102604921389056");
+const resolve_0: UuniqTypes.SnowflakeResolve = Snowflake.resolve("102604921389056");
 /*
   {
     created_at: "2025-03-14T11:35:07.409Z",
@@ -105,10 +104,10 @@ Snowflake.resolve("102604921389056");
   }
 */
 
-Symbolic.generate(); // "T8Qu56ki"
-Symbolic.generate(); // "T8Qu56kj"
+const id_2: string = Symbolic.generate(); // "T8Qu56ki"
+const id_3: string = Symbolic.generate(); // "T8Qu56kj"
 
-Symbolic.resolve("T8Qu56ki");
+const resolve_1: UuniqTypes.SymbolicResolve = Symbolic.resolve("T8Qu56ki");
 /*
   {
     created_at: "2025-03-14T11:36:05.528Z",
@@ -135,7 +134,7 @@ Generate Snowflake IDs developed by Twitter (X) in 2010. This can generate IDs f
 >
 > Example:
 >
-> ```javascript
+> ```typescript
 > const Snowflake = new Uuniq.Snowflake({
 >   epoch: "2025-01-01T00:00:00.000Z",
 >   place_id: 0
@@ -158,7 +157,7 @@ Generate unique IDs like YouTube's video IDs. This can generate IDs for approxim
 >
 > Example:
 >
-> ```javascript
+> ```typescript
 > const Symbolic = new Uuniq.Symbolic({
 >   epoch: "2025-01-01T00:00:00.000Z",
 >   place_id: 0,
@@ -181,7 +180,7 @@ Generate Snowflake IDs developed by Twitter (X) in 2010. This can generate IDs f
 >
 > Example:
 >
-> ```javascript
+> ```typescript
 > Snowflake.generate(); // "102604921389056"
 > Snowflake.generate(); // "102604921389057"
 > ```
@@ -201,7 +200,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 >
 > Example:
 >
-> ```javascript
+> ```typescript
 > Snowflake.resolve("102604921389056");
 > /*
 >   {
@@ -227,7 +226,7 @@ Generate unique IDs like YouTube's video IDs. This can generate IDs for approxim
 >
 > Example:
 >
-> ```javascript
+> ```typescript
 > Symbolic.generate(); // "T8Qu56ki"
 > Symbolic.generate(); // "T8Qu56kj"
 > ```
@@ -247,7 +246,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 >
 > Example:
 >
-> ```javascript
+> ```typescript
 > Symbolic.resolve("T8Qu56ki");
 > /*
 >   {

@@ -1,4 +1,4 @@
-import Uuniq from "../../src/main";
+import Uuniq from "../../src";
 
 const Symbolic = new Uuniq.Symbolic({
   epoch: "2007-05-05"

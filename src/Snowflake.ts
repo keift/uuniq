@@ -1,4 +1,4 @@
-import { Limits, Parts, Shifts, SnowflakeOptions, SnowflakeResolve } from "./types/main";
+import type { Limits, Parts, Shifts, SnowflakeOptions, SnowflakeResolve } from "./types";
 
 const parts: Parts = {
   timestamp: 53,

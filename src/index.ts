@@ -1,11 +1,11 @@
 import Snowflake from "./Snowflake";
 import Symbolic from "./Symbolic";
-import * as Types from "./types/main";
 
 const Uuniq = {
   Snowflake,
-  Symbolic,
-  Types
+  Symbolic
 };
+
+export * as Types from "./types";
 
 export default Uuniq;
