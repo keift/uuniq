@@ -1,6 +1,6 @@
 {
   "name": "uuniq",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Unique Snowflake IDs and Symbolic IDs that can be generated for thousands of years.",
   "license": "MIT",
   "main": "./dist/main.js",
@@ -12,7 +12,7 @@
     "test": "bun run build && npm run test:snowflake && npm run test:symbolic",
     "test:snowflake": "npm run ./test/snowflake.ts",
     "test:symbolic": "npm run ./test/symbolic.ts",
-    "build": "tsup ./main.ts --dts --clean --format esm,cjs --out-dir ./dist"
+    "build": "tsup ./src/main.ts --dts --clean --format esm,cjs --out-dir ./dist"
   },
   "dependencies": {
     "@types/any-base": "^1.1.3",

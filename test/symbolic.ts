@@ -1,4 +1,4 @@
-import Uuniq from "../dist/main.mjs";
+import Uuniq from "../src/main";
 
 // No Options
 const Symbolic_0 = new Uuniq.Symbolic();
