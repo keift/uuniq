@@ -60,7 +60,7 @@ const Snowflake_4 = new Uuniq.Snowflake();
 
 const Snowflake_4_resolve_0 = Snowflake_4.resolve("102604921389056");
 
-console.log(Snowflake_4_resolve_0);
+console.log(JSON.stringify(Snowflake_4_resolve_0));
 
 if (Snowflake_4_resolve_0.created_at !== "2025-03-14T11:35:07.409Z") throw new Error("❌ [Difference]");
 

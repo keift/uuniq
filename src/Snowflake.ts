@@ -58,7 +58,10 @@ class Snowflake {
   private _sequence: number;
   private _last_timestamp: number;
 
-  constructor(options: SnowflakeOptions = {}) {
+  constructor(options: SnowflakeOptions = {
+    epoch: "2025-01-01T00:00:00.000Z",
+    place_id: 0
+  }) {
     this._epoch =
       options.epoch instanceof Date
         ? options.epoch.getTime()

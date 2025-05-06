@@ -1,6 +1,6 @@
 {
   "name": "uuniq",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Unique Snowflake IDs and Symbolic IDs that can be generated for thousands of years.",
   "license": "MIT",
   "main": "./dist/main.js",

@@ -60,7 +60,7 @@ const Symbolic_4 = new Uuniq.Symbolic();
 
 const Symbolic_4_resolve_0 = Symbolic_4.resolve("T8Qu56ki");
 
-console.log(Symbolic_4_resolve_0);
+console.log(JSON.stringify(Symbolic_4_resolve_0));
 
 if (Symbolic_4_resolve_0.created_at !== "2025-03-14T11:36:05.528Z") throw new Error("❌ [Difference]");
 

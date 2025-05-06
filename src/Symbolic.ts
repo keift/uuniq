@@ -22,7 +22,11 @@ class Symbolic {
   private _encode: (value: string) => string;
   private _decode: (value: string) => string;
 
-  constructor(options: SymbolicOptions = {}) {
+  constructor(options: SymbolicOptions = {
+    epoch: "2025-01-01T00:00:00.000Z",
+    place_id: 0,
+    charset: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+  }) {
     this._epoch =
       options.epoch instanceof Date
         ? options.epoch.getTime()
