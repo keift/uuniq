@@ -60,7 +60,7 @@ class Snowflake {
 
   constructor(options: SnowflakeOptions = {}) {
     this._epoch =
-    options.epoch instanceof Date
+      options.epoch instanceof Date
         ? options.epoch.getTime()
         : typeof options.epoch === "string" || typeof options.epoch === "number"
           ? new Date(options.epoch).getTime()
