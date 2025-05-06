@@ -1,7 +1,5 @@
-import Parts from "./Parts";
+import type { Parts } from "./Parts";
 
-type Shifts = {
+export type Shifts = {
   [K in keyof Parts]: number;
 };
-
-export default Shifts;
