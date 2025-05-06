@@ -128,11 +128,9 @@ Generate Snowflake IDs developed by Twitter (X) in 2010. This can generate IDs f
 
 > | Parameter | Default | Description |
 > | --- | --- | --- |
-> | options | | [Object] (optional)<br/>Constructor's options. |
+> | options | | [SnowflakeOptions] (optional)<br/>Constructor's options. |
 > | options.epoch | `"2025-01-01T00:00:00.000Z"` | [String] \| [Number] \| [Date] (optional)<br/>Date of epoch. |
 > | options.place_id | `0` | [Number] (optional)<br/>Place ID for distributed systems. |
->
-> returns [Object]
 >
 >
 > Example:
@@ -152,12 +150,10 @@ Generate unique IDs like YouTube's video IDs. This can generate IDs for approxim
 
 > | Parameter | Default | Description |
 > | --- | --- | --- |
-> | options | | [Object] (optional)<br/>Constructor's options. |
+> | options | | [SymbolicOptions] (optional)<br/>Constructor's options. |
 > | options.epoch | `"2025-01-01T00:00:00.000Z"` | [String] \| [Number] \| [Date] (optional)<br/>Date of epoch. |
 > | options.place_id | `0` | [Number] (optional)<br/>Place ID for distributed systems. |
 > | options.charset | `"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"` | [String] (optional)<br/>Character set of IDs. |
->
-> returns [Object]
 >
 >
 > Example:
@@ -200,7 +196,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 > | --- | --- | --- |
 > | id | | [String]<br/> ID to be resolved. |
 >
-> returns [Object]
+> returns [SnowflakeResolve]
 >
 >
 > Example:
@@ -246,7 +242,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 > | --- | --- | --- |
 > | id | | [String]<br/> ID to be resolved. |
 >
-> returns [Object]
+> returns [SymbolicResolve]
 >
 >
 > Example:
