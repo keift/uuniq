@@ -1,4 +1,4 @@
-type Parts = {
+stype Parts = {
   timestamp: number;
   place_id: number;
   sequence: number;
