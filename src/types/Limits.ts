@@ -1,7 +1,5 @@
 import Parts from "./Parts";
 
-type Limits = {
+export type Limits = {
   [K in keyof Parts]: number;
 };
-
-export default Limits;
