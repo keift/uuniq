@@ -1,5 +1,7 @@
-export default type Parts = {
+type Parts = {
   timestamp: number;
   place_id: number;
   sequence: number;
 };
+
+export default Parts;
