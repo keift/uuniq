@@ -13,7 +13,7 @@ interface SymbolicResolve {
   sequence: number;
 };
 
-const Symbolic = class {
+class Symbolic {
   private _epoch: number;
   private _place_id: number;
   private _charset: string;
