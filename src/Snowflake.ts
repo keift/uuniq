@@ -18,7 +18,7 @@ type Options = {
 };
 
 const parts: Parts = {
-  timestamp: 54,
+  timestamp: 53,
   place_id: 4,
   sequence: 10
 };
@@ -65,11 +65,10 @@ class Snowflake {
         : typeof Options.epoch === "string" || typeof Options.epoch === "number"
           ? new Date(Options.epoch).getTime()
           : new Date("2025-01-01T00:00:00.000Z").getTime();
-  
     this._place_id = Options.place_id ?? 0;
-  
+
     if (this._place_id < 0 || this._place_id > limits.place_id) throw new Error("Field place_id must be between 0 and " + limits.place_id);
-  
+
     this._place_id = this._place_id & limits.place_id;
     this._sequence = 0;
     this._last_timestamp = -1;

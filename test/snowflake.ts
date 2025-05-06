@@ -10,7 +10,7 @@ const Snowflake_1_resolve_1 = Snowflake_1.resolve(Snowflake_1_generate_1);
 
 console.log(Snowflake_1_generate_1, JSON.stringify(Snowflake_1_resolve_1));
 
-if (new Date(Snowflake_1_resolve_1.created_at).getFullYear() !== 2007) throw new Error("Bro comes from the future.");
+if (new Date(Snowflake_1_resolve_1.created_at).getDate() !== new Date().getDate()) throw new Error("Bro comes from the future.");
 
 console.log("✅ Epoch Test: Checks successful!\n");
 
@@ -41,4 +41,15 @@ console.log(Snowflake_3_generate_2, JSON.stringify(Snowflake_3_resolve_2));
 
 if (Snowflake_3_resolve_1.sequence === Snowflake_3_resolve_2.sequence) throw new Error("Wtf, its same!");
 
-console.log("✅ Sequence Test: Checks successful!");
+console.log("✅ Sequence Test: Checks successful!\n");
+
+// Difference
+const Snowflake_4 = new Uuniq.Snowflake();
+
+const Snowflake_4_resolve_1 = Snowflake_4.resolve("102604921389056");
+
+console.log(Snowflake_4_resolve_1);
+
+if (Snowflake_4_resolve_1.created_at !== "2025-03-14T11:35:07.409Z") throw new Error("However, many things have changed...");
+
+console.log("✅ Difference Test: Checks successful!");

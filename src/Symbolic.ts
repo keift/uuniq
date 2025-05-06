@@ -14,30 +14,35 @@ interface Resolve {
 };
 
 class Symbolic {
+  private _epoch: number;
+  private _place_id: number;
+  private _charset: string;
+
   private _Snowflake: Snowflake;
-  private _encode: (value: number) => string;
-  private _decode: (value: string) => number;
+  private _encode: (value: string) => string;
+  private _decode: (value: string) => string;
 
   constructor(Options: Options = {}) {
-    Options = {
-      epoch: new Date("2025-01-01T00:00:00.000Z").getTime(),
-      place_id: 0,
-      charset: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
-
-      ...Options
-    }
+    this._epoch =
+      Options.epoch instanceof Date
+        ? Options.epoch.getTime()
+        : typeof Options.epoch === "string" || typeof Options.epoch === "number"
+          ? new Date(Options.epoch).getTime()
+          : new Date("2025-01-01T00:00:00.000Z").getTime();
+    this._place_id = Options.place_id ?? 0;
+    this._charset = Options.charset ?? "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
     this._Snowflake = new Snowflake({
-      epoch: Options.epoch,
-      place_id: Options.place_id,
+      epoch: this._epoch,
+      place_id: this._place_id,
     })
 
-    this._encode = Anybase(Anybase.DEC, Options.charset);
-    this._decode = Anybase(Options.charset, Anybase.DEC);
+    this._encode = Anybase(Anybase.DEC, this._charset);
+    this._decode = Anybase(this._charset, Anybase.DEC);
   }
 
   generate(): string {
-    return this._encode(Number(this._Snowflake.generate()));
+    return this._encode(this._Snowflake.generate());
   }
 
   resolve(id: string): Resolve {
