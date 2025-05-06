@@ -10,8 +10,8 @@
     "dev:snowflake": "bun run --watch ./examples/snowflake.ts",
     "dev:symbolic": "bun run --watch ./examples/symbolic.ts",
     "test": "bun run build && npm run test:snowflake && npm run test:symbolic",
-    "test:snowflake": "npm run ./test/snowflake.ts",
-    "test:symbolic": "npm run ./test/symbolic.ts",
+    "test:snowflake": "npm run ./test/Snowflake/default.ts && npm run ./test/Snowflake/difference.ts && npm run ./test/Snowflake/epoch.ts && npm run ./test/Snowflake/place_id.ts && npm run ./test/Snowflake/sequence.ts",
+    "test:symbolic": "npm run ./test/Symbolic/default.ts && npm run ./test/Symbolic/difference.ts && npm run ./test/Symbolic/epoch.ts && npm run ./test/Symbolic/place_id.ts && npm run ./test/Symbolic/sequence.ts",
     "build": "tsup ./src/main.ts --dts --clean --format esm,cjs --out-dir ./dist"
   },
   "dependencies": {
