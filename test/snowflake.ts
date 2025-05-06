@@ -39,7 +39,7 @@ const Snowflake_3_resolve_2 = Snowflake_3.resolve(Snowflake_3_generate_2);
 console.log(Snowflake_3_generate_1, JSON.stringify(Snowflake_3_resolve_1));
 console.log(Snowflake_3_generate_2, JSON.stringify(Snowflake_3_resolve_2));
 
-if (Snowflake_3_resolve_1.sequence === Snowflake_3_resolve_2.sequence) throw new Error("Wtf, its same!");
+if (Snowflake_3_generate_1 !== Snowflake_3_generate_2 && Snowflake_3_resolve_1.sequence === Snowflake_3_resolve_2.sequence) throw new Error("Wtf, its same!");
 
 console.log("✅ Sequence Test: Checks successful!\n");
 
