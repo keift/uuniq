@@ -1,17 +1,6 @@
 import Anybase from "any-base";
 import Snowflake from "./Snowflake";
-
-type SymbolicOptions = {
-  epoch?: string | number | Date;
-  place_id?: number;
-  charset?: string;
-};
-
-interface SymbolicResolve {
-  created_at: string;
-  place_id: number;
-  sequence: number;
-};
+import { SymbolicOptions, SymbolicResolve } from "./types/main";
 
 class Symbolic {
   private _epoch: number;
