@@ -1,6 +1,6 @@
 import Snowflake from "./Snowflake";
 import Symbolic from "./Symbolic";
-import Types from "./types/main";
+import * as Types from "./types/main";
 
 const Uuniq = {
   Snowflake,
