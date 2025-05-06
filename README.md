@@ -79,7 +79,8 @@ deno install npm:uuniq
 Briefly as follows.
 
 ```javascript
-const Uuniq = require("uuniq");
+import Uuniq from "uuniq";
+
 const Snowflake = new Uuniq.Snowflake();
 const Symbolic = new Uuniq.Symbolic();
 
