@@ -1,4 +1,4 @@
-import Parts from "./Parts";
+import type { Parts } from "./Parts";
 
 export type Limits = {
   [K in keyof Parts]: number;
