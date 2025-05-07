@@ -1,4 +1,4 @@
-import { Uuniq } from "../../src";
+import { Uuniq } from "../../src/main";
 
 const Snowflake = new Uuniq.Snowflake({
   epoch: "2007-05-05"

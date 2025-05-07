@@ -1,4 +1,4 @@
-import { Uuniq, Types } from "../../src";
+import { Uuniq, Types } from "../../src/main";
 
 const Symbolic = new Uuniq.Symbolic();
 

@@ -6,4 +6,4 @@ export const Uuniq = {
   Symbolic
 };
 
-export * as Types from "./types";
+export * as Types from "./types/main";

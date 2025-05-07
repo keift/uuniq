@@ -1,4 +1,4 @@
-import { Uuniq, Types } from "../../src";
+import { Uuniq, Types } from "../../src/main";
 
 const Snowflake = new Uuniq.Snowflake();
 
