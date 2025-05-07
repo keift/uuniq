@@ -1,9 +1,9 @@
 import Anybase from "any-base";
-import Snowflake from "./Snowflake";
+import { Snowflake } from "./Snowflake";
 
 import type { SymbolicOptions, SymbolicResolve } from "./types";
 
-class Symbolic {
+export class Symbolic {
   private _epoch: number;
   private _place_id: number;
   private _charset: string;
@@ -43,5 +43,3 @@ class Symbolic {
     return this._Snowflake.resolve(BigInt(this._decode(id)));
   }
 };
-
-export default Symbolic;

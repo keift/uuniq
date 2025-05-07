@@ -87,7 +87,7 @@ deno install npm:uuniq
 Briefly as follows.
 
 ```typescript
-import Uuniq from "uuniq";
+import { Uuniq } from "uuniq";
 
 const Snowflake = new Uuniq.Snowflake();
 const Symbolic = new Uuniq.Symbolic();

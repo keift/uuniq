@@ -1,9 +1,9 @@
-import Uuniq from "../../src";
+import { Uuniq, Types } from "../../src";
 
 const Symbolic = new Uuniq.Symbolic();
 
 const id = Symbolic.generate();
-const resolve = Symbolic.resolve(id);
+const resolve: Types.SymbolicResolve = Symbolic.resolve(id);
 
 console.log(id, JSON.stringify(resolve));
 

@@ -35,7 +35,7 @@ const calculateShifts = (parts: Parts): Shifts => {
 const limits = calculateLimits(parts);
 const shifts = calculateShifts(parts);
 
-class Snowflake {
+export class Snowflake {
   private _epoch: number;
   private _place_id: number;
   private _sequence: number;
@@ -104,5 +104,3 @@ class Snowflake {
     }
   }
 };
-
-export default Snowflake;

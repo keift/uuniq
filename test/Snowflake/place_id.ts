@@ -1,4 +1,4 @@
-import Uuniq from "../../src";
+import { Uuniq } from "../../src";
 
 const Snowflake = new Uuniq.Snowflake({
   place_id: 1
