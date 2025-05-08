@@ -1,8 +1,8 @@
-import { Uuniq } from "../../src/main";
+import { Symbolic, Interfaces } from "../../src/main";
 
-const Symbolic = new Uuniq.Symbolic();
+const SymbolicIDs: Symbolic = new Symbolic();
 
-const resolve = Symbolic.resolve("T8Qu56ki");
+const resolve: Interfaces.SymbolicResolve = SymbolicIDs.resolve("T8Qu56ki");
 
 console.log(JSON.stringify(resolve));
 

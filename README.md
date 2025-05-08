@@ -88,15 +88,15 @@ deno install npm:uuniq
 Briefly as follows.
 
 ```typescript
-import { Uuniq } from "uuniq";
+import { Snowflake, Symbolic, Types, Interfaces } from "uuniq";
 
-const Snowflake = new Uuniq.Snowflake();
-const Symbolic = new Uuniq.Symbolic();
+const SnowflakeIDs: Snowflake = new Snowflake();
+const SymbolicIDs: Symbolic = new Symbolic();
 
-Snowflake.generate(); // "102604921389056"
-Snowflake.generate(); // "102604921389057"
+const id_0: string = SnowflakeIDs.generate(); // "102604921389056"
+const id_1: string = SnowflakeIDs.generate(); // "102604921389057"
 
-Snowflake.resolve("102604921389056");
+const resolve_0: Interfaces.SnowflakeResolve = SnowflakeIDs.resolve("102604921389056");
 /*
   {
     created_at: "2025-03-14T11:35:07.409Z",
@@ -105,10 +105,10 @@ Snowflake.resolve("102604921389056");
   }
 */
 
-Symbolic.generate(); // "T8Qu56ki"
-Symbolic.generate(); // "T8Qu56kj"
+const id_2: string = SymbolicIDs.generate(); // "T8Qu56ki"
+const id_3: string = SymbolicIDs.generate(); // "T8Qu56kj"
 
-Symbolic.resolve("T8Qu56ki");
+const resolve_1: Interfaces.SymbolicResolve = SymbolicIDs.resolve("T8Qu56ki");
 /*
   {
     created_at: "2025-03-14T11:36:05.528Z",
@@ -136,7 +136,7 @@ Generate Snowflake IDs developed by Twitter (X) in 2010. This can generate IDs f
 > Example:
 >
 > ```typescript
-> const Snowflake = new Uuniq.Snowflake({
+> const SnowflakeIDs: Snowflake = new Snowflake({
 >   epoch: "2025-01-01T00:00:00.000Z",
 >   place_id: 0
 > });
@@ -159,7 +159,7 @@ Generate unique IDs like YouTube's video IDs. This can generate IDs for approxim
 > Example:
 >
 > ```typescript
-> const Symbolic = new Uuniq.Symbolic({
+> const SymbolicIDs: Symbolic = new Symbolic({
 >   epoch: "2025-01-01T00:00:00.000Z",
 >   place_id: 0,
 >   charset: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
@@ -182,8 +182,8 @@ Generate Snowflake IDs developed by Twitter (X) in 2010. This can generate IDs f
 > Example:
 >
 > ```typescript
-> Snowflake.generate(); // "102604921389056"
-> Snowflake.generate(); // "102604921389057"
+> const id_0: string = SnowflakeIDs.generate(); // "102604921389056"
+> const id_1: string = SnowflakeIDs.generate(); // "102604921389057"
 > ```
 
 <br/>
@@ -202,7 +202,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 > Example:
 >
 > ```typescript
-> Snowflake.resolve("102604921389056");
+> const resolve: Interfaces.SnowflakeResolve = SnowflakeIDs.resolve("102604921389056");
 > /*
 >   {
 >     created_at: "2025-03-14T11:35:07.409Z",
@@ -228,8 +228,8 @@ Generate unique IDs like YouTube's video IDs. This can generate IDs for approxim
 > Example:
 >
 > ```typescript
-> Symbolic.generate(); // "T8Qu56ki"
-> Symbolic.generate(); // "T8Qu56kj"
+> const id_0: string = SymbolicIDs.generate(); // "T8Qu56ki"
+> const id_1: string = SymbolicIDs.generate(); // "T8Qu56kj"
 > ```
 
 <br/>
@@ -248,7 +248,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 > Example:
 >
 > ```typescript
-> Symbolic.resolve("T8Qu56ki");
+> const resolve: Interfaces.SymbolicResolve = SymbolicIDs.resolve("T8Qu56ki");
 > /*
 >   {
 >     created_at: "2025-03-14T11:36:05.528Z",

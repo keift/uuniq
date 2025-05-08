@@ -1,11 +1,11 @@
-import { Uuniq } from "../../src/main";
+import { Symbolic, Interfaces } from "../../src/main";
 
-const Snowflake = new Uuniq.Snowflake({
+const SymbolicIDs: Symbolic = new Symbolic({
   epoch: "2007-05-05"
 });
 
-const id = Snowflake.generate();
-const resolve = Snowflake.resolve(id);
+const id: string = SymbolicIDs.generate();
+const resolve: Interfaces.SymbolicResolve = SymbolicIDs.resolve(id);
 
 console.log(id, JSON.stringify(resolve));
 

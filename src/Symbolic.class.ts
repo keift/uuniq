@@ -10,8 +10,8 @@ export class Symbolic {
   private _charset: string;
 
   private _Snowflake: Snowflake;
-  private _encode: (value: string) => string;
-  private _decode: (value: string) => string;
+  private _encode: (anybase: string) => string;
+  private _decode: (anybase: string) => string;
 
   constructor(options: SymbolicOptions = {
     epoch: "2025-01-01T00:00:00.000Z",

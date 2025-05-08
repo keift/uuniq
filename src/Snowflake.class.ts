@@ -7,21 +7,18 @@ const parts: Parts = {
   sequence: 10
 };
 
-const calculateLimits = (parts: Parts): Limits => {
-  const limits = {} as Limits;
+const calculateLimits: (parts: Parts) => Limits = (parts: Parts): Limits => {
+  const limits: Limits = {} as Limits;
+  const keys: (keyof Parts)[] = Object.keys(parts) as (keyof Parts)[];
 
-  for (const field in parts) {
-    const key = field as keyof Parts;
-
-    limits[key] = Math.pow(2, parts[key]) - 1;
-  }
+  for (const key of keys) limits[key] = Math.pow(2, parts[key]) - 1;
 
   return limits;
 };
 
-const calculateShifts = (parts: Parts): Shifts => {
-  const shifts = {} as Shifts;
-  let shift = 0;
+const calculateShifts: (parts: Parts) => Shifts = (parts: Parts): Shifts => {
+  const shifts: Shifts = {} as Shifts;
+  let shift: number = 0;
 
   const keys: (keyof Parts)[] = ["sequence", "place_id", "timestamp"];
 
@@ -33,8 +30,8 @@ const calculateShifts = (parts: Parts): Shifts => {
   return shifts;
 };
 
-const limits = calculateLimits(parts);
-const shifts = calculateShifts(parts);
+const limits: Limits = calculateLimits(parts);
+const shifts: Shifts = calculateShifts(parts);
 
 export class Snowflake {
   private _epoch: number;
@@ -66,7 +63,7 @@ export class Snowflake {
   }
 
   private _waitForNextTime(last_timestamp: number): number {
-    let timestamp = this._currentTimestamp();
+    let timestamp: number = this._currentTimestamp();
 
     while (last_timestamp >= timestamp) timestamp = this._currentTimestamp();
 
@@ -74,7 +71,7 @@ export class Snowflake {
   }
 
   public generate(): string {
-    let timestamp = this._currentTimestamp();
+    let timestamp: number = this._currentTimestamp();
 
     if (timestamp < this._last_timestamp) throw new Error("Clock moved backwards.");
 
@@ -94,7 +91,7 @@ export class Snowflake {
   }
 
   public resolve(id: string | bigint): SnowflakeResolve {
-    const bigint_id = BigInt(id);
+    const bigint_id: bigint = BigInt(id);
 
     return {
       created_at: new Date(

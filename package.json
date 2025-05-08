@@ -10,20 +10,19 @@
     "dev:snowflake": "bun run --watch ./examples/snowflake.ts",
     "dev:symbolic": "bun run --watch ./examples/symbolic.ts",
     "test": "npm run test:snowflake && npm run test:symbolic",
-    "test:snowflake": "npm run ./test/Snowflake/default.ts && npm run ./test/Snowflake/difference.ts && npm run ./test/Snowflake/epoch.ts && npm run ./test/Snowflake/place_id.ts && npm run ./test/Snowflake/sequence.ts",
-    "test:symbolic": "npm run ./test/Symbolic/default.ts && npm run ./test/Symbolic/difference.ts && npm run ./test/Symbolic/epoch.ts && npm run ./test/Symbolic/place_id.ts && npm run ./test/Symbolic/sequence.ts",
-    "build": "tsup ./src/main.ts --dts --clean --format esm,cjs --out-dir ./dist"
+    "test:snowflake": "npm run ./test/Snowflake/default.test.ts && npm run ./test/Snowflake/difference.test.ts && npm run ./test/Snowflake/epoch.test.ts && npm run ./test/Snowflake/place_id.test.ts && npm run ./test/Snowflake/sequence.test.ts",
+    "test:symbolic": "npm run ./test/Symbolic/default.test.ts && npm run ./test/Symbolic/difference.test.ts && npm run ./test/Symbolic/epoch.test.ts && npm run ./test/Symbolic/place_id.test.ts && npm run ./test/Symbolic/sequence.test.ts",
+    "build": "tsup ./src/main.ts --dts --clean --format esm,cjs --out-dir ./dist",
+    "lint": "eslint ./"
   },
   "dependencies": {
     "@types/any-base": "^1.1.3",
     "any-base": "^1.1.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.32.0",
-    "@typescript-eslint/parser": "^8.32.0",
-    "eslint": "^9.26.0",
     "tsup": "^8.4.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.32.0"
   },
   "engines": {
     "node": ">= 14.0.0"
