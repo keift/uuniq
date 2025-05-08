@@ -13,7 +13,7 @@ export default [
       }
     },
     plugins: {
-      "@typescript-eslint": eslint.plugin
+      "@typescript-eslint": typescript_eslint.plugin
     },
     rules: {
       "@typescript-eslint/typedef": ["error", {
