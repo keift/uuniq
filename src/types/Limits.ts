@@ -1,5 +1,5 @@
 import type { Parts } from "./Parts";
 
 export type Limits = {
-  [K in keyof Parts]: number;
+  [Key in keyof Parts]: number;
 };
