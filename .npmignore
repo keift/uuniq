@@ -11,3 +11,4 @@
 /test
 /tsconfig.json
 /types
+/tsup.config.ts

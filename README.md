@@ -35,6 +35,10 @@
 - [Features](#features)
 - [Installation](#installation)
 - [Documentation](#documentation)
+  - [Constructors](#constructors)
+  - [Methods](#methods)
+  - [Types](#types)
+  - [Interfaces](#interfaces)
 - [Links](#links)
   - [Change Log](CHANGELOG.md)
 
@@ -203,6 +207,28 @@ Generate unique IDs like YouTube's video IDs. This can generate IDs for approxim
 Resolve the previously created ID. For this, the `epoch` and `place_id` values ​​in the Constructor must be correct.
 
 > | Parameter | Default | Description |
+> | --- | --- | --- |
+> | id | | [String]<br/> ID to be resolved. |
+>
+> returns [SymbolicResolve]
+>
+>
+> Example:
+>
+> ```typescript
+> const resolve: Interfaces.SymbolicResolve = SymbolicIDs.resolve("T8Qu56ki");
+> /*
+>   {
+>     created_at: "2025-03-14T11:36:05.528Z",
+>     place_id: 0,
+>     sequence: 0
+>   }
+> */
+> ```
+
+### Types
+
+> | Type | Default | Description |
 > | --- | --- | --- |
 > | id | | [String]<br/> ID to be resolved. |
 >

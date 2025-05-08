@@ -17,12 +17,12 @@ export default [
     },
     rules: {
       "@typescript-eslint/typedef": ["error", {
-        variableDeclaration: true,
-        variableDeclarationIgnoreFunction: false,
+        arrowParameter: true,
         memberVariableDeclaration: true,
-        propertyDeclaration: true,
         parameter: true,
-        arrowParameter: true
+        propertyDeclaration: true,
+        variableDeclarationIgnoreFunction: false,
+        variableDeclaration: true
       }],
       "@typescript-eslint/explicit-function-return-type": "error",
       "@typescript-eslint/explicit-module-boundary-types": "error"
