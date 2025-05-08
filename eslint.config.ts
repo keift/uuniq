@@ -1,12 +1,12 @@
-import eslint from "typescript-eslint";
+import typescript_eslint from "typescript-eslint";
 
 export default [
   { ignores: ["./dist/**"] },
-  ...eslint.configs.strict,
+  ...typescript_eslint.configs.strict,
   {
     files: ["**/*.ts"],
     languageOptions: {
-      parser: eslint.parser,
+      parser: typescript_eslint.parser,
       parserOptions: {
         project: "./tsconfig.json",
         sourceType: "module"
