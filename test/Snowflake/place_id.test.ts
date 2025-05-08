@@ -1,8 +1,10 @@
-import { Snowflake, Interfaces } from "../../src/main";
+import { Snowflake, Types, Interfaces } from "../../src/main";
 
-const SnowflakeIDs: Snowflake = new Snowflake({
+const SnowflakeOptions: Types.SnowflakeOptions = {
   place_id: 1
-});
+};
+
+const SnowflakeIDs: Snowflake = new Snowflake(SnowflakeOptions);
 
 const id: string = SnowflakeIDs.generate();
 const resolve: Interfaces.SnowflakeResolve = SnowflakeIDs.resolve(id);

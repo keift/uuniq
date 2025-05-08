@@ -2,6 +2,7 @@ import eslint from "typescript-eslint";
 
 export default [
   { ignores: ["./dist/**"] },
+  ...eslint.configs.strict,
   {
     files: ["**/*.ts"],
     languageOptions: {
