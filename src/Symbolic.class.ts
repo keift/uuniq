@@ -1,7 +1,8 @@
 import Anybase from "any-base";
-import { Snowflake } from "./Snowflake";
+import { Snowflake } from "./Snowflake.class";
 
-import type { SymbolicOptions, SymbolicResolve } from "./types/main";
+import type { SymbolicOptions } from "./types/main.type";
+import type { SymbolicResolve } from "./interfaces/main.interface";
 
 export class Symbolic {
   private _epoch: number;

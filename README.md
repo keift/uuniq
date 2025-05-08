@@ -9,13 +9,14 @@
 [Buffer]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer
 [Void]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined
 
-[Limits]: ./src/types/Limits.ts
-[Parts]: ./src/types/Parts.ts
-[Shifts]: ./src/types/Shifts.ts
-[SnowflakeOptions]: ./src/types/SnowflakeOptions.ts
-[SnowflakeResolve]: ./src/types/SnowflakeResolve.ts
-[SymbolicOptions]: ./src/types/SymbolicOptions.ts
-[SymbolicResolve]: ./src/types/SymbolicResolve.ts
+[Limits]: ./src/types/Limits.type.ts
+[Parts]: ./src/types/Parts.type.ts
+[Shifts]: ./src/types/Shifts.type.ts
+[SnowflakeOptions]: ./src/types/SnowflakeOptions.type.ts
+[SymbolicOptions]: ./src/types/SymbolicOptions.type.ts
+
+[SnowflakeResolve]: ./src/interfaces/SnowflakeResolve.interface.ts
+[SymbolicResolve]: ./src/interfaces/SymbolicResolve.interface.ts
 
 <div align="center">
   <br/>

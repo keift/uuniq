@@ -19,6 +19,9 @@
     "any-base": "^1.1.0"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.32.0",
+    "@typescript-eslint/parser": "^8.32.0",
+    "eslint": "^9.26.0",
     "tsup": "^8.4.0",
     "typescript": "^5.8.3"
   },
