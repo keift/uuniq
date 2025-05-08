@@ -34,7 +34,6 @@
 - [About](#about)
 - [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Documentation](#documentation)
 - [Links](#links)
   - [Change Log](CHANGELOG.md)
@@ -81,41 +80,6 @@ Deno
 
 ```shell
 deno install npm:uuniq
-```
-
-## Usage
-
-Briefly as follows.
-
-```typescript
-import { Snowflake, Symbolic, Types, Interfaces } from "uuniq";
-
-const SnowflakeIDs: Snowflake = new Snowflake();
-const SymbolicIDs: Symbolic = new Symbolic();
-
-const id_0: string = SnowflakeIDs.generate(); // "102604921389056"
-const id_1: string = SnowflakeIDs.generate(); // "102604921389057"
-
-const resolve_0: Interfaces.SnowflakeResolve = SnowflakeIDs.resolve("102604921389056");
-/*
-  {
-    created_at: "2025-03-14T11:35:07.409Z",
-    place_id: 0,
-    sequence: 0
-  }
-*/
-
-const id_2: string = SymbolicIDs.generate(); // "T8Qu56ki"
-const id_3: string = SymbolicIDs.generate(); // "T8Qu56kj"
-
-const resolve_1: Interfaces.SymbolicResolve = SymbolicIDs.resolve("T8Qu56ki");
-/*
-  {
-    created_at: "2025-03-14T11:36:05.528Z",
-    place_id: 0,
-    sequence: 0
-  }
-*/
 ```
 
 ## Documentation
