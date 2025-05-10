@@ -24,7 +24,7 @@ export default [
         parameter: true,
         propertyDeclaration: true,
         variableDeclaration: true,
-        variableDeclarationIgnoreFunction: false
+        variableDeclarationIgnoreFunction: true
       }],
       "@typescript-eslint/explicit-function-return-type": "error"
     }

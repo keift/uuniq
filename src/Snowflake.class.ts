@@ -7,7 +7,7 @@ const parts: Parts = {
   sequence: 10
 };
 
-const calculateLimits: (parts: Parts) => Limits = (parts: Parts): Limits => {
+const calculateLimits = (parts: Parts): Limits => {
   const limits: Limits = {} as Limits;
   const keys: (keyof Parts)[] = Object.keys(parts) as (keyof Parts)[];
 
@@ -16,7 +16,7 @@ const calculateLimits: (parts: Parts) => Limits = (parts: Parts): Limits => {
   return limits;
 };
 
-const calculateShifts: (parts: Parts) => Shifts = (parts: Parts): Shifts => {
+const calculateShifts = (parts: Parts): Shifts => {
   const shifts: Shifts = {} as Shifts;
   let shift: number = 0;
 
