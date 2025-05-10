@@ -37,6 +37,7 @@ export default [
       "prefer-template": "error",
       "quote-props": ["error", "as-needed"],
       eqeqeq: "error",
+      indent: ["error", 2],
       quotes: ["error", "double", { avoidEscape: false }],
 
       "typescript-eslint/consistent-type-definitions": ["error", "type"],
