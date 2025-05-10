@@ -18,6 +18,7 @@ export default [
     rules: {
       "prefer-const": "error",
       "no-var": "error",
+      "@typescript-eslint/consistent-type-definitions": ["error", "type"],
       "@typescript-eslint/typedef": ["error", {
         arrayDestructuring: true,
         arrowParameter: true,
