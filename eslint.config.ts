@@ -18,7 +18,7 @@ export default [
     rules: {
       "arrow-body-style": "error",
       "default-case": "error",
-      eqeqeq: "error",
+      "no-duplicate-imports": "error",
       "no-empty": "error",
       "no-useless-catch": "error",
       "no-useless-constructor": "error",
@@ -28,8 +28,11 @@ export default [
       "object-shorthand": "error",
       "prefer-const": "error",
       "prefer-template": "error",
-      "no-duplicate-imports": "error",
+      eqeqeq: "error",
+      "quote-props": ["error", "as-needed"],
       quotes: ["error", "double", { avoidEscape: false }],
+      "func-style": ["error", "expression", { allowArrowFunctions: true }],
+      "prefer-arrow-callback": ["error", { allowNamedFunctions: false }],
       "typescript-eslint/consistent-type-definitions": ["error", "type"],
       "typescript-eslint/typedef": ["error", {
         arrayDestructuring: true,
