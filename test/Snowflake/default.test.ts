@@ -1,9 +1,11 @@
-import { Snowflake, Interfaces } from "../../src/main";
+import { Snowflake } from "../../src/main";
+
+import type { Types } from "../../src/main";
 
 const SnowflakeIDs: Snowflake = new Snowflake();
 
 const id: string = SnowflakeIDs.generate();
-const resolve: Interfaces.SnowflakeResolve = SnowflakeIDs.resolve(id);
+const resolve: Types.SnowflakeResolve = SnowflakeIDs.resolve(id);
 
 console.log(id, JSON.stringify(resolve));
 

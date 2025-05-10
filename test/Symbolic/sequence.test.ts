@@ -1,11 +1,13 @@
-import { Symbolic, Interfaces } from "../../src/main";
+import { Symbolic } from "../../src/main";
+
+import type { Types } from "../../src/main";
 
 const SymbolicIDs: Symbolic = new Symbolic();
 
 const id_0: string = SymbolicIDs.generate();
 const id_1: string = SymbolicIDs.generate();
-const resolve_0: Interfaces.SymbolicResolve = SymbolicIDs.resolve(id_0);
-const resolve_1: Interfaces.SymbolicResolve = SymbolicIDs.resolve(id_1);
+const resolve_0: Types.SymbolicResolve = SymbolicIDs.resolve(id_0);
+const resolve_1: Types.SymbolicResolve = SymbolicIDs.resolve(id_1);
 
 console.log(id_0, JSON.stringify(resolve_0));
 console.log(id_1, JSON.stringify(resolve_1));

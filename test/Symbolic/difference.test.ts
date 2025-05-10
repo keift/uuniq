@@ -1,8 +1,10 @@
-import { Symbolic, Interfaces } from "../../src/main";
+import { Symbolic } from "../../src/main";
+
+import type { Types } from "../../src/main";
 
 const SymbolicIDs: Symbolic = new Symbolic();
 
-const resolve: Interfaces.SymbolicResolve = SymbolicIDs.resolve("T8Qu56ki");
+const resolve: Types.SymbolicResolve = SymbolicIDs.resolve("T8Qu56ki");
 
 console.log(JSON.stringify(resolve));
 

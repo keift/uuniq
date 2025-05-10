@@ -34,6 +34,7 @@
 - [Features](#features)
 - [Installation](#installation)
 - [Documentation](#documentation)
+  - [Import](#import)
   - [Constructors](#constructors)
   - [Methods](#methods)
   - [Types](#types)
@@ -85,6 +86,12 @@ deno install npm:uuniq
 ```
 
 ## Documentation
+
+### Import
+
+> ```typescript
+> 
+>
 
 ### Constructors
 

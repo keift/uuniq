@@ -1,4 +1,6 @@
-import { Symbolic, Types, Interfaces } from "../../src/main";
+import { Symbolic } from "../../src/main";
+
+import type { Types } from "../../src/main";
 
 const SymbolicOptions: Types.SymbolicOptions = {
   epoch: "2007-05-05"
@@ -7,7 +9,7 @@ const SymbolicOptions: Types.SymbolicOptions = {
 const SymbolicIDs: Symbolic = new Symbolic(SymbolicOptions);
 
 const id: string = SymbolicIDs.generate();
-const resolve: Interfaces.SymbolicResolve = SymbolicIDs.resolve(id);
+const resolve: Types.SymbolicResolve = SymbolicIDs.resolve(id);
 
 console.log(id, JSON.stringify(resolve));
 
