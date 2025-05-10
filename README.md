@@ -250,8 +250,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 > Example:
 >
 > ```typescript
-> import { Snowflake, Symbolic } from "uuniq";
-> import type { Types as UuniqTypes } from "uuniq";
+> import { Snowflake, Symbolic, type Types as UuniqTypes } from "uuniq";
 >
 > const SnowflakeOptions: UuniqTypes.SnowflakeOptions = {
 >   epoch: "2025-01-01T00:00:00.000Z",
