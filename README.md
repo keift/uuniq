@@ -13,10 +13,9 @@
 [Parts]: ./src/types/Parts.type.ts
 [Shifts]: ./src/types/Shifts.type.ts
 [SnowflakeOptions]: ./src/types/SnowflakeOptions.type.ts
+[SnowflakeResolve]: ./src/types/SnowflakeResolve.type.ts
 [SymbolicOptions]: ./src/types/SymbolicOptions.type.ts
-
-[SnowflakeResolve]: ./src/interfaces/SnowflakeResolve.interface.ts
-[SymbolicResolve]: ./src/interfaces/SymbolicResolve.interface.ts
+[SymbolicResolve]: ./src/types/SymbolicResolve.type.ts
 
 <div align="center">
   <br/>
@@ -38,7 +37,6 @@
   - [Constructors](#constructors)
   - [Methods](#methods)
   - [Types](#types)
-  - [Interfaces](#interfaces)
 - [Links](#links)
   - [Change Log](CHANGELOG.md)
 
@@ -170,7 +168,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 > Example:
 >
 > ```typescript
-> const resolve: Interfaces.SnowflakeResolve = SnowflakeIDs.resolve("102604921389056");
+> const resolve: UuniqTypes.SnowflakeResolve = SnowflakeIDs.resolve("102604921389056");
 > /*
 >   {
 >     created_at: "2025-03-14T11:35:07.409Z",
@@ -216,7 +214,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 > Example:
 >
 > ```typescript
-> const resolve: Interfaces.SymbolicResolve = SymbolicIDs.resolve("T8Qu56ki");
+> const resolve: UuniqTypes.SymbolicResolve = SymbolicIDs.resolve("T8Qu56ki");
 > /*
 >   {
 >     created_at: "2025-03-14T11:36:05.528Z",
@@ -228,24 +226,39 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 
 ### Types
 
-> | Type | Default | Description |
+> | Type | Contents | Description |
 > | --- | --- | --- |
-> | id | | [String]<br/> ID to be resolved. |
->
-> returns [SymbolicResolve]
+> | [SnowflakeOptions] | {<br/>  epoch?: string | number | Date;<br/>  place_id?: number;<br/>} | new Snowflake(options?...)[#constructors] |
+> | [SnowflakeResolve] | {<br/>  created_at: string;<br/>  place_id: number;<br/>  sequence: number;<br/>} | new Snowflake(options?...)[#methods] |
+> | [SymbolicOptions] | {<br/>  epoch?: string | number | Date;<br/>  place_id?: number;<br/>  charset?: string;<br/>} | new Symbolic(options?...)[#constructors] |
+> | [SymbolicResolve] | {<br/>  created_at: string;<br/>  place_id: number;<br/>  sequence: number;<br/>} | new Snowflake(options?...)[#methods] |
 >
 >
 > Example:
 >
 > ```typescript
-> const resolve: Interfaces.SymbolicResolve = SymbolicIDs.resolve("T8Qu56ki");
-> /*
->   {
->     created_at: "2025-03-14T11:36:05.528Z",
->     place_id: 0,
->     sequence: 0
->   }
-> */
+> import { Snowflake, Symbolic } from "uuniq";
+> import type { Types as UuniqTypes } from "uuniq";
+>
+> const SnowflakeOptions: UuniqTypes.SnowflakeOptions = {
+>   epoch: "2025-01-01T00:00:00.000Z",
+>   place_id: 0
+> };
+>
+> const SymbolicOptions: UuniqTypes.SymbolicOptions = {
+>   epoch: "2025-01-01T00:00:00.000Z",
+>   place_id: 0,
+>   charset: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+> };
+>
+> const SnowflakeIDs: Snowflake = new Snowflake(SnowflakeOptions);
+> const SymbolicIDs: Symbolic = new Symbolic(SymbolicOptions);
+>
+> const snowflake_id: string = SnowflakeIDs.generate();
+> const symbolic_id: string = SymbolicIDs.generate();
+>
+> const snowflake_resolve: UuniqTypes.SnowflakeResolve = SnowflakeIDs.resolve(snowflake_id);
+> const symbolic_resolve: UuniqTypes.SymbolicResolve = SymbolicIDs.resolve(symbolic_id);
 > ```
 
 ## Links
