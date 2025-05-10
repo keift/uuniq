@@ -89,12 +89,12 @@ deno install npm:uuniq
 
 ### Import
 
-> _JavaScript_
+> _*JavaScript*_
 > ```typescript
 > import { Snowflake, Symbolic, type Types } from "uuniq";
 > ```
 >
-> _TypeScript_
+> _*TypeScript*_
 > ```javascript
 > import { Snowflake, Symbolic } from "uuniq";
 > ```
