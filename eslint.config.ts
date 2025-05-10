@@ -16,6 +16,8 @@ export default [
       "@typescript-eslint": typescript_eslint.plugin
     },
     rules: {
+      "prefer-const": "error",
+      "no-var": "error",
       "@typescript-eslint/typedef": ["error", {
         arrayDestructuring: true,
         arrowParameter: true,
