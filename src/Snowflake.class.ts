@@ -89,7 +89,7 @@ export class Snowflake {
     ).toString()
   }
 
-  public resolve(id: string | bigint): SnowflakeResolve {
+  public resolve(id: string): SnowflakeResolve {
     const bigint_id: bigint = BigInt(id);
 
     return {

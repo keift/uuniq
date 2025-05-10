@@ -40,6 +40,6 @@ export class Symbolic {
   }
 
   resolve(id: string): SymbolicResolve {
-    return this._Snowflake.resolve(BigInt(this._decode(id)));
+    return this._Snowflake.resolve(this._decode(id));
   }
 };
