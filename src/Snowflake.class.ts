@@ -50,7 +50,7 @@ export class Snowflake {
           : new Date("2025-01-01T00:00:00.000Z").getTime();
     this._place_id = options.place_id ?? 0;
 
-    if (this._place_id < 0 || this._place_id > limits.place_id) throw new Error("Field place_id must be between 0 and " + limits.place_id);
+    if (this._place_id < 0 || this._place_id > limits.place_id) throw new Error(`Field place_id must be between 0 and ${limits.place_id}`);
 
     this._place_id = this._place_id & limits.place_id;
     this._sequence = 0;

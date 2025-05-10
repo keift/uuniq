@@ -13,13 +13,25 @@ export default [
       }
     },
     plugins: {
-      "@typescript-eslint": typescript_eslint.plugin
+      "typescript-eslint": typescript_eslint.plugin
     },
     rules: {
-      "prefer-const": "error",
+      "arrow-body-style": "error",
+      "default-case": "error",
+      eqeqeq: "error",
+      "no-empty": "error",
+      "no-useless-catch": "error",
+      "no-useless-constructor": "error",
+      "no-useless-rename": "error",
+      "no-useless-return": "error",
       "no-var": "error",
-      "@typescript-eslint/consistent-type-definitions": ["error", "type"],
-      "@typescript-eslint/typedef": ["error", {
+      "object-shorthand": "error",
+      "prefer-const": "error",
+      "prefer-template": "error",
+      "no-duplicate-imports": "error",
+      quotes: ["error", "double", { avoidEscape: false }],
+      "typescript-eslint/consistent-type-definitions": ["error", "type"],
+      "typescript-eslint/typedef": ["error", {
         arrayDestructuring: true,
         arrowParameter: true,
         memberVariableDeclaration: true,
@@ -29,7 +41,7 @@ export default [
         variableDeclaration: true,
         variableDeclarationIgnoreFunction: true
       }],
-      "@typescript-eslint/explicit-function-return-type": "error"
+      "typescript-eslint/explicit-function-return-type": "error"
     }
   }
 ];
