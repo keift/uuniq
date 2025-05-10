@@ -239,12 +239,12 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 
 ### Types
 
-> | Type | Contents | Description |
-> | --- | --- | --- |
-> | [SnowflakeOptions] | {<br/>  epoch?: string \| number \| Date;<br/>  place_id?: number;<br/>} | new Snowflake(options?...)[#constructors] |
-> | [SnowflakeResolve] | {<br/>  created_at: string;<br/>  place_id: number;<br/>  sequence: number;<br/>} | new Snowflake(options?...)[#methods] |
-> | [SymbolicOptions] | {<br/>  epoch?: string \| number \| Date;<br/>  place_id?: number;<br/>  charset?: string;<br/>} | new Symbolic(options?...)[#constructors] |
-> | [SymbolicResolve] | {<br/>  created_at: string;<br/>  place_id: number;<br/>  sequence: number;<br/>} | new Snowflake(options?...)[#methods] |
+> | Type | Example |
+> | --- | --- |
+> | [SnowflakeOptions] | new Snowflake(options?...)(#constructors) |
+> | [SnowflakeResolve] | SnowflakeIDs.resolve(id)(#methods) |
+> | [SymbolicOptions] | new Symbolic(options?...)(#constructors) |
+> | [SymbolicResolve] | SymbolicIDs.resolve(id)(#methods) |
 >
 >
 > Example:
