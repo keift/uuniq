@@ -86,13 +86,15 @@ deno install npm:uuniq
 
 ### Import
 
+Briefly as follows.
+
+> TypeScript
 > ```typescript
-> // TypeScript
 > import { Snowflake, Symbolic, type Types as UuniqTypes } from "uuniq";
 > ```
 >
+> JavaScript
 > ```javascript
-> // JavaScript
 > import { Snowflake, Symbolic } from "uuniq";
 > ```
 
