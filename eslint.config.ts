@@ -16,24 +16,33 @@ export default [
       "typescript-eslint": typescript_eslint.plugin
     },
     rules: {
-      "arrow-body-style": "error",
+      "comma-dangle": ["error", "never"],
       "default-case": "error",
+      "eol-last": ["error", "never"],
+      "func-style": ["error", "expression", { allowArrowFunctions: true }],
       "no-duplicate-imports": "error",
       "no-empty": "error",
+      "no-multi-spaces": "error",
+      "no-multiple-empty-lines": ["error", { max: 1 }],
+      "no-trailing-spaces": ["error"],
       "no-useless-catch": "error",
       "no-useless-constructor": "error",
       "no-useless-rename": "error",
       "no-useless-return": "error",
       "no-var": "error",
       "object-shorthand": "error",
+      "prefer-arrow-callback": ["error", { allowNamedFunctions: false }],
       "prefer-const": "error",
       "prefer-template": "error",
-      eqeqeq: "error",
       "quote-props": ["error", "as-needed"],
+      eqeqeq: "error",
       quotes: ["error", "double", { avoidEscape: false }],
-      "func-style": ["error", "expression", { allowArrowFunctions: true }],
-      "prefer-arrow-callback": ["error", { allowNamedFunctions: false }],
+      "arrow-body-style": "error",
+
       "typescript-eslint/consistent-type-definitions": ["error", "type"],
+      "typescript-eslint/consistent-type-exports": ["error", { fixMixedExportsWithInlineTypeSpecifier: true }],
+      "typescript-eslint/consistent-type-imports": ["error", { prefer: "type-imports" }],
+      "typescript-eslint/explicit-function-return-type": "error",
       "typescript-eslint/typedef": ["error", {
         arrayDestructuring: true,
         arrowParameter: true,
@@ -43,8 +52,7 @@ export default [
         propertyDeclaration: true,
         variableDeclaration: true,
         variableDeclarationIgnoreFunction: true
-      }],
-      "typescript-eslint/explicit-function-return-type": "error"
+      }]
     }
   }
 ];

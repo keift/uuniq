@@ -28,7 +28,7 @@ export class Symbolic {
 
     this._Snowflake = new Snowflake({
       epoch: this._epoch,
-      place_id: this._place_id,
+      place_id: this._place_id
     })
 
     this._encode = Anybase(Anybase.DEC, this._charset);
