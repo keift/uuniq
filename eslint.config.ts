@@ -16,6 +16,7 @@ export default [
       "typescript-eslint": typescript_eslint.plugin
     },
     rules: {
+      "arrow-body-style": "error",
       "comma-dangle": ["error", "never"],
       "default-case": "error",
       "eol-last": ["error", "never"],
@@ -37,7 +38,6 @@ export default [
       "quote-props": ["error", "as-needed"],
       eqeqeq: "error",
       quotes: ["error", "double", { avoidEscape: false }],
-      "arrow-body-style": "error",
 
       "typescript-eslint/consistent-type-definitions": ["error", "type"],
       "typescript-eslint/consistent-type-exports": ["error", { fixMixedExportsWithInlineTypeSpecifier: true }],
