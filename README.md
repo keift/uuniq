@@ -9,9 +9,6 @@
 [Buffer]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer
 [Void]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined
 
-[Limits]: ./src/types/Limits.type.ts
-[Parts]: ./src/types/Parts.type.ts
-[Shifts]: ./src/types/Shifts.type.ts
 [SnowflakeOptions]: ./src/types/SnowflakeOptions.type.ts
 [SnowflakeResolve]: ./src/types/SnowflakeResolve.type.ts
 [SymbolicOptions]: ./src/types/SymbolicOptions.type.ts
