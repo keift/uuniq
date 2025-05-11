@@ -7,8 +7,8 @@
   "module": "./dist/main.mjs",
   "types": "./dist/main.d.ts",
   "scripts": {
-    "dev:snowflake": "bun run --watch ./examples/snowflake.ts",
-    "dev:symbolic": "bun run --watch ./examples/symbolic.ts",
+    "dev:snowflake": "bun run --watch ./examples/snowflake.example.ts",
+    "dev:symbolic": "bun run --watch ./examples/symbolic.example.ts",
     "test": "bun run lint && npm run test:snowflake && npm run test:symbolic",
     "test:snowflake": "npm run ./test/Snowflake/default.test.ts && npm run ./test/Snowflake/difference.test.ts && npm run ./test/Snowflake/epoch.test.ts && npm run ./test/Snowflake/place_id.test.ts && npm run ./test/Snowflake/sequence.test.ts",
     "test:symbolic": "npm run ./test/Symbolic/default.test.ts && npm run ./test/Symbolic/difference.test.ts && npm run ./test/Symbolic/epoch.test.ts && npm run ./test/Symbolic/place_id.test.ts && npm run ./test/Symbolic/sequence.test.ts",
