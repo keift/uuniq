@@ -33,8 +33,8 @@ const limits: Limits = calculateLimits(parts);
 const shifts: Shifts = calculateShifts(parts);
 
 export class Snowflake {
-  private _epoch: number;
-  private _place_id: number;
+  private readonly _epoch: number;
+  private readonly _place_id: number;
   private _sequence: number;
   private _last_timestamp: number;
 

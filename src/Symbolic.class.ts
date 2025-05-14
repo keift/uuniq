@@ -4,13 +4,13 @@ import { Snowflake } from "./Snowflake.class";
 import type { SymbolicOptions, SymbolicResolve } from "./types/main.type";
 
 export class Symbolic {
-  private _epoch: number;
-  private _place_id: number;
-  private _charset: string;
+  private readonly _epoch: number;
+  private readonly _place_id: number;
+  private readonly _charset: string;
 
-  private _Snowflake: Snowflake;
-  private _encode: (anybase: string) => string;
-  private _decode: (anybase: string) => string;
+  private readonly _Snowflake: Snowflake;
+  private readonly _encode: (anybase: string) => string;
+  private readonly _decode: (anybase: string) => string;
 
   constructor(options: SymbolicOptions = {
     epoch: "2025-01-01T00:00:00.000Z",
