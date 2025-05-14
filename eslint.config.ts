@@ -25,7 +25,7 @@ export default [
       "no-empty": "error",
       "no-multi-spaces": "error",
       "no-multiple-empty-lines": ["error", { max: 1 }],
-      "no-trailing-spaces": ["error"],
+      "no-trailing-spaces": "error",
       "no-useless-catch": "error",
       "no-useless-constructor": "error",
       "no-useless-rename": "error",
