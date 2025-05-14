@@ -95,7 +95,7 @@ Briefly as follows.
 
 `new Snowflake(options?)`
 
-Generate Snowflake IDs developed by Twitter (X) in 2010. Unique IDs can be generated in distributed systems by specifying Place IDs.
+Snowflake IDs developed by Twitter (X) in 2010. Unique IDs can be generated in distributed systems by specifying Place IDs.
 
 > | Parameter | Default | Description |
 > | --- | --- | --- |
@@ -117,7 +117,7 @@ Generate Snowflake IDs developed by Twitter (X) in 2010. Unique IDs can be gener
 
 `new Symbolic(options?)`
 
-Generate unique IDs like YouTube's video IDs. Unique IDs can be generated in distributed systems by specifying Place IDs.
+Unique IDs like YouTube's video IDs. Unique IDs can be generated in distributed systems by specifying Place IDs.
 
 > | Parameter | Default | Description |
 > | --- | --- | --- |
