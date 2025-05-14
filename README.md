@@ -40,7 +40,7 @@
 
 ## About
 
-Unique Snowflake IDs and Symbolic IDs that can be generated for thousands of years.
+Short but unique IDs.
 
 ## Features
 
@@ -53,7 +53,7 @@ Unique Snowflake IDs and Symbolic IDs that can be generated for thousands of yea
 
 ## Installation
 
-NPM
+You can install it with these commands.
 
 ```shell
 // NPM
