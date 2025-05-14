@@ -53,7 +53,7 @@ Short but unique IDs.
 
 ## Installation
 
-You can install it with these commands.
+You can install it as follows.
 
 ```shell
 // NPM
