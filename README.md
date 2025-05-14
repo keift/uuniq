@@ -56,30 +56,19 @@ Unique Snowflake IDs and Symbolic IDs that can be generated for thousands of yea
 NPM
 
 ```shell
+// NPM
 npm install uuniq
-```
 
-PNPM
-
-```shell
+// PNPM
 pnpm install uuniq
-```
 
-Yarn
-
-```shell
+// Yarn
 yarn add uuniq
-```
 
-Bun
-
-```shell
+// Bun
 bun add uuniq
-```
 
-Deno
-
-```shell
+// Deno
 deno install npm:uuniq
 ```
 
@@ -106,7 +95,7 @@ Briefly as follows.
 
 `new Snowflake(options?)`
 
-Generate Snowflake IDs developed by Twitter (X) in 2010. This can generate IDs for approximately 4,463 years according to the specified epoch. Unique IDs can be generated in distributed systems by specifying Place IDs.
+Generate Snowflake IDs developed by Twitter (X) in 2010. Unique IDs can be generated in distributed systems by specifying Place IDs.
 
 > | Parameter | Default | Description |
 > | --- | --- | --- |
@@ -128,7 +117,7 @@ Generate Snowflake IDs developed by Twitter (X) in 2010. This can generate IDs f
 
 `new Symbolic(options?)`
 
-Generate unique IDs like YouTube's video IDs. This can generate IDs for approximately 4,463 years according to the specified epoch. Unique IDs can be generated in distributed systems by specifying Place IDs.
+Generate unique IDs like YouTube's video IDs. Unique IDs can be generated in distributed systems by specifying Place IDs.
 
 > | Parameter | Default | Description |
 > | --- | --- | --- |
@@ -152,7 +141,7 @@ Generate unique IDs like YouTube's video IDs. This can generate IDs for approxim
 
 `Snowflake.generate()`
 
-Generate Snowflake IDs developed by Twitter (X) in 2010. This can generate IDs for approximately 4,463 years according to the specified epoch.
+Generate Snowflake IDs developed by Twitter (X) in 2010.
 
 > | Parameter | Default | Description |
 > | --- | --- | --- |
@@ -198,7 +187,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 
 `Symbolic.generate()`
 
-Generate unique IDs like YouTube's video IDs. This can generate IDs for approximately 4,463 years according to the specified epoch.
+Generate unique IDs like YouTube's video IDs.
 
 > | Parameter | Default | Description |
 > | --- | --- | --- |
