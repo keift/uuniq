@@ -4,42 +4,42 @@ import { Snowflake } from "./Snowflake.class";
 import type { SymbolicOptions, SymbolicResolve } from "./types/main.type";
 
 export class Symbolic {
-  private readonly _epoch: number;
-  private readonly _place_id: number;
-  private readonly _charset: string;
+  private readonly epoch: number;
+  private readonly place_id: number;
+  private readonly charset: string;
 
-  private readonly _Snowflake: Snowflake;
-  private readonly _encode: (anybase: string) => string;
-  private readonly _decode: (anybase: string) => string;
+  private readonly Snowflake: Snowflake;
+  private readonly encode: (anybase: string) => string;
+  private readonly decode: (anybase: string) => string;
 
   constructor(options: SymbolicOptions = {
     epoch: "2025-01-01T00:00:00.000Z",
     place_id: 0,
     charset: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
   }) {
-    this._epoch =
+    this.epoch =
       options.epoch instanceof Date
         ? options.epoch.getTime()
         : typeof options.epoch === "string" || typeof options.epoch === "number"
           ? new Date(options.epoch).getTime()
           : new Date("2025-01-01T00:00:00.000Z").getTime();
-    this._place_id = options.place_id ?? 0;
-    this._charset = options.charset ?? "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    this.place_id = options.place_id ?? 0;
+    this.charset = options.charset ?? "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-    this._Snowflake = new Snowflake({
-      epoch: this._epoch,
-      place_id: this._place_id
+    this.Snowflake = new Snowflake({
+      epoch: this.epoch,
+      place_id: this.place_id
     })
 
-    this._encode = Anybase(Anybase.DEC, this._charset);
-    this._decode = Anybase(this._charset, Anybase.DEC);
+    this.encode = Anybase(Anybase.DEC, this.charset);
+    this.decode = Anybase(this.charset, Anybase.DEC);
   }
 
   generate(): string {
-    return this._encode(this._Snowflake.generate());
+    return this.encode(this.Snowflake.generate());
   }
 
   resolve(id: string): SymbolicResolve {
-    return this._Snowflake.resolve(this._decode(id));
+    return this.Snowflake.resolve(this.decode(id));
   }
 };

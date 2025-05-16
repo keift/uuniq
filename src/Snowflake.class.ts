@@ -33,59 +33,59 @@ const limits: Limits = calculateLimits(parts);
 const shifts: Shifts = calculateShifts(parts);
 
 export class Snowflake {
-  private readonly _epoch: number;
-  private readonly _place_id: number;
-  private _sequence: number;
-  private _last_timestamp: number;
+  private readonly epoch: number;
+  private readonly place_id: number;
+  private sequence: number;
+  private last_timestamp: number;
 
   constructor(options: SnowflakeOptions = {
     epoch: "2025-01-01T00:00:00.000Z",
     place_id: 0
   }) {
-    this._epoch =
+    this.epoch =
       options.epoch instanceof Date
         ? options.epoch.getTime()
         : typeof options.epoch === "string" || typeof options.epoch === "number"
           ? new Date(options.epoch).getTime()
           : new Date("2025-01-01T00:00:00.000Z").getTime();
-    this._place_id = options.place_id ?? 0;
+    this.place_id = options.place_id ?? 0;
 
-    if (this._place_id < 0 || this._place_id > limits.place_id) throw new Error(`Field place_id must be between 0 and ${limits.place_id}`);
+    if (this.place_id < 0 || this.place_id > limits.place_id) throw new Error(`Field place_id must be between 0 and ${limits.place_id}`);
 
-    this._place_id = this._place_id & limits.place_id;
-    this._sequence = 0;
-    this._last_timestamp = -1;
+    this.place_id = this.place_id & limits.place_id;
+    this.sequence = 0;
+    this.last_timestamp = -1;
   }
 
-  private _currentTimestamp(): number {
-    return Date.now() - this._epoch;
+  private currentTimestamp(): number {
+    return Date.now() - this.epoch;
   }
 
-  private _waitForNextTime(last_timestamp: number): number {
-    let timestamp: number = this._currentTimestamp();
+  private waitForNextTime(last_timestamp: number): number {
+    let timestamp: number = this.currentTimestamp();
 
-    while (last_timestamp >= timestamp) timestamp = this._currentTimestamp();
+    while (last_timestamp >= timestamp) timestamp = this.currentTimestamp();
 
     return timestamp;
   }
 
   public generate(): string {
-    let timestamp: number = this._currentTimestamp();
+    let timestamp: number = this.currentTimestamp();
 
-    if (timestamp < this._last_timestamp) throw new Error("Clock moved backwards.");
+    if (timestamp < this.last_timestamp) throw new Error("Clock moved backwards.");
 
-    if (timestamp === this._last_timestamp) {
-      this._sequence = (this._sequence + 1) & limits.sequence;
+    if (timestamp === this.last_timestamp) {
+      this.sequence = (this.sequence + 1) & limits.sequence;
 
-      if (this._sequence === 0) timestamp = this._waitForNextTime(this._last_timestamp);
-    } else this._sequence = 0;
+      if (this.sequence === 0) timestamp = this.waitForNextTime(this.last_timestamp);
+    } else this.sequence = 0;
 
-    this._last_timestamp = timestamp;
+    this.last_timestamp = timestamp;
 
     return (
       (BigInt(timestamp) << BigInt(shifts.timestamp)) |
-      (BigInt(this._place_id) << BigInt(shifts.place_id)) |
-      BigInt(this._sequence)
+      (BigInt(this.place_id) << BigInt(shifts.place_id)) |
+      BigInt(this.sequence)
     ).toString()
   }
 
@@ -94,7 +94,7 @@ export class Snowflake {
 
     return {
       created_at: new Date(
-        this._epoch + Number((bigint_id >> BigInt(shifts.timestamp)) & BigInt(limits.timestamp))
+        this.epoch + Number((bigint_id >> BigInt(shifts.timestamp)) & BigInt(limits.timestamp))
       ).toISOString(),
       place_id: Number((bigint_id >> BigInt(shifts.place_id)) & BigInt(limits.place_id)),
       sequence: Number(bigint_id & BigInt(limits.sequence))
