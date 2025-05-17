@@ -34,7 +34,7 @@ jobs:
         run: |
           if [[ -n $(git status --porcelain) ]]; then
             git add ./
-            git commit -m "✨ chore: run prettier"
+            git commit -m "✨ chore: prettier"
             git push
           else
             echo "No changes."
