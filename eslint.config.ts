@@ -19,7 +19,6 @@ export default [
       "arrow-body-style": "error",
       "comma-dangle": ["error", "never"],
       "default-case": "error",
-      "eol-last": ["error", "never"],
       "func-style": ["error", "expression", { allowArrowFunctions: true }],
       "no-duplicate-imports": "error",
       "no-empty": "error",

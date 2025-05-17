@@ -1,4 +1,5 @@
 /.github
+/.prettierrc.json
 /assets
 /bun.lock*
 /bunfig.toml
