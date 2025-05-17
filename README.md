@@ -20,8 +20,8 @@
   <br/>
   <img src="https://img.shields.io/npm/v/uuniq?label=version&color=%23633BFF"/>
   <img src="https://img.shields.io/npm/l/uuniq?label=license&color=%23633BFF"/>
-  <img src="https://img.shields.io/npm/unpacked-size/uuniq?label=size&color=%2300927F"/>
   <img src="https://img.shields.io/npm/dt/uuniq?label=downloads&color=%2300927F"/>
+  <img src="https://img.shields.io/npm/unpacked-size/uuniq?label=size&color=%2300927F"/>
 </div>
 
 ## Contents
