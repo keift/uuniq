@@ -1,8 +1,14 @@
 {
   "name": "uuniq",
-  "version": "1.2.11",
+  "version": "1.2.12",
   "description": "Short but unique IDs.",
   "license": "MIT",
+  "homepage": "https://github.com/keift/uuniq",
+  "bugs": "https://github.com/keift/uuniq/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keift/uuniq.git"
+  },
   "main": "./dist/main.js",
   "module": "./dist/main.mjs",
   "types": "./dist/main.d.ts",
@@ -26,13 +32,6 @@
     "tsup": "^8.5.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.32.1"
-  },
-  "engines": {
-    "node": ">= 14.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/keift/uuniq.git"
   },
   "keywords": [
     "id",
