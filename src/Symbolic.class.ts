@@ -12,11 +12,13 @@ export class Symbolic {
   private readonly encode: (anybase: string) => string;
   private readonly decode: (anybase: string) => string;
 
-  constructor(options: SymbolicOptions = {
-    epoch: "2025-01-01T00:00:00.000Z",
-    place_id: 0,
-    charset: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-  }) {
+  constructor(
+    options: SymbolicOptions = {
+      epoch: "2025-01-01T00:00:00.000Z",
+      place_id: 0,
+      charset: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+    }
+  ) {
     this.epoch =
       options.epoch instanceof Date
         ? options.epoch.getTime()
@@ -24,12 +26,14 @@ export class Symbolic {
           ? new Date(options.epoch).getTime()
           : new Date("2025-01-01T00:00:00.000Z").getTime();
     this.place_id = options.place_id ?? 0;
-    this.charset = options.charset ?? "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    this.charset =
+      options.charset ??
+      "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
     this.Snowflake = new Snowflake({
       epoch: this.epoch,
       place_id: this.place_id
-    })
+    });
 
     this.encode = Anybase(Anybase.DEC, this.charset);
     this.decode = Anybase(this.charset, Anybase.DEC);
@@ -42,4 +46,4 @@ export class Symbolic {
   resolve(id: string): SymbolicResolve {
     return this.Snowflake.resolve(this.decode(id));
   }
-};
+}

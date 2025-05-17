@@ -1,4 +1,10 @@
-import type { Limits, Parts, Shifts, SnowflakeOptions, SnowflakeResolve } from "./types/main.type";
+import type {
+  Limits,
+  Parts,
+  Shifts,
+  SnowflakeOptions,
+  SnowflakeResolve
+} from "./types/main.type";
 
 const parts: Parts = {
   timestamp: 53,
@@ -38,10 +44,12 @@ export class Snowflake {
   private sequence: number;
   private last_timestamp: number;
 
-  constructor(options: SnowflakeOptions = {
-    epoch: "2025-01-01T00:00:00.000Z",
-    place_id: 0
-  }) {
+  constructor(
+    options: SnowflakeOptions = {
+      epoch: "2025-01-01T00:00:00.000Z",
+      place_id: 0
+    }
+  ) {
     this.epoch =
       options.epoch instanceof Date
         ? options.epoch.getTime()
@@ -50,7 +58,10 @@ export class Snowflake {
           : new Date("2025-01-01T00:00:00.000Z").getTime();
     this.place_id = options.place_id ?? 0;
 
-    if (this.place_id < 0 || this.place_id > limits.place_id) throw new Error(`Field place_id must be between 0 and ${limits.place_id}`);
+    if (this.place_id < 0 || this.place_id > limits.place_id)
+      throw new Error(
+        `Field place_id must be between 0 and ${limits.place_id}`
+      );
 
     this.place_id = this.place_id & limits.place_id;
     this.sequence = 0;
@@ -72,12 +83,14 @@ export class Snowflake {
   public generate(): string {
     let timestamp: number = this.currentTimestamp();
 
-    if (timestamp < this.last_timestamp) throw new Error("Clock moved backwards.");
+    if (timestamp < this.last_timestamp)
+      throw new Error("Clock moved backwards.");
 
     if (timestamp === this.last_timestamp) {
       this.sequence = (this.sequence + 1) & limits.sequence;
 
-      if (this.sequence === 0) timestamp = this.waitForNextTime(this.last_timestamp);
+      if (this.sequence === 0)
+        timestamp = this.waitForNextTime(this.last_timestamp);
     } else this.sequence = 0;
 
     this.last_timestamp = timestamp;
@@ -86,7 +99,7 @@ export class Snowflake {
       (BigInt(timestamp) << BigInt(shifts.timestamp)) |
       (BigInt(this.place_id) << BigInt(shifts.place_id)) |
       BigInt(this.sequence)
-    ).toString()
+    ).toString();
   }
 
   public resolve(id: string): SnowflakeResolve {
@@ -94,10 +107,15 @@ export class Snowflake {
 
     return {
       created_at: new Date(
-        this.epoch + Number((bigint_id >> BigInt(shifts.timestamp)) & BigInt(limits.timestamp))
+        this.epoch +
+          Number(
+            (bigint_id >> BigInt(shifts.timestamp)) & BigInt(limits.timestamp)
+          )
       ).toISOString(),
-      place_id: Number((bigint_id >> BigInt(shifts.place_id)) & BigInt(limits.place_id)),
+      place_id: Number(
+        (bigint_id >> BigInt(shifts.place_id)) & BigInt(limits.place_id)
+      ),
       sequence: Number(bigint_id & BigInt(limits.sequence))
-    }
+    };
   }
-};
+}

@@ -40,20 +40,29 @@ export default [
       quotes: ["error", "double", { avoidEscape: false }],
 
       "typescript-eslint/consistent-type-definitions": ["error", "type"],
-      "typescript-eslint/consistent-type-exports": ["error", { fixMixedExportsWithInlineTypeSpecifier: true }],
-      "typescript-eslint/consistent-type-imports": ["error", { prefer: "type-imports" }],
+      "typescript-eslint/consistent-type-exports": [
+        "error",
+        { fixMixedExportsWithInlineTypeSpecifier: true }
+      ],
+      "typescript-eslint/consistent-type-imports": [
+        "error",
+        { prefer: "type-imports" }
+      ],
       "typescript-eslint/explicit-function-return-type": "error",
       "typescript-eslint/prefer-readonly": "error",
-      "typescript-eslint/typedef": ["error", {
-        arrayDestructuring: true,
-        arrowParameter: true,
-        memberVariableDeclaration: true,
-        objectDestructuring: true,
-        parameter: true,
-        propertyDeclaration: true,
-        variableDeclaration: true,
-        variableDeclarationIgnoreFunction: true
-      }]
+      "typescript-eslint/typedef": [
+        "error",
+        {
+          arrayDestructuring: true,
+          arrowParameter: true,
+          memberVariableDeclaration: true,
+          objectDestructuring: true,
+          parameter: true,
+          propertyDeclaration: true,
+          variableDeclaration: true,
+          variableDeclarationIgnoreFunction: true
+        }
+      ]
     }
   }
 ];

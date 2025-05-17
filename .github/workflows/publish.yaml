@@ -12,32 +12,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Setup Node
-      uses: actions/setup-node@v4
-      with:
-        node-version: 21
-        registry-url: https://registry.npmjs.org
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 21
+          registry-url: https://registry.npmjs.org
 
-    - name: Setup Bun
-      uses: oven-sh/setup-bun@v2
-      with:
-        bun-version: latest
-        registry-url: https://registry.npmjs.org
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+          registry-url: https://registry.npmjs.org
 
-    - name: Install dependencies
-      run: bun install
+      - name: Install dependencies
+        run: bun install
 
-    - name: Run build processes
-      run: bun run build
+      - name: Run build processes
+        run: bun run build
 
-    - name: Run unit tests
-      run: bun run test
+      - name: Run unit tests
+        run: bun run test
 
-    - name: Publish to the NPM
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
-      run: |
-        npm publish --provenance --access=public
+      - name: Publish to the NPM
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+        run: |
+          npm publish --provenance --access=public
