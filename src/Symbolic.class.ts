@@ -13,7 +13,7 @@ export class Symbolic {
   private readonly encode: (anybase: string) => string;
   private readonly decode: (anybase: string) => string;
 
-  constructor(
+  public constructor(
     options: SymbolicOptions = {
       epoch: "2025-01-01T00:00:00.000Z",
       place_id: 0,
