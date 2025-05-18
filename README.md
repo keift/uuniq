@@ -167,8 +167,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 > Example:
 >
 > ```typescript
-> const resolve: UuniqTypes.SnowflakeResolve =
->   SnowflakeIDs.resolve("102604921389056");
+> const resolve: UuniqTypes.SnowflakeResolve = SnowflakeIDs.resolve("102604921389056");
 > /*
 >   {
 >     created_at: "2025-03-14T11:35:07.409Z",
@@ -253,10 +252,8 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 > const snowflake_id: string = SnowflakeIDs.generate();
 > const symbolic_id: string = SymbolicIDs.generate();
 >
-> const snowflake_resolve: UuniqTypes.SnowflakeResolve =
->   SnowflakeIDs.resolve(snowflake_id);
-> const symbolic_resolve: UuniqTypes.SymbolicResolve =
->   SymbolicIDs.resolve(symbolic_id);
+> const snowflake_resolve: UuniqTypes.SnowflakeResolve = SnowflakeIDs.resolve(snowflake_id);
+> const symbolic_resolve: UuniqTypes.SymbolicResolve = SymbolicIDs.resolve(symbolic_id);
 > ```
 
 ## Links

@@ -11,7 +11,6 @@ const resolve: UuniqTypes.SymbolicResolve = SymbolicIDs.resolve(id);
 
 console.log(id, JSON.stringify(resolve));
 
-if (new Date(resolve.created_at).getDate() !== new Date().getDate())
-  throw new Error("❌ [Epoch]");
+if (new Date(resolve.created_at).getDate() !== new Date().getDate()) throw new Error("❌ [Epoch]");
 
 console.log("✅ [Epoch] Checks successful!");

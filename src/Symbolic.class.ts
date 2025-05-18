@@ -19,16 +19,9 @@ export class Symbolic {
       charset: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     }
   ) {
-    this.epoch =
-      options.epoch instanceof Date
-        ? options.epoch.getTime()
-        : typeof options.epoch === "string" || typeof options.epoch === "number"
-          ? new Date(options.epoch).getTime()
-          : new Date("2025-01-01T00:00:00.000Z").getTime();
+    this.epoch = options.epoch instanceof Date ? options.epoch.getTime() : typeof options.epoch === "string" || typeof options.epoch === "number" ? new Date(options.epoch).getTime() : new Date("2025-01-01T00:00:00.000Z").getTime();
     this.place_id = options.place_id ?? 0;
-    this.charset =
-      options.charset ??
-      "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    this.charset = options.charset ?? "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
     this.Snowflake = new Snowflake({
       epoch: this.epoch,
