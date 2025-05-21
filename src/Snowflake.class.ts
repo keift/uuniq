@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 import type { Limits, Parts, Shifts, SnowflakeOptions, SnowflakeResolve } from "./types/main.type";
 
 const parts: Parts = {
