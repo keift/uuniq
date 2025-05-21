@@ -39,5 +39,3 @@ jobs:
           else
             echo "No changes."
           fi
-
-
