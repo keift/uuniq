@@ -33,11 +33,11 @@ export class Symbolic {
     this.decode = Anybase(this.charset, Anybase.DEC);
   }
 
-  generate(): string {
+  public generate(): string {
     return this.encode(this.Snowflake.generate());
   }
 
-  resolve(id: string): SymbolicResolve {
+  public resolve(id: string): SymbolicResolve {
     return this.Snowflake.resolve(this.decode(id));
   }
 }
