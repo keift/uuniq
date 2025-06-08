@@ -9,7 +9,7 @@
 /node_modules
 /package-lock.json
 /src
-/test
+/tests
 /tsconfig.json
 /tsup.config.ts
 /types
