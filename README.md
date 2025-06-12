@@ -29,8 +29,8 @@
 - [About](#about)
 - [Features](#features)
 - [Installation](#installation)
-- [Tree](#tree)
 - [Documentation](#documentation)
+  - [Tree](#tree)
   - [Import](#import)
   - [Constructors](#constructors)
   - [Methods](#methods)
@@ -74,27 +74,6 @@ deno install npm:uuniq
 
 ## Documentation
 
-### Import
-
-Briefly as follows.
-
-> TypeScript
->
-> ```typescript
-> import { Snowflake, Symbolic, type Types as UuniqTypes } from "uuniq";
-> ```
->
-> JavaScript
->
-> ```javascript
-> import { Snowflake, Symbolic } from "uuniq";
-> ```
-
-These can also be accessed under `Uuniq`.
-
-> ```typescript
-> import { Uuniq } from "uuniq";
-> ```
 
 ### Tree
 
@@ -116,6 +95,28 @@ Uuniq
     ├── SymbolicOptions
     └── SymbolicResolve
 ```
+
+### Import
+
+Briefly as follows.
+
+> TypeScript
+>
+> ```typescript
+> import { Snowflake, Symbolic, type Types as UuniqTypes } from "uuniq";
+> 
+> // These can also be accessed under Uuniq
+> import { Uuniq } from "uuniq";
+> ```
+>
+> JavaScript
+>
+> ```javascript
+> import { Snowflake, Symbolic } from "uuniq";
+>
+> // These can also be accessed under Uuniq
+> import { Uuniq } from "uuniq";
+> ```
 
 ### Constructors
 
