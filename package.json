@@ -16,7 +16,7 @@
     "tests:symbolic": "npm run ./tests/Symbolic/default.test.ts && npm run ./tests/Symbolic/difference.test.ts && npm run ./tests/Symbolic/epoch.test.ts && npm run ./tests/Symbolic/place_id.test.ts && npm run ./tests/Symbolic/sequence.test.ts",
     "prettier": "prettier --write ./",
     "build": "tsup",
-    "lint": "eslint"
+    "lint": "eslint ./"
   },
   "dependencies": {
     "@types/any-base": "^1.1.3",
