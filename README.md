@@ -98,6 +98,8 @@ These can also be accessed under `Uuniq`.
 
 ### Tree
 
+Briefly as follows.
+
 ```
 Uuniq
 ├── new Snowflake(options?)
