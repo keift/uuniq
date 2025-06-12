@@ -100,24 +100,23 @@ Uuniq
 ```
 
 ### Import
-
 Briefly as follows.
 
 > TypeScript
 >
 > ```typescript
 > import { Snowflake, Symbolic, type Types as UuniqTypes } from "uuniq";
->
-> // These can also be accessed under Uuniq
-> import { Uuniq } from "uuniq";
 > ```
 >
 > JavaScript
 >
 > ```javascript
 > import { Snowflake, Symbolic } from "uuniq";
+> ```
 >
-> // These can also be accessed under Uuniq
+> These can also be accessed under Uuniq
+>
+> ```typescript
 > import { Uuniq } from "uuniq";
 > ```
 
