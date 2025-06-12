@@ -74,7 +74,6 @@ deno install npm:uuniq
 
 ## Documentation
 
-
 ### Tree
 
 Briefly as follows.
@@ -104,7 +103,7 @@ Briefly as follows.
 >
 > ```typescript
 > import { Snowflake, Symbolic, type Types as UuniqTypes } from "uuniq";
-> 
+>
 > // These can also be accessed under Uuniq
 > import { Uuniq } from "uuniq";
 > ```
