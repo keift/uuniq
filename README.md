@@ -29,6 +29,7 @@
 - [About](#about)
 - [Features](#features)
 - [Installation](#installation)
+- [Tree](#tree)
 - [Documentation](#documentation)
   - [Import](#import)
   - [Constructors](#constructors)
@@ -88,6 +89,31 @@ Briefly as follows.
 > ```javascript
 > import { Snowflake, Symbolic } from "uuniq";
 > ```
+
+These can also be accessed under `Uuniq`.
+
+> ```typescript
+> import { Uuniq } from "uuniq";
+> ```
+
+### Tree
+
+```
+Uuniq
+├── new Snowflake(options?)
+│   ├── generate()
+│   └── resolve(id)
+│
+├── new Symbolic(options?)
+│   ├── generate()
+│   └── resolve(id)
+│
+└── type Types
+    ├── SnowflakeOptions
+    ├── SnowflakeResolve
+    ├── SymbolicOptions
+    └── SymbolicResolve
+```
 
 ### Constructors
 
