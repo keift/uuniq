@@ -114,12 +114,6 @@ Briefly as follows.
 > ```javascript
 > import { Snowflake, Symbolic } from "uuniq";
 > ```
->
-> These can also be accessed under Uuniq
->
-> ```typescript
-> import { Uuniq } from "uuniq";
-> ```
 
 ### Constructors
 
