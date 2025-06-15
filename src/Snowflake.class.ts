@@ -1,3 +1,5 @@
+import _ from "lodash";
+
 import type { Limits } from "./types/Limits.type";
 import type { Parts } from "./types/Parts.type";
 import type { Shifts } from "./types/Shifts.type";
@@ -36,24 +38,25 @@ const calculateShifts = (parts: Parts): Shifts => {
 const limits: Limits = calculateLimits(parts);
 const shifts: Shifts = calculateShifts(parts);
 
+const SnowflakeOptionsDefault: SnowflakeOptions = {
+  epoch: "2025-01-01T00:00:00.000Z",
+  place_id: 0
+};
+
 export class Snowflake {
+  private readonly options: SnowflakeOptions;
   private readonly epoch: number;
-  private readonly place_id: number;
   private sequence: number;
   private last_timestamp: number;
 
-  public constructor(
-    options: SnowflakeOptions = {
-      epoch: "2025-01-01T00:00:00.000Z",
-      place_id: 0
-    }
-  ) {
-    this.epoch = options.epoch instanceof Date ? options.epoch.getTime() : typeof options.epoch === "string" || typeof options.epoch === "number" ? new Date(options.epoch).getTime() : new Date("2025-01-01T00:00:00.000Z").getTime();
-    this.place_id = options.place_id ?? 0;
+  public constructor(options: SnowflakeOptions = SnowflakeOptionsDefault) {
+    this.options = _.merge({}, SnowflakeOptionsDefault, options);
 
-    if (this.place_id < 0 || this.place_id > limits.place_id) throw new Error(`Field place_id must be between 0 and ${limits.place_id}`);
+    this.epoch = this.options.epoch instanceof Date ? this.options.epoch.getTime() : typeof this.options.epoch === "string" || typeof this.options.epoch === "number" ? new Date(this.options.epoch).getTime() : new Date("2025-01-01T00:00:00.000Z").getTime();
 
-    this.place_id = this.place_id & limits.place_id;
+    if ((this.options.place_id ?? 0) < 0 || (this.options.place_id ?? 0) > limits.place_id) throw new Error(`Field place_id must be between 0 and ${limits.place_id}`);
+
+    this.options.place_id = (this.options.place_id ?? 0) & limits.place_id;
     this.sequence = 0;
     this.last_timestamp = -1;
   }
@@ -83,7 +86,7 @@ export class Snowflake {
 
     this.last_timestamp = timestamp;
 
-    return ((BigInt(timestamp) << BigInt(shifts.timestamp)) | (BigInt(this.place_id) << BigInt(shifts.place_id)) | BigInt(this.sequence)).toString();
+    return ((BigInt(timestamp) << BigInt(shifts.timestamp)) | (BigInt(this.options.place_id ?? 0) << BigInt(shifts.place_id)) | BigInt(this.sequence)).toString();
   }
 
   public resolve(id: string): SnowflakeResolve {
