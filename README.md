@@ -43,6 +43,7 @@
   - [Twitter](https://x.com/keiftttt)
   - [GitHub](https://github.com/keift)
 - [License](#license)
+
 ## About
 
 Short but unique IDs.
