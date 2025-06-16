@@ -3,14 +3,10 @@ import _ from "lodash";
 
 import { Snowflake } from "./Snowflake.class";
 
+import { SymbolicOptionsDefault } from "./defaults/SymbolicOptions.default";
+
 import type { SymbolicOptions } from "./types/SymbolicOptions.type";
 import type { SymbolicResolve } from "./types/SymbolicResolve.type";
-
-const SymbolicOptionsDefault: SymbolicOptions = {
-  epoch: "2025-01-01T00:00:00.000Z",
-  place_id: 0,
-  charset: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-};
 
 export class Symbolic {
   private readonly options: SymbolicOptions;

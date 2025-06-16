@@ -8,6 +8,8 @@
 [Function]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
 [Promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 [Void]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined
+[SnowflakeOptionsDefault]: ./src/defaults/SnowflakeOptions.default.ts
+[SymbolicOptionsDefault]: ./src/defaults/SymbolicOptions.default.ts
 [SnowflakeOptions]: ./src/types/SnowflakeOptions.type.ts
 [SnowflakeResolve]: ./src/types/SnowflakeResolve.type.ts
 [SymbolicOptions]: ./src/types/SymbolicOptions.type.ts
@@ -36,7 +38,10 @@
   - [Methods](#methods)
   - [Types](#types)
 - [Links](#links)
-  - [Change Log](CHANGELOG.md)
+  - [Discord](https://discord.gg/keift)
+  - [Telegram](https://t.me/keiftt)
+  - [Twitter](https://x.com/keiftttt)
+  - [GitHub](https://github.com/keift)
 
 ## About
 
@@ -123,17 +128,12 @@ Snowflake IDs developed by Twitter (X) in 2010. Unique IDs can be generated in d
 
 > | Parameter        | Default                      | Description                                                  |
 > | ---------------- | ---------------------------- | ------------------------------------------------------------ |
-> | options          |                              | [SnowflakeOptions] (optional)<br/>Constructor's options.     |
-> | options.epoch    | `"2025-01-01T00:00:00.000Z"` | [String] \| [Number] \| [Date] (optional)<br/>Date of epoch. |
-> | options.place_id | `0`                          | [Number] (optional)<br/>Place ID for distributed systems.    |
+> | options          |       [SnowflakeOptionsDefault]                       | [SnowflakeOptions] (optional)<br/>Constructor's options.     |
 >
 > Example:
 >
 > ```typescript
-> const SnowflakeIDs: Snowflake = new Snowflake({
->   epoch: "2025-01-01T00:00:00.000Z",
->   place_id: 0
-> });
+> const SnowflakeIDs: Snowflake = new Snowflake();
 > ```
 
 <br/>
@@ -144,19 +144,12 @@ Unique IDs like YouTube's video IDs. Unique IDs can be generated in distributed 
 
 > | Parameter        | Default                                                            | Description                                                  |
 > | ---------------- | ------------------------------------------------------------------ | ------------------------------------------------------------ |
-> | options          |                                                                    | [SymbolicOptions] (optional)<br/>Constructor's options.      |
-> | options.epoch    | `"2025-01-01T00:00:00.000Z"`                                       | [String] \| [Number] \| [Date] (optional)<br/>Date of epoch. |
-> | options.place_id | `0`                                                                | [Number] (optional)<br/>Place ID for distributed systems.    |
-> | options.charset  | `"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"` | [String] (optional)<br/>Character set of IDs.                |
+> | options          |   [SymbolicOptionsDefault]                                                                 | [SymbolicOptions] (optional)<br/>Constructor's options.      |
 >
 > Example:
 >
 > ```typescript
-> const SymbolicIDs: Symbolic = new Symbolic({
->   epoch: "2025-01-01T00:00:00.000Z",
->   place_id: 0,
->   charset: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-> });
+> const SymbolicIDs: Symbolic = new Symbolic();
 > ```
 
 ### Methods
@@ -249,43 +242,28 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 
 ### Types
 
-> | Type               | Place                                    |
-> | ------------------ | ---------------------------------------- |
-> | [SnowflakeOptions] | [new Snowflake(options?)](#constructors) |
-> | [SnowflakeResolve] | [Snowflake.resolve(id)](#methods)        |
-> | [SymbolicOptions]  | [new Symbolic(options?)](#constructors)  |
-> | [SymbolicResolve]  | [Symbolic.resolve(id)](#methods)         |
->
-> Example:
->
-> ```typescript
-> import { Snowflake, Symbolic, type Types as UuniqTypes } from "uuniq";
->
-> const SnowflakeOptions: UuniqTypes.SnowflakeOptions = {
->   epoch: "2025-01-01T00:00:00.000Z",
->   place_id: 0
-> };
->
-> const SymbolicOptions: UuniqTypes.SymbolicOptions = {
->   epoch: "2025-01-01T00:00:00.000Z",
->   place_id: 0,
->   charset: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-> };
->
-> const SnowflakeIDs: Snowflake = new Snowflake(SnowflakeOptions);
-> const SymbolicIDs: Symbolic = new Symbolic(SymbolicOptions);
->
-> const snowflake_id: string = SnowflakeIDs.generate();
-> const symbolic_id: string = SymbolicIDs.generate();
->
-> const snowflake_resolve: UuniqTypes.SnowflakeResolve = SnowflakeIDs.resolve(snowflake_id);
-> const symbolic_resolve: UuniqTypes.SymbolicResolve = SymbolicIDs.resolve(symbolic_id);
-> ```
+ | Type               | Place                                    |
+ | ------------------ | ---------------------------------------- |
+ | [SnowflakeOptions] | [new Snowflake(options?)](#constructors) |
+ | [SnowflakeResolve] | [Snowflake.resolve(id)](#methods)        |
+ | [SymbolicOptions]  | [new Symbolic(options?)](#constructors)  |
+ | [SymbolicResolve]  | [Symbolic.resolve(id)](#methods)         |
 
 ## Links
 
-- [Change Log](CHANGELOG.md)
+- [Discord](https://discord.gg/keift)
+- [Telegram](https://t.me/keiftt)
+- [Twitter](https://x.com/keiftttt)
+- [GitHub](https://github.com/keift)
 
 ## License
 
-[MIT](LICENSE.md)
+MIT License
+
+Copyright (c) 2025 Keift
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

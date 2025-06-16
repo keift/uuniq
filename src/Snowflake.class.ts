@@ -1,5 +1,7 @@
 import _ from "lodash";
 
+import { SnowflakeOptionsDefault } from "./defaults/SnowflakeOptions.default";
+
 import type { Limits } from "./types/Limits.type";
 import type { Parts } from "./types/Parts.type";
 import type { Shifts } from "./types/Shifts.type";
@@ -37,11 +39,6 @@ const calculateShifts = (parts: Parts): Shifts => {
 
 const limits: Limits = calculateLimits(parts);
 const shifts: Shifts = calculateShifts(parts);
-
-const SnowflakeOptionsDefault: SnowflakeOptions = {
-  epoch: "2025-01-01T00:00:00.000Z",
-  place_id: 0
-};
 
 export class Snowflake {
   private readonly options: SnowflakeOptions;
