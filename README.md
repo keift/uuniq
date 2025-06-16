@@ -126,9 +126,9 @@ Briefly as follows.
 
 Snowflake IDs developed by Twitter (X) in 2010. Unique IDs can be generated in distributed systems by specifying Place IDs.
 
-> | Parameter        | Default                      | Description                                                  |
-> | ---------------- | ---------------------------- | ------------------------------------------------------------ |
-> | options          |       [SnowflakeOptionsDefault]                       | [SnowflakeOptions] (optional)<br/>Constructor's options.     |
+> | Parameter | Default                   | Description                                              |
+> | --------- | ------------------------- | -------------------------------------------------------- |
+> | options   | [SnowflakeOptionsDefault] | [SnowflakeOptions] (optional)<br/>Constructor's options. |
 >
 > Example:
 >
@@ -142,9 +142,9 @@ Snowflake IDs developed by Twitter (X) in 2010. Unique IDs can be generated in d
 
 Unique IDs like YouTube's video IDs. Unique IDs can be generated in distributed systems by specifying Place IDs.
 
-> | Parameter        | Default                                                            | Description                                                  |
-> | ---------------- | ------------------------------------------------------------------ | ------------------------------------------------------------ |
-> | options          |   [SymbolicOptionsDefault]                                                                 | [SymbolicOptions] (optional)<br/>Constructor's options.      |
+> | Parameter | Default                  | Description                                             |
+> | --------- | ------------------------ | ------------------------------------------------------- |
+> | options   | [SymbolicOptionsDefault] | [SymbolicOptions] (optional)<br/>Constructor's options. |
 >
 > Example:
 >
@@ -242,12 +242,12 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 
 ### Types
 
- | Type               | Place                                    |
- | ------------------ | ---------------------------------------- |
- | [SnowflakeOptions] | [new Snowflake(options?)](#constructors) |
- | [SnowflakeResolve] | [Snowflake.resolve(id)](#methods)        |
- | [SymbolicOptions]  | [new Symbolic(options?)](#constructors)  |
- | [SymbolicResolve]  | [Symbolic.resolve(id)](#methods)         |
+| Type               | Place                                    |
+| ------------------ | ---------------------------------------- |
+| [SnowflakeOptions] | [new Snowflake(options?)](#constructors) |
+| [SnowflakeResolve] | [Snowflake.resolve(id)](#methods)        |
+| [SymbolicOptions]  | [new Symbolic(options?)](#constructors)  |
+| [SymbolicResolve]  | [Symbolic.resolve(id)](#methods)         |
 
 ## Links
 
