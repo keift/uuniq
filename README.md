@@ -242,12 +242,12 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 
 ### Types
 
-| Type               | Place                                    |
-| ------------------ | ---------------------------------------- |
-| [SnowflakeOptions] | [new Snowflake(options?)](#constructors) |
-| [SnowflakeResolve] | [Snowflake.resolve(id)](#methods)        |
-| [SymbolicOptions]  | [new Symbolic(options?)](#constructors)  |
-| [SymbolicResolve]  | [Symbolic.resolve(id)](#methods)         |
+| Type               |
+| ------------------ |
+| [SnowflakeOptions] |
+| [SnowflakeResolve] |
+| [SymbolicOptions]  |
+| [SymbolicResolve]  |
 
 ## Links
 
