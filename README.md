@@ -167,8 +167,8 @@ Generate Snowflake IDs developed by Twitter (X) in 2010.
 > Example:
 >
 > ```typescript
-> const id_0: string = SnowflakeIDs.generate(); // "102604921389056"
-> const id_1: string = SnowflakeIDs.generate(); // "102604921389057"
+> SnowflakeIDs.generate(); // "102604921389056"
+> SnowflakeIDs.generate(); // "102604921389057"
 > ```
 
 <br/>
@@ -186,7 +186,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 > Example:
 >
 > ```typescript
-> const resolve: UuniqTypes.SnowflakeResolve = SnowflakeIDs.resolve("102604921389056");
+> SnowflakeIDs.resolve("102604921389056");
 > /*
 >   {
 >     created_at: "2025-03-14T11:35:07.409Z",
@@ -211,8 +211,8 @@ Generate unique IDs like YouTube's video IDs.
 > Example:
 >
 > ```typescript
-> const id_0: string = SymbolicIDs.generate(); // "T8Qu56ki"
-> const id_1: string = SymbolicIDs.generate(); // "T8Qu56kj"
+> SymbolicIDs.generate(); // "T8Qu56ki"
+> SymbolicIDs.generate(); // "T8Qu56kj"
 > ```
 
 <br/>
@@ -230,7 +230,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 > Example:
 >
 > ```typescript
-> const resolve: UuniqTypes.SymbolicResolve = SymbolicIDs.resolve("T8Qu56ki");
+> SymbolicIDs.resolve("T8Qu56ki");
 > /*
 >   {
 >     created_at: "2025-03-14T11:36:05.528Z",
