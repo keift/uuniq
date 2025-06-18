@@ -15,7 +15,6 @@
 [SymbolicOptions]: ./src/types/SymbolicOptions.type.ts
 [SymbolicResolve]: ./src/types/SymbolicResolve.type.ts
 
-
 <div align="center">
   <br/>
   <img src="https://i.ibb.co/GvJ1ZRF0/unknown.png" width="350px"/>
