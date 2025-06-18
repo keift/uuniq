@@ -9,8 +9,6 @@
   "module": "./dist/main.mjs",
   "types": "./dist/main.d.ts",
   "scripts": {
-    "dev:snowflake": "bun run --watch ./examples/snowflake.example.ts",
-    "dev:symbolic": "bun run --watch ./examples/symbolic.example.ts",
     "tests": "bun run lint && bun test",
     "prettier": "prettier --write ./",
     "build": "tsup",
