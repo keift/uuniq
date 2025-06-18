@@ -11,6 +11,6 @@ const resolve: UuniqTypes.SnowflakeResolve = SnowflakeIDs.resolve(id);
 
 console.log(id, JSON.stringify(resolve));
 
-if (resolve.place_id !== 1) throw new Error("❌ [Place ID]");
+if (resolve.place_id !== 1) throw new Error("❌ Error");
 
-console.log("✅ [Place ID] Checks successful!");
+console.log("✅ Success");

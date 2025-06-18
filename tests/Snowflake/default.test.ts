@@ -7,6 +7,6 @@ const resolve: UuniqTypes.SnowflakeResolve = SnowflakeIDs.resolve(id);
 
 console.log(id, JSON.stringify(resolve));
 
-if (new Date(resolve.created_at).getDate() !== new Date().getDate()) throw new Error("❌ [Default]");
+if (new Date(resolve.created_at).getDate() !== new Date().getDate()) throw new Error("❌ Error");
 
-console.log("✅ [Default] Checks successful!");
+console.log("✅ Success");

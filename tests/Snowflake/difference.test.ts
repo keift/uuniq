@@ -6,6 +6,6 @@ const resolve: UuniqTypes.SnowflakeResolve = SnowflakeIDs.resolve("1026049213890
 
 console.log(JSON.stringify(resolve));
 
-if (resolve.created_at !== "2025-03-14T11:35:07.409Z") throw new Error("❌ [Difference]");
+if (resolve.created_at !== "2025-03-14T11:35:07.409Z") throw new Error("❌ Error");
 
-console.log("✅ [Difference] Checks successful!");
+console.log("✅ Success");
