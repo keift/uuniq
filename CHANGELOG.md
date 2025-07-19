@@ -4,4 +4,3 @@
 
 - Features:
   - **TypeScript Support.** Modern and compatible library with TypeScript support.
-
