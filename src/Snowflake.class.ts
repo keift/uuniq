@@ -25,7 +25,7 @@ const calculateLimits = (parts: Parts): Limits => {
 
 const calculateShifts = (parts: Parts): Shifts => {
   const shifts: Shifts = {} as Shifts;
-  let shift: number = 0;
+  let shift = 0;
 
   const keys: (keyof Parts)[] = ["sequence", "place_id", "timestamp"];
 
@@ -87,7 +87,7 @@ export class Snowflake {
   }
 
   public resolve(id: string): SnowflakeResolve {
-    const bigint_id: bigint = BigInt(id);
+    const bigint_id = BigInt(id);
 
     return {
       created_at: new Date(this.epoch + Number((bigint_id >> BigInt(shifts.timestamp)) & BigInt(limits.timestamp))).toISOString(),
