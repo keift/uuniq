@@ -51,7 +51,7 @@ export class Snowflake {
 
     this.epoch = this.options.epoch instanceof Date ? this.options.epoch.getTime() : typeof this.options.epoch === "string" || typeof this.options.epoch === "number" ? new Date(this.options.epoch).getTime() : new Date("2025-01-01T00:00:00.000Z").getTime();
 
-    if ((this.options.place_id ?? 0) < 0 || (this.options.place_id ?? 0) > limits.place_id) throw new Error(`Field place_id must be between 0 and ${limits.place_id}`);
+    if ((this.options.place_id ?? 0) < 0 || (this.options.place_id ?? 0) > limits.place_id) throw new Error(`Field place_id must be between 0 and ${limits.place_id.toString()}`);
 
     this.options.place_id = (this.options.place_id ?? 0) & limits.place_id;
     this.sequence = 0;
