@@ -1,4 +1,4 @@
-import { Symbolic, type SymbolicOptions, type  SymbolicResolve} from "../../src/main";
+import { Symbolic, type SymbolicOptions, type SymbolicResolve } from "../../src/main";
 
 const options: SymbolicOptions = {
   epoch: "2007-05-05"
