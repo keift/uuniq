@@ -10,8 +10,8 @@
   "types": "./dist/main.d.ts",
   "scripts": {
     "tests": "bun run lint && bun test",
-    "prettier": "prettier --write ./",
     "build": "tsup",
+    "prettier": "prettier --write ./",
     "lint": "eslint ./"
   },
   "dependencies": {
@@ -21,7 +21,7 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "neatlint": "^1.1.2",
+    "neatlint": "^1.1.4",
     "prettier": "^3.6.2",
     "tsup": "^8.5.0"
   },

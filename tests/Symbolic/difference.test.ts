@@ -1,8 +1,8 @@
-import { Symbolic, type Types as UuniqTypes } from "../../src/main";
+import { Symbolic, type SymbolicResolve } from "../../src/main";
 
 const SymbolicIDs: Symbolic = new Symbolic();
 
-const resolve: UuniqTypes.SymbolicResolve = SymbolicIDs.resolve("T8Qu56ki");
+const resolve: SymbolicResolve = SymbolicIDs.resolve("T8Qu56ki");
 
 console.log(JSON.stringify(resolve));
 

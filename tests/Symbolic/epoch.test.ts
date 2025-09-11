@@ -1,13 +1,13 @@
-import { Symbolic, type Types as UuniqTypes } from "../../src/main";
+import { Symbolic, type SymbolicOptions, type  SymbolicResolve} from "../../src/main";
 
-const SymbolicOptions: UuniqTypes.SymbolicOptions = {
+const options: SymbolicOptions = {
   epoch: "2007-05-05"
 };
 
-const SymbolicIDs: Symbolic = new Symbolic(SymbolicOptions);
+const SymbolicIDs: Symbolic = new Symbolic(options);
 
 const id: string = SymbolicIDs.generate();
-const resolve: UuniqTypes.SymbolicResolve = SymbolicIDs.resolve(id);
+const resolve: SymbolicResolve = SymbolicIDs.resolve(id);
 
 console.log(id, JSON.stringify(resolve));
 

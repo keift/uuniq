@@ -1,13 +1,13 @@
-import { Snowflake, type Types as UuniqTypes } from "../../src/main";
+import { Snowflake, type SnowflakeOptions, type SnowflakeResolve } from "../../src/main";
 
-const SnowflakeOptions: UuniqTypes.SnowflakeOptions = {
+const options: SnowflakeOptions = {
   epoch: "2007-05-05"
 };
 
-const SnowflakeIDs: Snowflake = new Snowflake(SnowflakeOptions);
+const SnowflakeIDs: Snowflake = new Snowflake(options);
 
 const id: string = SnowflakeIDs.generate();
-const resolve: UuniqTypes.SnowflakeResolve = SnowflakeIDs.resolve(id);
+const resolve: SnowflakeResolve = SnowflakeIDs.resolve(id);
 
 console.log(id, JSON.stringify(resolve));
 

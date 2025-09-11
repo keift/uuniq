@@ -97,29 +97,19 @@ Uuniq
 │   ├── generate()
 │   └── resolve(id)
 │
-└── type Types
-    │
-    ├── SnowflakeOptions
-    ├── SnowflakeResolve
-    ├── SymbolicOptions
-    └── SymbolicResolve
+├── type SnowflakeOptions
+├── type SnowflakeResolve
+├── type SymbolicOptions
+└── type SymbolicResolve
 ```
 
 ### Import
 
 Briefly as follows.
 
-> TypeScript
->
-> ```typescript
-> import { Snowflake, Symbolic, type Types as UuniqTypes } from "uuniq";
-> ```
->
-> JavaScript
->
-> ```javascript
-> import { Snowflake, Symbolic } from "uuniq";
-> ```
+```typescript
+import { Snowflake, Symbolic } from "uuniq";
+```
 
 ### Constructors
 
