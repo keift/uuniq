@@ -124,7 +124,7 @@ Snowflake IDs developed by Twitter (X) in 2010. Unique IDs can be generated in d
 > Example:
 >
 > ```typescript
-> const SnowflakeIDs: Snowflake = new Snowflake();
+> const SnowflakeIDs = new Snowflake();
 > ```
 
 <br/>
@@ -140,7 +140,7 @@ Unique IDs like YouTube's video IDs. Unique IDs can be generated in distributed 
 > Example:
 >
 > ```typescript
-> const SymbolicIDs: Symbolic = new Symbolic();
+> const SymbolicIDs = new Symbolic();
 > ```
 
 ### Methods
