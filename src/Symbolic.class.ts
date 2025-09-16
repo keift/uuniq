@@ -30,7 +30,7 @@ export class Symbolic {
     this.decode = Anybase(this.options.charset ?? "", Anybase.DEC);
   }
 
-  public generate(): string {
+  public generate() {
     return this.encode(this.Snowflake.generate());
   }
 

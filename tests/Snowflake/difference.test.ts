@@ -1,8 +1,8 @@
-import { Snowflake, type SnowflakeResolve } from "../../src/main";
+import { Snowflake } from "../../src/main";
 
-const SnowflakeIDs: Snowflake = new Snowflake();
+const SnowflakeIDs = new Snowflake();
 
-const resolve: SnowflakeResolve = SnowflakeIDs.resolve("102604921389056");
+const resolve = SnowflakeIDs.resolve("102604921389056");
 
 console.log(JSON.stringify(resolve));
 

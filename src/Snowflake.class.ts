@@ -58,20 +58,20 @@ export class Snowflake {
     this.last_timestamp = -1;
   }
 
-  private currentTimestamp(): number {
+  private currentTimestamp() {
     return Date.now() - this.epoch;
   }
 
-  private waitForNextTime(last_timestamp: number): number {
-    let timestamp: number = this.currentTimestamp();
+  private waitForNextTime(last_timestamp: number) {
+    let timestamp = this.currentTimestamp();
 
     while (last_timestamp >= timestamp) timestamp = this.currentTimestamp();
 
     return timestamp;
   }
 
-  public generate(): string {
-    let timestamp: number = this.currentTimestamp();
+  public generate() {
+    let timestamp = this.currentTimestamp();
 
     if (timestamp < this.last_timestamp) throw new Error("Clock moved backwards.");
 

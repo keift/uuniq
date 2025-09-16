@@ -21,7 +21,7 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "neatlint": "^1.1.4",
+    "neatlint": "^1.1.5",
     "prettier": "^3.6.2",
     "tsup": "^8.5.0"
   },
@@ -39,4 +39,3 @@
     "symbolic-id"
   ]
 }
-

@@ -1,11 +1,11 @@
-import { Symbolic, type SymbolicResolve } from "../../src/main";
+import { Symbolic } from "../../src/main";
 
-const SymbolicIDs: Symbolic = new Symbolic();
+const SymbolicIDs = new Symbolic();
 
-const id_0: string = SymbolicIDs.generate();
-const id_1: string = SymbolicIDs.generate();
-const resolve_0: SymbolicResolve = SymbolicIDs.resolve(id_0);
-const resolve_1: SymbolicResolve = SymbolicIDs.resolve(id_1);
+const id_0 = SymbolicIDs.generate();
+const id_1 = SymbolicIDs.generate();
+const resolve_0 = SymbolicIDs.resolve(id_0);
+const resolve_1 = SymbolicIDs.resolve(id_1);
 
 console.log(id_0, JSON.stringify(resolve_0));
 console.log(id_1, JSON.stringify(resolve_1));
