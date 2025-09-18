@@ -1,12 +1,12 @@
-import Anybase from "any-base";
-import _ from "lodash";
+import Anybase from 'any-base';
+import _ from 'lodash';
 
-import { Snowflake } from "./Snowflake.class";
+import { Snowflake } from './Snowflake.class';
 
-import { SymbolicOptionsDefault } from "./defaults/SymbolicOptions.default";
+import { SymbolicOptionsDefault } from './defaults/SymbolicOptions.default';
 
-import type { SymbolicOptions } from "./types/SymbolicOptions.type";
-import type { SymbolicResolve } from "./types/SymbolicResolve.type";
+import type { SymbolicOptions } from './types/SymbolicOptions.type';
+import type { SymbolicResolve } from './types/SymbolicResolve.type';
 
 export class Symbolic {
   private readonly options: SymbolicOptions;
@@ -19,15 +19,15 @@ export class Symbolic {
   public constructor(options: SymbolicOptions = SymbolicOptionsDefault) {
     this.options = _.merge({}, SymbolicOptionsDefault, options);
 
-    this.epoch = this.options.epoch instanceof Date ? this.options.epoch.getTime() : typeof this.options.epoch === "string" || typeof this.options.epoch === "number" ? new Date(this.options.epoch).getTime() : new Date("2025-01-01T00:00:00.000Z").getTime();
+    this.epoch = this.options.epoch instanceof Date ? this.options.epoch.getTime() : typeof this.options.epoch === 'string' || typeof this.options.epoch === 'number' ? new Date(this.options.epoch).getTime() : new Date('2025-01-01T00:00:00.000Z').getTime();
 
     this.Snowflake = new Snowflake({
       epoch: this.epoch,
       place_id: this.options.place_id ?? 0
     });
 
-    this.encode = Anybase(Anybase.DEC, this.options.charset ?? "");
-    this.decode = Anybase(this.options.charset ?? "", Anybase.DEC);
+    this.encode = Anybase(Anybase.DEC, this.options.charset ?? '');
+    this.decode = Anybase(this.options.charset ?? '', Anybase.DEC);
   }
 
   public generate() {

@@ -1,4 +1,4 @@
-import { defineConfig } from "tsup";
+import { defineConfig } from 'tsup';
 
 export default defineConfig({
   bundle: true,
@@ -8,7 +8,7 @@ export default defineConfig({
   dts: true,
   cjsInterop: true,
 
-  outDir: "./dist",
-  format: ["esm", "cjs"],
-  entry: ["./src/**/*.ts"]
+  outDir: './dist',
+  format: ['esm', 'cjs'],
+  entry: ['./src/**/*.ts']
 });

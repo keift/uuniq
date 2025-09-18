@@ -108,7 +108,7 @@ Uuniq
 Briefly as follows.
 
 ```typescript
-import { Snowflake, Symbolic } from "uuniq";
+import { Snowflake, Symbolic } from 'uuniq';
 ```
 
 ### Constructors
@@ -177,7 +177,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 > Example:
 >
 > ```typescript
-> SnowflakeIDs.resolve("102604921389056");
+> SnowflakeIDs.resolve('102604921389056');
 > /*
 >   {
 >     created_at: "2025-03-14T11:35:07.409Z",
@@ -221,7 +221,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 > Example:
 >
 > ```typescript
-> SymbolicIDs.resolve("T8Qu56ki");
+> SymbolicIDs.resolve('T8Qu56ki');
 > /*
 >   {
 >     created_at: "2025-03-14T11:36:05.528Z",

@@ -1,4 +1,4 @@
-import { Symbolic } from "../../src/main";
+import { Symbolic } from '../../src/main';
 
 const SymbolicIDs: Symbolic = new Symbolic({ place_id: 1 });
 
@@ -7,6 +7,6 @@ const resolve = SymbolicIDs.resolve(id);
 
 console.log(id, JSON.stringify(resolve));
 
-if (resolve.place_id !== 1) throw new Error("❌ Error");
+if (resolve.place_id !== 1) throw new Error('❌ Error');
 
-console.log("✅ Success");
+console.log('✅ Success');

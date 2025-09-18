@@ -1,12 +1,12 @@
-import _ from "lodash";
+import _ from 'lodash';
 
-import { SnowflakeOptionsDefault } from "./defaults/SnowflakeOptions.default";
+import { SnowflakeOptionsDefault } from './defaults/SnowflakeOptions.default';
 
-import type { Limits } from "./types/Limits.type";
-import type { Parts } from "./types/Parts.type";
-import type { Shifts } from "./types/Shifts.type";
-import type { SnowflakeOptions } from "./types/SnowflakeOptions.type";
-import type { SnowflakeResolve } from "./types/SnowflakeResolve.type";
+import type { Limits } from './types/Limits.type';
+import type { Parts } from './types/Parts.type';
+import type { Shifts } from './types/Shifts.type';
+import type { SnowflakeOptions } from './types/SnowflakeOptions.type';
+import type { SnowflakeResolve } from './types/SnowflakeResolve.type';
 
 const parts: Parts = {
   timestamp: 53,
@@ -27,7 +27,7 @@ const calculateShifts = (parts: Parts): Shifts => {
   const shifts: Shifts = {} as Shifts;
   let shift = 0;
 
-  const keys: (keyof Parts)[] = ["sequence", "place_id", "timestamp"];
+  const keys: (keyof Parts)[] = ['sequence', 'place_id', 'timestamp'];
 
   for (const key of keys) {
     shifts[key] = shift;
@@ -49,7 +49,7 @@ export class Snowflake {
   public constructor(options: SnowflakeOptions = SnowflakeOptionsDefault) {
     this.options = _.merge({}, SnowflakeOptionsDefault, options);
 
-    this.epoch = this.options.epoch instanceof Date ? this.options.epoch.getTime() : typeof this.options.epoch === "string" || typeof this.options.epoch === "number" ? new Date(this.options.epoch).getTime() : new Date("2025-01-01T00:00:00.000Z").getTime();
+    this.epoch = this.options.epoch instanceof Date ? this.options.epoch.getTime() : typeof this.options.epoch === 'string' || typeof this.options.epoch === 'number' ? new Date(this.options.epoch).getTime() : new Date('2025-01-01T00:00:00.000Z').getTime();
 
     if ((this.options.place_id ?? 0) < 0 || (this.options.place_id ?? 0) > limits.place_id) throw new Error(`Field place_id must be between 0 and ${limits.place_id.toString()}`);
 
@@ -73,7 +73,7 @@ export class Snowflake {
   public generate() {
     let timestamp = this.currentTimestamp();
 
-    if (timestamp < this.last_timestamp) throw new Error("Clock moved backwards.");
+    if (timestamp < this.last_timestamp) throw new Error('Clock moved backwards.');
 
     if (timestamp === this.last_timestamp) {
       this.sequence = (this.sequence + 1) & limits.sequence;

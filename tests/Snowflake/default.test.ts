@@ -1,4 +1,4 @@
-import { Snowflake } from "../../src/main";
+import { Snowflake } from '../../src/main';
 
 const SnowflakeIDs = new Snowflake();
 
@@ -7,6 +7,6 @@ const resolve = SnowflakeIDs.resolve(id);
 
 console.log(id, JSON.stringify(resolve));
 
-if (new Date(resolve.created_at).getDate() !== new Date().getDate()) throw new Error("❌ Error");
+if (new Date(resolve.created_at).getDate() !== new Date().getDate()) throw new Error('❌ Error');
 
-console.log("✅ Success");
+console.log('✅ Success');
