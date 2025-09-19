@@ -2,13 +2,13 @@ import { defineConfig } from 'tsup';
 
 export default defineConfig({
   bundle: true,
-  splitting: false,
-  sourcemap: false,
+  cjsInterop: true,
   clean: true,
   dts: true,
-  cjsInterop: true,
+  sourcemap: false,
+  splitting: false,
 
   outDir: './dist',
   format: ['esm', 'cjs'],
-  entry: ['./src/**/*.ts']
+  entry: ['./src/main.ts']
 });
