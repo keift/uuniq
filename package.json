@@ -1,6 +1,6 @@
 {
   "name": "uuniq",
-  "version": "1.2.24",
+  "version": "1.2.25",
   "description": "Short but unique IDs.",
   "license": "MIT",
   "homepage": "https://github.com/keift/uuniq",
@@ -21,7 +21,7 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "neatlint": "^1.1.8",
+    "neatlint": "^1.1.9",
     "prettier": "^3.6.2",
     "tsup": "^8.5.0"
   },
