@@ -1,6 +1,6 @@
 import { Symbolic } from '../../src/main';
 
-const SymbolicIDs: Symbolic = new Symbolic({ place_id: 1 });
+const SymbolicIDs = new Symbolic({ place_id: 1 });
 
 const id = SymbolicIDs.generate();
 const resolve = SymbolicIDs.resolve(id);
