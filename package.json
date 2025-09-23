@@ -21,7 +21,7 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "neatlint": "^1.1.11",
+    "neatlint": "^1.1.12",
     "prettier": "^3.6.2",
     "tsup": "^8.5.0"
   },
