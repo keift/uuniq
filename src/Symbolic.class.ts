@@ -1,5 +1,5 @@
 import Anybase from 'any-base';
-import _ from 'lodash';
+import merge from 'lodash.merge';
 
 import { Snowflake } from './Snowflake.class';
 
@@ -17,7 +17,7 @@ export class Symbolic {
   private readonly decode: (anybase: string) => string;
 
   public constructor(options: SymbolicOptions = SymbolicOptionsDefault) {
-    this.options = _.merge({}, SymbolicOptionsDefault, options);
+    this.options = merge({}, SymbolicOptionsDefault, options);
 
     this.epoch = this.options.epoch instanceof Date ? this.options.epoch.getTime() : typeof this.options.epoch === 'string' || typeof this.options.epoch === 'number' ? new Date(this.options.epoch).getTime() : new Date('2025-01-01T00:00:00.000Z').getTime();
 

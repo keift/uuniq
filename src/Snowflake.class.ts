@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import merge from 'lodash.merge';
 
 import { SnowflakeOptionsDefault } from './defaults/SnowflakeOptions.default';
 
@@ -47,7 +47,7 @@ export class Snowflake {
   private last_timestamp: number;
 
   public constructor(options: SnowflakeOptions = SnowflakeOptionsDefault) {
-    this.options = _.merge({}, SnowflakeOptionsDefault, options);
+    this.options = merge({}, SnowflakeOptionsDefault, options);
 
     this.epoch = this.options.epoch instanceof Date ? this.options.epoch.getTime() : typeof this.options.epoch === 'string' || typeof this.options.epoch === 'number' ? new Date(this.options.epoch).getTime() : new Date('2025-01-01T00:00:00.000Z').getTime();
 
