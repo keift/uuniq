@@ -21,7 +21,7 @@
     "lodash.merge": "^4.6.2"
   },
   "devDependencies": {
-    "neatlint": "^1.1.19",
+    "neatlint": "^1.1.20",
     "prettier": "^3.6.2",
     "tsup": "^8.5.0"
   },
