@@ -15,19 +15,19 @@ const parts: Parts = {
 };
 
 const calculateLimits = (parts: Parts): Limits => {
-  const limits: Limits = {} as Limits;
-  const keys: (keyof Parts)[] = Object.keys(parts) as (keyof Parts)[];
+  const limits = {} as Limits;
+  const keys: (keyof Parts)[] = ['sequence', 'place_id', 'timestamp'];
 
-  for (const key of keys) limits[key] = Math.pow(2, parts[key]) - 1;
+  for (const key of keys) limits[key] = (BigInt(1) << BigInt(parts[key])) - BigInt(1);
 
   return limits;
 };
 
 const calculateShifts = (parts: Parts): Shifts => {
-  const shifts: Shifts = {} as Shifts;
-  let shift = 0;
-
+  const shifts = {} as Shifts;
   const keys: (keyof Parts)[] = ['sequence', 'place_id', 'timestamp'];
+
+  let shift = 0;
 
   for (const key of keys) {
     shifts[key] = shift;
@@ -37,8 +37,8 @@ const calculateShifts = (parts: Parts): Shifts => {
   return shifts;
 };
 
-const limits: Limits = calculateLimits(parts);
-const shifts: Shifts = calculateShifts(parts);
+const limits = calculateLimits(parts);
+const shifts = calculateShifts(parts);
 
 export class Snowflake {
   private readonly options: SnowflakeOptions;
@@ -49,11 +49,11 @@ export class Snowflake {
   public constructor(options: SnowflakeOptions = SnowflakeOptionsDefault) {
     this.options = merge({}, SnowflakeOptionsDefault, options);
 
-    this.epoch = this.options.epoch instanceof Date ? this.options.epoch.getTime() : typeof this.options.epoch === 'string' || typeof this.options.epoch === 'number' ? new Date(this.options.epoch).getTime() : new Date('2025-01-01T00:00:00.000Z').getTime();
+    this.epoch = new Date(this.options.epoch ?? '').getTime();
 
     if ((this.options.place_id ?? 0) < 0 || (this.options.place_id ?? 0) > limits.place_id) throw new Error(`Field place_id must be between 0 and ${limits.place_id.toString()}`);
 
-    this.options.place_id = (this.options.place_id ?? 0) & limits.place_id;
+    this.options.place_id = (this.options.place_id ?? 0) & Number(limits.place_id);
     this.sequence = 0;
     this.last_timestamp = -1;
   }
@@ -63,36 +63,36 @@ export class Snowflake {
   }
 
   private waitForNextTime(last_timestamp: number) {
-    let timestamp = this.currentTimestamp();
+    let current_timestamp = this.currentTimestamp();
 
-    while (last_timestamp >= timestamp) timestamp = this.currentTimestamp();
+    while (last_timestamp >= current_timestamp) current_timestamp = this.currentTimestamp();
 
-    return timestamp;
+    return current_timestamp;
   }
 
   public generate() {
-    let timestamp = this.currentTimestamp();
+    let current_timestamp = this.currentTimestamp();
 
-    if (timestamp < this.last_timestamp) throw new Error('Clock moved backwards.');
+    if (current_timestamp < this.last_timestamp) throw new Error('Clock moved backwards.');
 
-    if (timestamp === this.last_timestamp) {
-      this.sequence = (this.sequence + 1) & limits.sequence;
+    if (current_timestamp === this.last_timestamp) {
+      this.sequence = (this.sequence + 1) & Number(limits.sequence);
 
-      if (this.sequence === 0) timestamp = this.waitForNextTime(this.last_timestamp);
+      if (this.sequence === 0) current_timestamp = this.waitForNextTime(this.last_timestamp);
     } else this.sequence = 0;
 
-    this.last_timestamp = timestamp;
+    this.last_timestamp = current_timestamp;
 
-    return ((BigInt(timestamp) << BigInt(shifts.timestamp)) | (BigInt(this.options.place_id ?? 0) << BigInt(shifts.place_id)) | BigInt(this.sequence)).toString();
+    return ((BigInt(current_timestamp) << BigInt(shifts.timestamp)) | (BigInt(this.options.place_id ?? 0) << BigInt(shifts.place_id)) | BigInt(this.sequence)).toString();
   }
 
   public resolve(id: string): SnowflakeResolve {
     const bigint_id = BigInt(id);
 
     return {
-      created_at: new Date(this.epoch + Number((bigint_id >> BigInt(shifts.timestamp)) & BigInt(limits.timestamp))).toISOString(),
-      place_id: Number((bigint_id >> BigInt(shifts.place_id)) & BigInt(limits.place_id)),
-      sequence: Number(bigint_id & BigInt(limits.sequence))
+      created_at: new Date(this.epoch + Number((bigint_id >> BigInt(shifts.timestamp)) & limits.timestamp)).toISOString(),
+      place_id: Number((bigint_id >> BigInt(shifts.place_id)) & limits.place_id),
+      sequence: Number(bigint_id & limits.sequence)
     };
   }
 }

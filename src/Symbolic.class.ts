@@ -19,11 +19,11 @@ export class Symbolic {
   public constructor(options: SymbolicOptions = SymbolicOptionsDefault) {
     this.options = merge({}, SymbolicOptionsDefault, options);
 
-    this.epoch = this.options.epoch instanceof Date ? this.options.epoch.getTime() : typeof this.options.epoch === 'string' || typeof this.options.epoch === 'number' ? new Date(this.options.epoch).getTime() : new Date('2025-01-01T00:00:00.000Z').getTime();
+    this.epoch = new Date(this.options.epoch ?? '').getTime();
 
     this.Snowflake = new Snowflake({
-      epoch: this.epoch,
-      place_id: this.options.place_id ?? 0
+      epoch: this.options.epoch,
+      place_id: this.options.place_id
     });
 
     this.encode = Anybase(Anybase.DEC, this.options.charset ?? '');

@@ -1,5 +1,5 @@
 export type SymbolicOptions = {
-  epoch?: string | number | Date;
+  epoch?: string;
   place_id?: number;
   charset?: string;
 };

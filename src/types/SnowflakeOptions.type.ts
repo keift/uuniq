@@ -1,4 +1,4 @@
 export type SnowflakeOptions = {
-  epoch?: string | number | Date;
+  epoch?: string;
   place_id?: number;
 };
