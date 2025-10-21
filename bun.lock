@@ -1,4 +1,4 @@
-{f
+{
   "lockfileVersion": 1,
   "workspaces": {
     "": {
@@ -365,7 +365,7 @@
 
     "natural-compare": ["natural-compare@1.4.0", "", {}, "sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw=="],
 
-    "neatlint": ["neatlint@1.1.21", "", { "dependencies": { "@eslint/js": "^9.38.0", "@types/lodash.merge": "^4.6.9", "eslint": "^9.38.0", "jiti": "^2.6.1", "lodash.merge": "^4.6.2", "typescript": "^5.9.3", "typescript-eslint": "^8.46.2" } }, "sha512-nvnWoVjdwmHCjpq0qrtAgRgW7VEeSsClc0GPAF3v6dclLOZRopYxOGXS36v/vK/wMA8KTbIVcipj5pq8qg2DiA=="],
+    "neatlint": ["neatlint@1.1.23", "", { "dependencies": { "@eslint/js": "^9.38.0", "@types/lodash.merge": "^4.6.9", "eslint": "^9.38.0", "jiti": "^2.6.1", "lodash.merge": "^4.6.2", "typescript": "^5.9.3", "typescript-eslint": "^8.46.2" } }, "sha512-NKFvm2oPGKJflXokJ3P9xfXIZtA/O7B3F/seVFV33itzUsy06vA2zax7P7sQ8ILhLTFvW0elG/PsgLJ7GUkSuQ=="],
 
     "object-assign": ["object-assign@4.1.1", "", {}, "sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg=="],
 
