@@ -6,10 +6,6 @@ export default defineConfig({
   clean: true,
   dts: true,
 
-  minify: false,
-  sourcemap: false,
-  splitting: false,
-
   outDir: './dist',
   format: ['esm', 'cjs'],
   entry: ['./src/main.ts']
