@@ -5,6 +5,8 @@ export default defineConfig({
   cjsInterop: true,
   clean: true,
   dts: true,
+
+  minify: false,
   sourcemap: false,
   splitting: false,
 
