@@ -1,8 +1,8 @@
-import { Symbolic } from '../../src/main';
+import { Snowflake } from '../../src/main';
 
-const SymbolicIDs = new Symbolic();
+const SnowflakeIDs = new Snowflake({ format: 'symbolic' });
 
-const resolve = SymbolicIDs.resolve('T8Qu56ki');
+const resolve = SnowflakeIDs.resolve('T8Qu56ki');
 
 console.log(JSON.stringify(resolve));
 

@@ -1,7 +1,7 @@
 {
   "name": "uuniq",
-  "version": "1.2.28",
-  "description": "Short but unique IDs.",
+  "version": "1.3.0",
+  "description": "Short yet unique IDs.",
   "license": "MIT",
   "homepage": "https://github.com/keift/uuniq",
   "bugs": "https://github.com/keift/uuniq/issues",
@@ -17,10 +17,13 @@
   "dependencies": {
     "@types/any-base": "^1.1.3",
     "@types/lodash.merge": "^4.6.9",
+    "@types/node": "^24.10.0",
     "any-base": "^1.1.0",
     "lodash.merge": "^4.6.2"
   },
   "devDependencies": {
+    "@keyv/mongo": "^3.0.5",
+    "keyv": "^5.5.3",
     "neatlint": "^1.1.23",
     "prettier": "^3.6.2",
     "tsup": "^8.5.0"
@@ -35,6 +38,8 @@
     "unique-id",
     "snowflake",
     "snowflake-id",
+    "increment",
+    "increment-id",
     "symbolic",
     "symbolic-id"
   ]

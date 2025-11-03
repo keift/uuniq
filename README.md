@@ -9,11 +9,10 @@
 [Promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 [Void]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined
 [SnowflakeOptionsDefault]: ./src/defaults/SnowflakeOptions.default.ts
-[SymbolicOptionsDefault]: ./src/defaults/SymbolicOptions.default.ts
+[IncrementOptionsDefault]: ./src/defaults/IncrementOptions.default.ts
 [SnowflakeOptions]: ./src/types/SnowflakeOptions.type.ts
 [SnowflakeResolve]: ./src/types/SnowflakeResolve.type.ts
-[SymbolicOptions]: ./src/types/SymbolicOptions.type.ts
-[SymbolicResolve]: ./src/types/SymbolicResolve.type.ts
+[IncrementOptions]: ./src/types/IncrementOptions.type.ts
 
 <div align="center">
   <br/>
@@ -46,15 +45,16 @@
 
 ## About
 
-Short but unique IDs.
+Short yet unique IDs.
 
 ## Features
 
-- Short but unique IDs
+- Short yet unique IDs
 - The possibility of collision is impossible
 - Suitable for distributed systems
 - Suitable for sorting and database indexes
 - Snowflake IDs developed by Twitter (X) can be generated
+- Increment IDs that can only be incremented when generated
 - Symbolic IDs can be generated like YouTube's video IDs
 
 ## Installation
@@ -92,15 +92,13 @@ Uuniq
 │   ├── generate()
 │   └── resolve(id)
 │
-├── new Symbolic(options?)
+├── new Increment(options?)
 │   │
-│   ├── generate()
-│   └── resolve(id)
+│   └── generate()
 │
 ├── type SnowflakeOptions
 ├── type SnowflakeResolve
-├── type SymbolicOptions
-└── type SymbolicResolve
+└── type IncrementOptions
 ```
 
 ### Import
@@ -108,7 +106,7 @@ Uuniq
 Briefly as follows.
 
 ```typescript
-import { Snowflake, Symbolic } from 'uuniq';
+import { Snowflake, Increment } from 'uuniq';
 ```
 
 ### Constructors
@@ -129,18 +127,18 @@ Snowflake IDs developed by Twitter (X) in 2010. Unique IDs can be generated in d
 
 <br/>
 
-`new Symbolic(options?)`
+`new Increment(options?)`
 
-Unique IDs like YouTube's video IDs. Unique IDs can be generated in distributed systems by specifying Place IDs.
+Unique IDs that are only incremented when created. Sequences are kept in the database. Sequences can be parsed by specifying Place IDs.
 
-> | Parameter | Default                  | Description                                             |
-> | --------- | ------------------------ | ------------------------------------------------------- |
-> | options   | [SymbolicOptionsDefault] | [SymbolicOptions] (optional)<br/>Constructor's options. |
+> | Parameter | Default                   | Description                                              |
+> | --------- | ------------------------- | -------------------------------------------------------- |
+> | options   | [IncrementOptionsDefault] | [IncrementOptions] (optional)<br/>Constructor's options. |
 >
 > Example:
 >
 > ```typescript
-> const SymbolicIDs = new Symbolic();
+> const IncrementIDs = new Increment();
 > ```
 
 ### Methods
@@ -158,8 +156,14 @@ Generate Snowflake IDs developed by Twitter (X) in 2010.
 > Example:
 >
 > ```typescript
-> SnowflakeIDs.generate(); // "102604921389056"
-> SnowflakeIDs.generate(); // "102604921389057"
+> const NumericSnowflakeIDs = new Snowflake({ format: 'numeric' });
+> const SymbolicSnowflakeIDs = new Snowflake({ format: 'symbolic' });
+>
+> NumericSnowflakeIDs.generate(); // "102604921389056"
+> NumericSnowflakeIDs.generate(); // "102604921389057"
+>
+> SymbolicSnowflakeIDs.generate(); // "T8Qu56ki"
+> SymbolicSnowflakeIDs.generate(); // "T8Qu56kj"
 > ```
 
 <br/>
@@ -177,10 +181,22 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values �
 > Example:
 >
 > ```typescript
-> SnowflakeIDs.resolve('102604921389056');
+> const NumericSnowflakeIDs = new Snowflake({ format: 'numeric' });
+> const SymbolicSnowflakeIDs = new Snowflake({ format: 'symbolic' });
+>
+> NumericSnowflakeIDs.resolve('102604921389056');
 > /*
 >   {
 >     created_at: "2025-03-14T11:35:07.409Z",
+>     place_id: 0,
+>     sequence: 0
+>   }
+> */
+>
+> SymbolicSnowflakeIDs.resolve('T8Qu56ki');
+> /*
+>   {
+>     created_at: "2025-03-14T11:36:05.528Z",
 >     place_id: 0,
 >     sequence: 0
 >   }
@@ -189,9 +205,9 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values �
 
 <br/>
 
-`Symbolic.generate()`
+`Increment.generate()`
 
-Generate unique IDs like YouTube's video IDs.
+Generate unique IDs that are only incremented when created.
 
 > | Parameter | Default | Description |
 > | --------- | ------- | ----------- |
@@ -202,33 +218,14 @@ Generate unique IDs like YouTube's video IDs.
 > Example:
 >
 > ```typescript
-> SymbolicIDs.generate(); // "T8Qu56ki"
-> SymbolicIDs.generate(); // "T8Qu56kj"
-> ```
-
-<br/>
-
-`Symbolic.resolve(id)`
-
-Resolve the previously created ID. For this, the `epoch` and `place_id` values ​​in the Constructor must be correct.
-
-> | Parameter | Default | Description                      |
-> | --------- | ------- | -------------------------------- |
-> | id        |         | [String]<br/> ID to be resolved. |
+> const NumericIncrementIDs = new Increment({ format: 'numeric' });
+> const SymbolicIncrementIDs = new Increment({ format: 'symbolic' });
 >
-> returns [SymbolicResolve]
+> IncrementIDs.generate(); // "10000001"
+> IncrementIDs.generate(); // "10000002"
 >
-> Example:
->
-> ```typescript
-> SymbolicIDs.resolve('T8Qu56ki');
-> /*
->   {
->     created_at: "2025-03-14T11:36:05.528Z",
->     place_id: 0,
->     sequence: 0
->   }
-> */
+> IncrementIDs.generate(); // "fxSL"
+> IncrementIDs.generate(); // "fxSM"
 > ```
 
 ### Types
@@ -237,8 +234,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values �
 | ------------------ |
 | [SnowflakeOptions] |
 | [SnowflakeResolve] |
-| [SymbolicOptions]  |
-| [SymbolicResolve]  |
+| [IncrementOptions] |
 
 ## Links
 

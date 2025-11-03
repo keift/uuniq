@@ -1,3 +1,4 @@
+import Anybase from 'any-base';
 import merge from 'lodash.merge';
 
 import { SnowflakeOptionsDefault } from './defaults/SnowflakeOptions.default';
@@ -45,6 +46,8 @@ export class Snowflake {
   private readonly epoch: number;
   private sequence: number;
   private last_timestamp: number;
+  private readonly anybase_encode: (anybase: string) => string;
+  private readonly anybase_decode: (anybase: string) => string;
 
   public constructor(options: SnowflakeOptions = SnowflakeOptionsDefault) {
     this.options = merge({}, SnowflakeOptionsDefault, options);
@@ -56,6 +59,9 @@ export class Snowflake {
     this.options.place_id = (this.options.place_id ?? 0) & Number(limits.place_id);
     this.sequence = 0;
     this.last_timestamp = -1;
+
+    this.anybase_encode = Anybase(Anybase.DEC, this.options.charset ?? '');
+    this.anybase_decode = Anybase(this.options.charset ?? '', Anybase.DEC);
   }
 
   private currentTimestamp() {
@@ -83,10 +89,16 @@ export class Snowflake {
 
     this.last_timestamp = current_timestamp;
 
-    return ((BigInt(current_timestamp) << BigInt(shifts.timestamp)) | (BigInt(this.options.place_id ?? 0) << BigInt(shifts.place_id)) | BigInt(this.sequence)).toString();
+    let id = ((BigInt(current_timestamp) << BigInt(shifts.timestamp)) | (BigInt(this.options.place_id ?? 0) << BigInt(shifts.place_id)) | BigInt(this.sequence)).toString();
+
+    if (this.options.format === 'symbolic') id = this.anybase_encode(id);
+
+    return id;
   }
 
   public resolve(id: string): SnowflakeResolve {
+    if (this.options.format === 'symbolic') id = this.anybase_decode(id);
+
     const bigint_id = BigInt(id);
 
     return {
