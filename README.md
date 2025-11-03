@@ -224,11 +224,11 @@ Generate unique IDs that are only incremented when created.
 > const NumericIncrementIDs = new Increment({ format: 'numeric', store: new Keyv(new KeyvMongo('mongodb+srv://...@...mongodb.net/app', { collection: 'uuniq' })) });
 > const SymbolicIncrementIDs = new Increment({ format: 'symbolic', store: new Keyv(new KeyvMongo('mongodb+srv://...@...mongodb.net/app', { collection: 'uuniq' })) });
 >
-> IncrementIDs.generate(); // "10000001"
-> IncrementIDs.generate(); // "10000002"
+> NumericIncrementIDs.generate(); // "10000001"
+> NumericIncrementIDs.generate(); // "10000002"
 >
-> IncrementIDs.generate(); // "fxSL"
-> IncrementIDs.generate(); // "fxSM"
+> SymbolicIncrementIDs.generate(); // "fxSL"
+> SymbolicIncrementIDs.generate(); // "fxSM"
 > ```
 
 ### Types
