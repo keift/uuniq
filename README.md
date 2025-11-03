@@ -129,7 +129,7 @@ Snowflake IDs developed by Twitter (X) in 2010. Unique IDs can be generated in d
 
 `new Increment(options?)`
 
-Unique IDs that are only incremented when created. Sequences are kept in the database. Sequences can be parsed by specifying Place IDs.
+Unique IDs that are only incremented when created. Sequences are kept in the database. You can create a free database from [MongoDB Cloud](https://cloud.mongodb.com). Sequences can be parsed by specifying Place IDs.
 
 > | Parameter | Default                   | Description                                              |
 > | --------- | ------------------------- | -------------------------------------------------------- |
@@ -138,7 +138,10 @@ Unique IDs that are only incremented when created. Sequences are kept in the dat
 > Example:
 >
 > ```typescript
-> const IncrementIDs = new Increment();
+> import Keyv from 'keyv';
+> import KeyvMongo from '@keyv/mongo';
+>
+> const IncrementIDs = new Increment({ store: new Keyv(new KeyvMongo('mongodb+srv://...@...mongodb.net/app', { collection: 'uuniq' })) });
 > ```
 
 ### Methods
@@ -218,8 +221,8 @@ Generate unique IDs that are only incremented when created.
 > Example:
 >
 > ```typescript
-> const NumericIncrementIDs = new Increment({ format: 'numeric' });
-> const SymbolicIncrementIDs = new Increment({ format: 'symbolic' });
+> const NumericIncrementIDs = new Increment({ format: 'numeric', store: new Keyv(new KeyvMongo('mongodb+srv://...@...mongodb.net/app', { collection: 'uuniq' })) });
+> const SymbolicIncrementIDs = new Increment({ format: 'symbolic', store: new Keyv(new KeyvMongo('mongodb+srv://...@...mongodb.net/app', { collection: 'uuniq' })) });
 >
 > IncrementIDs.generate(); // "10000001"
 > IncrementIDs.generate(); // "10000002"
