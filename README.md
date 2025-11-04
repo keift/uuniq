@@ -92,7 +92,7 @@ Uuniq
 │   ├── generate()
 │   └── resolve(id)
 │
-├── new Increment(options?)
+├── new Increment(options)
 │   │
 │   └── generate()
 │
