@@ -5,8 +5,6 @@ import { IncrementOptionsDefault } from './defaults/IncrementOptions.default';
 
 import type { IncrementOptions } from './types/IncrementOptions.type';
 
-const timeouts = new Map<string, NodeJS.Timeout>();
-
 type Store = {
   set: (key: string, value: unknown) => Promise<unknown>;
   get: <Type>(key: string) => Promise<Type | undefined>;
@@ -17,6 +15,7 @@ export class Increment {
   private readonly store: Store;
   private sequence: number | null = null;
   private readonly anybase_encode: (anybase: string) => string;
+  private readonly timeouts = new Map<string, NodeJS.Timeout>();
 
   public constructor(options: IncrementOptions) {
     this.options = merge({}, IncrementOptionsDefault, options);
@@ -40,14 +39,14 @@ export class Increment {
 
         this.sequence++;
 
-        if (!timeouts.get('SYNC_SEQUENCE')) {
-          timeouts.set(
+        if (!this.timeouts.get('SYNC_SEQUENCE')) {
+          this.timeouts.set(
             'SYNC_SEQUENCE',
             setTimeout(() => {
               void (async () => {
                 await this.store.set(`increment_sequence--place_id:${this.options.place_id?.toString() ?? ''}`, this.sequence);
 
-                timeouts.delete('SYNC_SEQUENCE');
+                this.timeouts.delete('SYNC_SEQUENCE');
               })();
             }, 1000)
           );
