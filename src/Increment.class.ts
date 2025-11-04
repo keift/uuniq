@@ -30,7 +30,7 @@ export class Increment {
   }
 
   private async syncSequence() {
-    this.sequence = (await this.store.get<number>(`increment_sequence--place_id:${this.options.place_id?.toString() ?? ''}`)) ?? this.options.initial ?? 0;
+    this.sequence = (await this.store.get<number>(`increment_sequence--place_id:${this.options.place_id?.toString() ?? ''}`)) ?? (this.options.initial !== undefined ? this.options.initial - 1 : 0);
   }
 
   public generate() {

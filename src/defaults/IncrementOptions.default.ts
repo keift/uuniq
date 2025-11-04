@@ -2,7 +2,7 @@ import type { IncrementOptions } from '../types/IncrementOptions.type';
 
 export const IncrementOptionsDefault: IncrementOptions = {
   format: 'numeric',
-  initial: 10000000,
+  initial: 10000001,
   charset: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',
   place_id: 0,
 
