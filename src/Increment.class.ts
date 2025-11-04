@@ -42,7 +42,7 @@ export class Increment {
 
         if (!timeouts.get('SYNC_SEQUENCE')) {
           timeouts.set(
-            `SYNC_SEQUENCE`,
+            'SYNC_SEQUENCE',
             setTimeout(() => {
               void (async () => {
                 await this.store.set(`increment_sequence--place_id:${this.options.place_id?.toString() ?? ''}`, this.sequence);
