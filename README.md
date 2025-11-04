@@ -127,7 +127,7 @@ Snowflake IDs developed by Twitter (X) in 2010. Unique IDs can be generated in d
 
 <br/>
 
-`new Increment(options?)`
+`new Increment(options)`
 
 Unique IDs that only increase when generated. Sequences are kept in the database. You can create a free database from [MongoDB Cloud](https://cloud.mongodb.com). Storing sequences requires tools that include `set(key, value)` and `get(key)`. We recommend [Keyv](https://npmjs.com/package/keyv). Sequences can be parsed by specifying Place IDs.
 

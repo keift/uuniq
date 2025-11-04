@@ -18,7 +18,7 @@ export class Increment {
   private sequence: number | null = null;
   private readonly anybase_encode: (anybase: string) => string;
 
-  public constructor(options: IncrementOptions = IncrementOptionsDefault) {
+  public constructor(options: IncrementOptions) {
     this.options = merge({}, IncrementOptionsDefault, options);
 
     this.options.place_id = this.options.place_id ?? 0;
