@@ -216,7 +216,7 @@ Generate unique IDs that only increase when generated.
 > | --------- | ------- | ----------- |
 > |           |         |             |
 >
-> returns [String]
+> returns [Promise]<[String]>
 >
 > Example:
 >
@@ -224,11 +224,11 @@ Generate unique IDs that only increase when generated.
 > const NumericIncrementIDs = new Increment({ format: 'numeric', store: new Keyv(new KeyvMongo('mongodb+srv://...@...mongodb.net/app', { collection: 'uuniq' })) });
 > const SymbolicIncrementIDs = new Increment({ format: 'symbolic', store: new Keyv(new KeyvMongo('mongodb+srv://...@...mongodb.net/app', { collection: 'uuniq' })) });
 >
-> NumericIncrementIDs.generate(); // "10000001"
-> NumericIncrementIDs.generate(); // "10000002"
+> await NumericIncrementIDs.generate(); // "10000001"
+> await NumericIncrementIDs.generate(); // "10000002"
 >
-> SymbolicIncrementIDs.generate(); // "fxSL"
-> SymbolicIncrementIDs.generate(); // "fxSM"
+> await SymbolicIncrementIDs.generate(); // "fxSL"
+> await SymbolicIncrementIDs.generate(); // "fxSM"
 > ```
 
 ### Types
