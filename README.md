@@ -54,7 +54,7 @@ Short yet unique IDs.
 - Suitable for distributed systems
 - Suitable for sorting and database indexes
 - Snowflake IDs developed by Twitter (X) can be generated
-- Increment IDs that can only be incremented when generated
+- Increment IDs that only increase when created
 - Symbolic IDs can be generated like YouTube's video IDs
 
 ## Installation
@@ -129,7 +129,7 @@ Snowflake IDs developed by Twitter (X) in 2010. Unique IDs can be generated in d
 
 `new Increment(options?)`
 
-Unique IDs that are only incremented when created. Sequences are kept in the database. You can create a free database from [MongoDB Cloud](https://cloud.mongodb.com). Sequences can be parsed by specifying Place IDs.
+Unique IDs that only increase when created. Sequences are kept in the database. You can create a free database from [MongoDB Cloud](https://cloud.mongodb.com). Storing sequences requires tools that include `set(key, value)` and `get(key)`. We recommend [Keyv](https://npmjs.com/package/keyv). Sequences can be parsed by specifying Place IDs.
 
 > | Parameter | Default                   | Description                                              |
 > | --------- | ------------------------- | -------------------------------------------------------- |
@@ -210,7 +210,7 @@ Resolve the previously created ID. For this, the `epoch` and `place_id` values â
 
 `Increment.generate()`
 
-Generate unique IDs that are only incremented when created.
+Generate unique IDs that only increase when created.
 
 > | Parameter | Default | Description |
 > | --------- | ------- | ----------- |
