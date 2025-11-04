@@ -15,8 +15,8 @@ type Store = {
 export class Increment {
   private readonly options: IncrementOptions;
   private readonly store: Store;
-  private readonly anybase_encode: (anybase: string) => string;
   private sequence: number | null = null;
+  private readonly anybase_encode: (anybase: string) => string;
 
   public constructor(options: IncrementOptions = IncrementOptionsDefault) {
     this.options = merge({}, IncrementOptionsDefault, options);
@@ -44,9 +44,11 @@ export class Increment {
           timeouts.set(
             `SYNC_SEQUENCE`,
             setTimeout(() => {
-              void this.store.set(`increment_sequence--place_id:${this.options.place_id?.toString() ?? ''}`, this.sequence);
+              void (async () => {
+                await this.store.set(`increment_sequence--place_id:${this.options.place_id?.toString() ?? ''}`, this.sequence);
 
-              timeouts.delete('SYNC_SEQUENCE');
+                timeouts.delete('SYNC_SEQUENCE');
+              })();
             }, 1000)
           );
         }
