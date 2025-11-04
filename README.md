@@ -173,7 +173,7 @@ Generate Snowflake IDs developed by Twitter (X) in 2010.
 
 `Snowflake.resolve(id)`
 
-Resolve the previously generated ID. For this, the `epoch` and `place_id` values ​​in the Constructor must be correct.
+Resolve the previously generated ID. For this, the `format`, `epoch` and `place_id` values ​​in the Constructor must be correct.
 
 > | Parameter | Default | Description                      |
 > | --------- | ------- | -------------------------------- |
