@@ -1,6 +1,6 @@
 {
   "name": "uuniq",
-  "version": "1.3.6",
+  "version": "1.3.7",
   "description": "Short yet unique IDs.",
   "license": "MIT",
   "homepage": "https://github.com/keift/uuniq",
@@ -26,7 +26,7 @@
     "keyv": "^5.5.4",
     "neatlint": "^1.1.26",
     "prettier": "^3.6.2",
-    "tsup": "^8.5.0"
+    "tsup": "^8.5.1"
   },
   "repository": {
     "type": "git",
