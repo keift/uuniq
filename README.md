@@ -141,7 +141,8 @@ Unique IDs that only increase when generated. Sequences are kept in the database
 > import Keyv from 'keyv';
 > import KeyvMongo from '@keyv/mongo';
 >
-> const IncrementIDs = new Increment({ store: new Keyv(new KeyvMongo('mongodb+srv://...@...mongodb.net/app', { collection: 'uuniq' })) });
+> const UuniqStore = new Keyv(new KeyvMongo('mongodb+srv://...@...mongodb.net/app', { collection: 'uuniq' }));
+> const IncrementIDs = new Increment({ store: UuniqStore });
 > ```
 
 ### Methods
@@ -221,8 +222,9 @@ Generate unique IDs that only increase when generated.
 > Example:
 >
 > ```typescript
-> const NumericIncrementIDs = new Increment({ format: 'numeric', store: new Keyv(new KeyvMongo('mongodb+srv://...@...mongodb.net/app', { collection: 'uuniq' })) });
-> const SymbolicIncrementIDs = new Increment({ format: 'symbolic', store: new Keyv(new KeyvMongo('mongodb+srv://...@...mongodb.net/app', { collection: 'uuniq' })) });
+> const UuniqStore = new Keyv(new KeyvMongo('mongodb+srv://...@...mongodb.net/app', { collection: 'uuniq' }));
+> const NumericIncrementIDs = new Increment({ format: 'numeric', store: UuniqStore });
+> const SymbolicIncrementIDs = new Increment({ format: 'symbolic', store: UuniqStore });
 >
 > await NumericIncrementIDs.generate(); // "10000001"
 > await NumericIncrementIDs.generate(); // "10000002"
