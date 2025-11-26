@@ -222,7 +222,6 @@ Generate unique IDs that only increase when generated.
 > Example:
 >
 > ```typescript
-> const UuniqStore = new Keyv(new KeyvMongo('mongodb+srv://...@...mongodb.net/app', { collection: 'uuniq' }));
 > const NumericIncrementIDs = new Increment({ format: 'numeric', store: UuniqStore });
 > const SymbolicIncrementIDs = new Increment({ format: 'symbolic', store: UuniqStore });
 >
