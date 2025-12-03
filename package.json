@@ -25,7 +25,7 @@
     "@keyv/mongo": "^3.0.5",
     "keyv": "^5.5.4",
     "neatlint": "^1.1.26",
-    "prettier": "^3.7.3",
+    "prettier": "^3.7.4",
     "tsup": "^8.5.1"
   },
   "repository": {
