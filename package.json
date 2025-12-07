@@ -24,7 +24,7 @@
   "devDependencies": {
     "@keyv/mongo": "^3.0.5",
     "keyv": "^5.5.5",
-    "neatlint": "^1.1.26",
+    "neatlint": "^1.1.27",
     "prettier": "^3.7.4",
     "tsup": "^8.5.1"
   },
