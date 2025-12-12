@@ -14,7 +14,7 @@
       "devDependencies": {
         "@keyv/mongo": "^3.0.5",
         "keyv": "^5.5.5",
-        "neatlint": "^1.2.0",
+        "neatlint": "^1.2.1",
         "prettier": "^3.7.4",
         "tsup": "^8.5.1",
       },
@@ -365,7 +365,7 @@
 
     "natural-compare": ["natural-compare@1.4.0", "", {}, "sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw=="],
 
-    "neatlint": ["neatlint@1.2.0", "", { "dependencies": { "@eslint/js": "latest", "@types/lodash.merge": "^4.6.9", "@types/node": "latest", "eslint": "latest", "jiti": "latest", "lodash.merge": "^4.6.2", "typescript": "latest", "typescript-eslint": "latest" } }, "sha512-NKghB7OShgtsVcFzVUuzpmCorjNa161MLAz4lYehKEF+Zh5RMPr0SuVtW6ElkXOea6Y6GuCoj+8lapJEJBzTFA=="],
+    "neatlint": ["neatlint@1.2.1", "", { "dependencies": { "@eslint/js": "latest", "@types/lodash.merge": "^4.6.9", "@types/node": "latest", "eslint": "latest", "jiti": "latest", "lodash.merge": "^4.6.2", "typescript": "latest", "typescript-eslint": "latest" } }, "sha512-4H6YjoAgMbCBsHSM+H92VWvuR/q1F7/tj1Y2uF8TzRPFByxDQJ3pPGlXm6HQ9OxZbGqgmtrYUaFpouea0XQ1wg=="],
 
     "object-assign": ["object-assign@4.1.1", "", {}, "sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg=="],
 
@@ -490,8 +490,6 @@
     "glob/minimatch": ["minimatch@9.0.5", "", { "dependencies": { "brace-expansion": "^2.0.1" } }, "sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow=="],
 
     "import-fresh/resolve-from": ["resolve-from@4.0.0", "", {}, "sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g=="],
-
-    "neatlint/@types/node": ["@types/node@24.10.2", "", { "dependencies": { "undici-types": "~7.16.0" } }, "sha512-WOhQTZ4G8xZ1tjJTvKOpyEVSGgOTvJAfDK3FNFgELyaTpzhdgHVHeqW8V+UJvzF5BT+/B54T/1S2K6gd9c7bbA=="],
 
     "string-width-cjs/emoji-regex": ["emoji-regex@8.0.0", "", {}, "sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A=="],
 
