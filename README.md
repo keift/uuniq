@@ -75,7 +75,7 @@ yarn add uuniq
 bun add uuniq
 
 // Deno
-deno add npm:uuniq
+deno add uuniq
 ```
 
 ## Documentation
