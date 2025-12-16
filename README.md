@@ -63,10 +63,10 @@ You can install it as follows.
 
 ```shell
 // NPM
-npm install uuniq
+npm add uuniq
 
 // PNPM
-pnpm install uuniq
+pnpm add uuniq
 
 // Yarn
 yarn add uuniq
@@ -75,7 +75,7 @@ yarn add uuniq
 bun add uuniq
 
 // Deno
-deno install npm:uuniq
+deno add npm:uuniq
 ```
 
 ## Documentation
