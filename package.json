@@ -22,11 +22,11 @@
     "lodash.merge": "^4.6.2"
   },
   "devDependencies": {
-    "@keyv/mongo": "^3.0.5",
-    "keyv": "^5.5.5",
-    "neatlint": "^1.2.1",
-    "prettier": "^3.7.4",
-    "tsup": "^8.5.1"
+    "@keyv/mongo": "latest",
+    "keyv": "latest",
+    "neatlint": "latest",
+    "prettier": "latest",
+    "tsup": "latest"
   },
   "repository": {
     "type": "git",
