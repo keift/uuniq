@@ -1,7 +1,7 @@
 /.github
 /.prettierrc.json
 /assets
-/bun.lock*
+/bun.lock
 /bunfig.toml
 /CHANGELOG.md
 /eslint.config.ts
