@@ -66,19 +66,19 @@ Short yet unique IDs.
 You can install it as follows.
 
 ```shell
-// NPM
+# NPM
 npm add uuniq
 
-// PNPM
+# PNPM
 pnpm add uuniq
 
-// Yarn
+# Yarn
 yarn add uuniq
 
-// Bun
+# Bun
 bun add uuniq
 
-// Deno
+# Deno
 deno add uuniq
 ```
 
