@@ -41,6 +41,8 @@ const calculateShifts = (parts: Parts): Shifts => {
 const limits = calculateLimits(parts);
 const shifts = calculateShifts(parts);
 
+const place_ids_used = new Set<number>();
+
 export class Snowflake {
   private readonly options: SnowflakeOptions;
   private readonly epoch: number;
@@ -54,9 +56,14 @@ export class Snowflake {
 
     this.epoch = new Date(this.options.epoch ?? '').getTime();
 
-    if ((this.options.place_id ?? 0) < 0 || (this.options.place_id ?? 0) > limits.place_id) throw new Error(`Field place_id must be between 0 and ${limits.place_id.toString()}`);
+    if ((this.options.place_id ?? 0) < 0 || (this.options.place_id ?? 0) > limits.place_id) throw new Error(`Field place_id must be between 0 and ${limits.place_id.toString()}.`);
 
     this.options.place_id = (this.options.place_id ?? 0) & Number(limits.place_id);
+
+    if (place_ids_used.has(this.options.place_id)) throw new Error(`Place ID ${(this.options.place_id ?? 0).toString()} already in use.`);
+
+    place_ids_used.add(this.options.place_id);
+
     this.sequence = 0;
     this.last_timestamp = -1;
 

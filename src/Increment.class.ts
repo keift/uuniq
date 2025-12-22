@@ -5,6 +5,8 @@ import { IncrementOptionsDefault } from './defaults/IncrementOptions.default';
 
 import type { IncrementOptions } from './types/IncrementOptions.type';
 
+const place_ids_used = new Set<number>();
+
 type Store = {
   set: (key: string, value: unknown) => Promise<unknown>;
   get: <Type>(key: string) => Promise<Type | undefined>;
@@ -21,6 +23,11 @@ export class Increment {
     this.options = merge({}, IncrementOptionsDefault, options);
 
     this.options.place_id = this.options.place_id ?? 0;
+
+    if (place_ids_used.has(this.options.place_id)) throw new Error(`Place ID ${(this.options.place_id ?? 0).toString()} already in use.`);
+
+    place_ids_used.add(this.options.place_id);
+
     this.store = options.store as Store;
 
     this.anybase_encode = Anybase(Anybase.DEC, this.options.charset ?? '');

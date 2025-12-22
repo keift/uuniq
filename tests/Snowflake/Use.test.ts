@@ -1,6 +1,6 @@
 import { Snowflake } from '../../src/main';
 
-const SnowflakeIDs = new Snowflake();
+const SnowflakeIDs = new Snowflake({ place_id: 4 });
 
 const id = SnowflakeIDs.generate();
 const resolve = SnowflakeIDs.resolve(id);
