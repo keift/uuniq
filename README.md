@@ -146,6 +146,7 @@ Unique IDs that only increase when generated. Sequences are kept in the database
 > import KeyvMongo from '@keyv/mongo';
 >
 > const UuniqStore = new Keyv(new KeyvMongo('mongodb+srv://...@...mongodb.net/app', { collection: 'uuniq' }));
+>
 > const IncrementIDs = new Increment({ store: UuniqStore });
 > ```
 
@@ -164,8 +165,8 @@ Generate Snowflake IDs developed by Twitter (X) in 2010.
 > Example:
 >
 > ```typescript
-> const NumericSnowflakeIDs = new Snowflake({ format: 'numeric' });
-> const SymbolicSnowflakeIDs = new Snowflake({ format: 'symbolic' });
+> const NumericSnowflakeIDs = new Snowflake({ format: 'numeric', place_id: 0 });
+> const SymbolicSnowflakeIDs = new Snowflake({ format: 'symbolic', place_id: 1 });
 >
 > NumericSnowflakeIDs.generate(); // "102604921389056"
 > NumericSnowflakeIDs.generate(); // "102604921389057"
@@ -189,8 +190,8 @@ Resolve the previously generated ID. For this, the `format`, `epoch` and `place_
 > Example:
 >
 > ```typescript
-> const NumericSnowflakeIDs = new Snowflake({ format: 'numeric' });
-> const SymbolicSnowflakeIDs = new Snowflake({ format: 'symbolic' });
+> const NumericSnowflakeIDs = new Snowflake({ format: 'numeric', place_id: 0 });
+> const SymbolicSnowflakeIDs = new Snowflake({ format: 'symbolic', place_id: 1 });
 >
 > NumericSnowflakeIDs.resolve('102604921389056');
 > /*
@@ -226,8 +227,8 @@ Generate unique IDs that only increase when generated.
 > Example:
 >
 > ```typescript
-> const NumericIncrementIDs = new Increment({ format: 'numeric', store: UuniqStore });
-> const SymbolicIncrementIDs = new Increment({ format: 'symbolic', store: UuniqStore });
+> const NumericIncrementIDs = new Increment({ format: 'numeric', place_id: 0, store: UuniqStore });
+> const SymbolicIncrementIDs = new Increment({ format: 'symbolic', place_id: 1, store: UuniqStore });
 >
 > await NumericIncrementIDs.generate(); // "10000001"
 > await NumericIncrementIDs.generate(); // "10000002"
