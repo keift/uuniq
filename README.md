@@ -2,7 +2,6 @@
 [Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 [Boolean]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
 [Object]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
-[Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 [Date]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 [Buffer]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer
 [Promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
@@ -119,9 +118,9 @@ import { Snowflake, Increment } from 'uuniq';
 
 Snowflake IDs developed by Twitter (X) in 2010. Unique IDs can be generated in distributed systems by specifying Place IDs.
 
-> | Parameter | Default                   | Description                                              |
-> | --------- | ------------------------- | -------------------------------------------------------- |
-> | options   | [SnowflakeOptionsDefault] | [SnowflakeOptions] (optional)<br/>Constructor's options. |
+> | Parameter | Type               | Default                   | Description            |
+> | --------- | ------------------ | ------------------------- | ---------------------- |
+> | options?  | [SnowflakeOptions] | [SnowflakeOptionsDefault] | Constructor's options. |
 >
 > Example:
 >
@@ -135,9 +134,9 @@ Snowflake IDs developed by Twitter (X) in 2010. Unique IDs can be generated in d
 
 Unique IDs that only increase when generated. Sequences are kept in the database. You can create a free database from [MongoDB Cloud](https://cloud.mongodb.com). Storing sequences requires tools that include `set(key, value)` and `get(key)`. We recommend [Keyv](https://npmjs.com/package/keyv). Sequences can be parsed by specifying Place IDs.
 
-> | Parameter | Default                   | Description                                   |
-> | --------- | ------------------------- | --------------------------------------------- |
-> | options   | [IncrementOptionsDefault] | [IncrementOptions]<br/>Constructor's options. |
+> | Parameter | Type               | Default                   | Description            |
+> | --------- | ------------------ | ------------------------- | ---------------------- |
+> | options   | [IncrementOptions] | [IncrementOptionsDefault] | Constructor's options. |
 >
 > Example:
 >
@@ -156,9 +155,9 @@ Unique IDs that only increase when generated. Sequences are kept in the database
 
 Generate Snowflake IDs developed by Twitter (X) in 2010.
 
-> | Parameter | Default | Description |
-> | --------- | ------- | ----------- |
-> |           |         |             |
+> | Parameter | Type | Default | Description |
+> | --------- | ---- | ------- | ----------- |
+> |           |      |         |             |
 >
 > returns [String]
 >
@@ -181,9 +180,9 @@ Generate Snowflake IDs developed by Twitter (X) in 2010.
 
 Resolve the previously generated ID. For this, the `format`, `epoch` and `place_id` values ​​in the Constructor must be correct.
 
-> | Parameter | Default | Description                      |
-> | --------- | ------- | -------------------------------- |
-> | id        |         | [String]<br/> ID to be resolved. |
+> | Parameter | Type     | Default | Description        |
+> | --------- | -------- | ------- | ------------------ |
+> | id        | [String] |         | ID to be resolved. |
 >
 > returns [SnowflakeResolve]
 >
@@ -218,9 +217,9 @@ Resolve the previously generated ID. For this, the `format`, `epoch` and `place_
 
 Generate unique IDs that only increase when generated.
 
-> | Parameter | Default | Description |
-> | --------- | ------- | ----------- |
-> |           |         |             |
+> | Parameter | Type | Default | Description |
+> | --------- | ---- | ------- | ----------- |
+> |           |      |         |             |
 >
 > returns [Promise]<[String]>
 >
