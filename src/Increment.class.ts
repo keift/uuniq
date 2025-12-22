@@ -24,7 +24,7 @@ export class Increment {
 
     this.options.place_id = this.options.place_id ?? 0;
 
-    if (place_ids_used.has(this.options.place_id)) throw new Error(`Place ID ${(this.options.place_id ?? 0).toString()} already in use.`);
+    if (place_ids_used.has(this.options.place_id)) throw new Error(`Place ID ${this.options.place_id.toString()} already in use`);
 
     place_ids_used.add(this.options.place_id);
 
