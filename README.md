@@ -56,9 +56,9 @@ Short yet unique IDs.
 - The possibility of collision is impossible
 - Suitable for distributed systems
 - Suitable for sorting and database indexes
-- Snowflake IDs developed by Twitter (X) can be generated
-- Increment IDs that only increase when generated
-- Symbolic IDs can be generated like YouTube's video IDs
+- Snowflake IDs can be generated, developed by Twitter (X)
+- Increment IDs can be generated, increasing each time they are generated
+- Symbolic IDs can be generated, similar to YouTube's video identities
 
 ## Installation
 
@@ -116,7 +116,7 @@ import { Snowflake, Increment } from 'uuniq';
 
 `new Snowflake(options?)`
 
-Snowflake IDs developed by Twitter (X) in 2010. Unique IDs can be generated in distributed systems by specifying Place IDs.
+Snowflake IDs are timestamp based identifiers. Each ID consists of numbers that are quite unique from the previous ones. Unique IDs can be generated in distributed systems by specifying Place IDs.
 
 > | Parameter | Type               | Default                   | Description            |
 > | --------- | ------------------ | ------------------------- | ---------------------- |
@@ -132,7 +132,7 @@ Snowflake IDs developed by Twitter (X) in 2010. Unique IDs can be generated in d
 
 `new Increment(options)`
 
-Unique IDs that only increase when generated. Sequences are kept in the database. You can create a free database from [MongoDB Cloud](https://cloud.mongodb.com). Storing sequences requires tools that include `set(key, value)` and `get(key)`. We recommend [Keyv](https://npmjs.com/package/keyv). Sequences can be parsed by specifying Place IDs.
+Unique IDs that increase each time they are generated. Sequences are kept in the database. You can create a free database from [MongoDB Cloud](https://cloud.mongodb.com). Storing sequences requires tools that include `set(key, value)` and `get(key)`. We recommend [Keyv](https://npmjs.com/package/keyv). Sequences can be parsed by specifying Place IDs.
 
 > | Parameter | Type               | Default                   | Description            |
 > | --------- | ------------------ | ------------------------- | ---------------------- |
@@ -153,7 +153,7 @@ Unique IDs that only increase when generated. Sequences are kept in the database
 
 `Snowflake.generate()`
 
-Generate Snowflake IDs developed by Twitter (X) in 2010.
+Generate Snowflake IDs.
 
 > | Parameter | Type | Default | Description |
 > | --------- | ---- | ------- | ----------- |
@@ -178,7 +178,7 @@ Generate Snowflake IDs developed by Twitter (X) in 2010.
 
 `Snowflake.resolve(id)`
 
-Resolve the previously generated ID. For this, the `format`, `epoch` and `place_id` values ​​in the Constructor must be correct.
+Resolve the previously generated Snowflake ID. For this, the `format`, `epoch` and `place_id` values ​​in the Constructor must be correct.
 
 > | Parameter | Type     | Default | Description        |
 > | --------- | -------- | ------- | ------------------ |
@@ -215,7 +215,7 @@ Resolve the previously generated ID. For this, the `format`, `epoch` and `place_
 
 `Increment.generate()`
 
-Generate unique IDs that only increase when generated.
+Generate Increment IDs that increase each time they are generated.
 
 > | Parameter | Type | Default | Description |
 > | --------- | ---- | ------- | ----------- |
