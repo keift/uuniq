@@ -132,7 +132,7 @@ Snowflake IDs are timestamp based identifiers. Each ID consists of numbers that 
 
 `new Increment(options)`
 
-Unique IDs that increase each time they are generated. Sequences are kept in the database. You can create a free database from [MongoDB Cloud](https://cloud.mongodb.com). Storing sequences requires tools that include `set(key, value)` and `get(key)`. We recommend [Keyv](https://npmjs.com/package/keyv). Sequences can be parsed by specifying Place IDs.
+Increment IDs that increase each time they are generated. Sequences are kept in the database. You can create a free database from [MongoDB Cloud](https://cloud.mongodb.com). Storing sequences requires tools that include `set(key, value)` and `get(key)`. We recommend [Keyv](https://npmjs.com/package/keyv). Sequences can be parsed by specifying Place IDs.
 
 > | Parameter | Type               | Default                   | Description            |
 > | --------- | ------------------ | ------------------------- | ---------------------- |
