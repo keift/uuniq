@@ -56,7 +56,7 @@ Short yet unique IDs.
 - The possibility of collision is impossible
 - Suitable for distributed systems
 - Suitable for sorting and database indexes
-- Snowflake IDs can be generated, developed by Twitter (X)
+- Snowflake IDs can be generated, each one is timestamp based
 - Increment IDs can be generated, increasing each time they are generated
 - Symbolic IDs can be generated, similar to YouTube's video identities
 
