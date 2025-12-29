@@ -1,5 +1,6 @@
 import Anybase from 'any-base';
 import merge from 'lodash.merge';
+import throttle from 'lodash.throttle';
 
 import { IncrementOptionsDefault } from './defaults/IncrementOptions.default';
 
@@ -17,7 +18,6 @@ export class Increment {
   private readonly store: Store;
   private sequence: number | null = null;
   private readonly anybase_encode: (anybase: string) => string;
-  private readonly timeouts = new Map<string, NodeJS.Timeout>();
 
   public constructor(options: IncrementOptions) {
     this.options = merge({}, IncrementOptionsDefault, options);
@@ -32,12 +32,22 @@ export class Increment {
 
     this.anybase_encode = Anybase(Anybase.DEC, this.options.charset ?? '');
 
-    void this.syncSequence();
+    void this.initial();
   }
 
-  private async syncSequence() {
+  private async initial() {
     this.sequence = (await this.store.get<number>(`increment_sequence--place_id:${this.options.place_id?.toString() ?? ''}`)) ?? (this.options.initial !== undefined ? this.options.initial - 1 : 0);
   }
+
+  private readonly syncSequence = throttle(
+    () => {
+      if (this.sequence === null) return;
+
+      void this.store.set(`increment_sequence--place_id:${this.options.place_id?.toString() ?? ''}`, this.sequence);
+    },
+    1000,
+    { leading: true, trailing: true }
+  );
 
   public generate() {
     return new Promise<string>((resolve) => {
@@ -46,18 +56,7 @@ export class Increment {
 
         this.sequence++;
 
-        if (!this.timeouts.get('SYNC_SEQUENCE')) {
-          this.timeouts.set(
-            'SYNC_SEQUENCE',
-            setTimeout(() => {
-              void (async () => {
-                await this.store.set(`increment_sequence--place_id:${this.options.place_id?.toString() ?? ''}`, this.sequence);
-
-                this.timeouts.delete('SYNC_SEQUENCE');
-              })();
-            }, 1000)
-          );
-        }
+        this.syncSequence();
 
         let id = this.sequence.toString();
 
