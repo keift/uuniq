@@ -1,6 +1,6 @@
 {
   "name": "uuniq",
-  "version": "1.3.14",
+  "version": "1.3.15",
   "description": "Short yet unique IDs.",
   "license": "MIT",
   "homepage": "https://github.com/keift/uuniq",
@@ -25,8 +25,8 @@
   "devDependencies": {
     "@keyv/mongo": "latest",
     "keyv": "latest",
-    "neatlint": "latest",
     "prettier": "latest",
+    "rulint": "latest",
     "tsup": "latest"
   },
   "repository": {

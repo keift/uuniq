@@ -88,7 +88,7 @@ deno add uuniq
 Briefly as follows.
 
 ```typescript
-Uuniq
+uuniq
 │
 ├── new Snowflake(options?)
 │   │
