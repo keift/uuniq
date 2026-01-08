@@ -56,11 +56,11 @@ export class Snowflake {
 
     this.epoch = new Date(this.options.epoch ?? '').getTime();
 
-    if ((this.options.place_id ?? 0) < 0 || (this.options.place_id ?? 0) > limits.place_id) throw new Error(`Field place_id must be between 0 and ${limits.place_id.toString()}`);
+    if ((this.options.place_id ?? 0) < 0 || (this.options.place_id ?? 0) > limits.place_id) throw new Error(`Field place_id must be between 0 and ${String(limits.place_id)}`);
 
     this.options.place_id = (this.options.place_id ?? 0) & Number(limits.place_id);
 
-    if (place_ids_used.has(this.options.place_id)) throw new Error(`Place ID ${this.options.place_id.toString()} already in use`);
+    if (place_ids_used.has(this.options.place_id)) throw new Error(`Place ID ${String(this.options.place_id)} already in use`);
 
     place_ids_used.add(this.options.place_id);
 
@@ -96,7 +96,7 @@ export class Snowflake {
 
     this.last_timestamp = current_timestamp;
 
-    let id = ((BigInt(current_timestamp) << BigInt(shifts.timestamp)) | (BigInt(this.options.place_id ?? 0) << BigInt(shifts.place_id)) | BigInt(this.sequence)).toString();
+    let id = String((BigInt(current_timestamp) << BigInt(shifts.timestamp)) | (BigInt(this.options.place_id ?? 0) << BigInt(shifts.place_id)) | BigInt(this.sequence));
 
     if (this.options.format === 'symbolic') id = this.anybase_encode(id);
 
