@@ -3,30 +3,30 @@ import merge from 'lodash.merge';
 
 import { SnowflakeOptionsDefault } from './defaults/SnowflakeOptions.default';
 
-import type { Limits } from './types/Limits.type';
-import type { Parts } from './types/Parts.type';
-import type { Shifts } from './types/Shifts.type';
+import type { SnowflakeLimits } from './types/SnowflakeLimits.type';
+import type { SnowflakeParts } from './types/SnowflakeParts.type';
+import type { SnowflakeShifts } from './types/SnowflakeShifts.type';
 import type { SnowflakeOptions } from './types/SnowflakeOptions.type';
 import type { SnowflakeResolve } from './types/SnowflakeResolve.type';
 
-const parts: Parts = {
+const parts: SnowflakeParts = {
   timestamp: 53,
   place_id: 4,
   sequence: 10
 };
 
-const calculateLimits = (parts: Parts): Limits => {
-  const limits = {} as Limits;
-  const keys: (keyof Parts)[] = ['sequence', 'place_id', 'timestamp'];
+const calculateLimits = (parts: SnowflakeParts): SnowflakeLimits => {
+  const limits = {} as SnowflakeLimits;
+  const keys: (keyof SnowflakeParts)[] = ['sequence', 'place_id', 'timestamp'];
 
   for (const key of keys) limits[key] = (BigInt(1) << BigInt(parts[key])) - BigInt(1);
 
   return limits;
 };
 
-const calculateShifts = (parts: Parts): Shifts => {
-  const shifts = {} as Shifts;
-  const keys: (keyof Parts)[] = ['sequence', 'place_id', 'timestamp'];
+const calculateShifts = (parts: SnowflakeParts): SnowflakeShifts => {
+  const shifts = {} as SnowflakeShifts;
+  const keys: (keyof SnowflakeParts)[] = ['sequence', 'place_id', 'timestamp'];
 
   let shift = 0;
 

@@ -5,13 +5,9 @@ import throttle from 'lodash.throttle';
 import { IncrementOptionsDefault } from './defaults/IncrementOptions.default';
 
 import type { IncrementOptions } from './types/IncrementOptions.type';
+import type { Store } from './types/Store.type';
 
 const place_ids_used = new Set<number>();
-
-type Store = {
-  set: (key: string, value: unknown) => Promise<unknown>;
-  get: <Type>(key: string) => Promise<Type | undefined>;
-};
 
 export class Increment {
   private readonly options: IncrementOptions;
