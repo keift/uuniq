@@ -4,10 +4,10 @@ import merge from 'lodash.merge';
 import { SnowflakeOptionsDefault } from './defaults/SnowflakeOptions.default';
 
 import type { SnowflakeLimits } from './types/SnowflakeLimits.type';
-import type { SnowflakeParts } from './types/SnowflakeParts.type';
-import type { SnowflakeShifts } from './types/SnowflakeShifts.type';
 import type { SnowflakeOptions } from './types/SnowflakeOptions.type';
+import type { SnowflakeParts } from './types/SnowflakeParts.type';
 import type { SnowflakeResolve } from './types/SnowflakeResolve.type';
+import type { SnowflakeShifts } from './types/SnowflakeShifts.type';
 
 const parts: SnowflakeParts = {
   timestamp: 53,
