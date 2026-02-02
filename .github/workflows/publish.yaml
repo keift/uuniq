@@ -20,6 +20,10 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v6
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+        with:
+          registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
         run: bun install
@@ -31,6 +35,4 @@ jobs:
         run: bun run build
 
       - name: Publish to the NPM
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
         run: npm publish --access public --provenance
