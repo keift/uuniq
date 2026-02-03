@@ -13,6 +13,9 @@
 
 [SnowflakeOptionsDefault]: ./src/defaults/SnowflakeOptions.default.ts
 [IncrementOptionsDefault]: ./src/defaults/IncrementOptions.default.ts
+
+<!---->
+
 [SnowflakeOptions]: ./src/types/SnowflakeOptions.type.ts
 [SnowflakeResolve]: ./src/types/SnowflakeResolve.type.ts
 [IncrementOptions]: ./src/types/IncrementOptions.type.ts
