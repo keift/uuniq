@@ -1,7 +1,6 @@
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 [Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 [Boolean]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
-[Object]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
 [Date]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 [Buffer]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer
 [Promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
@@ -44,8 +43,8 @@
   - [Types](#types)
 - [Links](#links)
   - [Discord](https://discord.gg/keift)
-  - [Telegram](https://t.me/keiftt)
-  - [Twitter](https://x.com/keiftttt)
+  - [Telegram](https://t.me/keiftco)
+  - [Twitter](https://x.com/keiftco)
   - [GitHub](https://github.com/keift)
 - [License](#license)
 
@@ -250,8 +249,8 @@ Generate Increment IDs that increase each time they are generated.
 ## Links
 
 - [Discord](https://discord.gg/keift)
-- [Telegram](https://t.me/keiftt)
-- [Twitter](https://x.com/keiftttt)
+- [Telegram](https://t.me/keiftco)
+- [Twitter](https://x.com/keiftco)
 - [GitHub](https://github.com/keift)
 
 ## License
