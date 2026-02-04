@@ -121,9 +121,9 @@ import { Snowflake, Increment } from 'uuniq';
 
 Snowflake IDs are timestamp based identifiers. Each ID consists of numbers that are quite unique from the previous ones. Unique IDs can be generated in distributed systems by specifying Place IDs.
 
-> | Parameter | Type               | Default                   | Description            |
-> | --------- | ------------------ | ------------------------- | ---------------------- |
-> | options?  | [SnowflakeOptions] | [SnowflakeOptionsDefault] | Constructor's options. |
+> | Parameter  | Type               | Default                   | Description            |
+> | ---------- | ------------------ | ------------------------- | ---------------------- |
+> | `options?` | [SnowflakeOptions] | [SnowflakeOptionsDefault] | Constructor's options. |
 >
 > Example:
 >
@@ -139,7 +139,7 @@ Increment IDs that increase each time they are generated. Sequences are kept in 
 
 > | Parameter | Type               | Default                   | Description            |
 > | --------- | ------------------ | ------------------------- | ---------------------- |
-> | options   | [IncrementOptions] | [IncrementOptionsDefault] | Constructor's options. |
+> | `options` | [IncrementOptions] | [IncrementOptionsDefault] | Constructor's options. |
 >
 > Example:
 >
@@ -185,7 +185,7 @@ Resolve the previously generated Snowflake ID. For this, the `format`, `epoch` a
 
 > | Parameter | Type     | Default | Description        |
 > | --------- | -------- | ------- | ------------------ |
-> | id        | [String] |         | ID to be resolved. |
+> | `id`        | [String] |         | ID to be resolved. |
 >
 > returns [SnowflakeResolve]
 >
