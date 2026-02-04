@@ -45,7 +45,7 @@ export class Increment {
     { leading: true, trailing: true }
   );
 
-  public generate() {
+  public generate(): Promise<string> {
     return new Promise<string>((resolve) => {
       const wait = () => {
         if (this.sequence === null) return setTimeout(() => wait(), 1000);

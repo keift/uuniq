@@ -83,7 +83,7 @@ export class Snowflake {
     return current_timestamp;
   }
 
-  public generate() {
+  public generate(): string {
     let current_timestamp = this.currentTimestamp();
 
     if (current_timestamp < this.last_timestamp) throw new Error('Clock moved backwards');
