@@ -185,7 +185,7 @@ Resolve the previously generated Snowflake ID. For this, the `format`, `epoch` a
 
 > | Parameter | Type     | Default | Description        |
 > | --------- | -------- | ------- | ------------------ |
-> | `id`        | [String] |         | ID to be resolved. |
+> | `id`      | [String] |         | ID to be resolved. |
 >
 > returns [SnowflakeResolve]
 >
