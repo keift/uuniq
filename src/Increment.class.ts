@@ -46,7 +46,7 @@ export class Increment {
   );
 
   public generate(): Promise<string> {
-    return new Promise<string>((resolve) => {
+    return new Promise((resolve) => {
       const wait = () => {
         if (this.sequence === null) return setTimeout(() => wait(), 1000);
 

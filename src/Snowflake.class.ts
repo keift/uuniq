@@ -15,7 +15,7 @@ const parts: SnowflakeParts = {
   sequence: 10
 };
 
-const calculateLimits = (parts: SnowflakeParts): SnowflakeLimits => {
+const calculateLimits = (parts: SnowflakeParts) => {
   const limits = {} as SnowflakeLimits;
   const keys: (keyof SnowflakeParts)[] = ['sequence', 'place_id', 'timestamp'];
 
@@ -24,7 +24,7 @@ const calculateLimits = (parts: SnowflakeParts): SnowflakeLimits => {
   return limits;
 };
 
-const calculateShifts = (parts: SnowflakeParts): SnowflakeShifts => {
+const calculateShifts = (parts: SnowflakeParts) => {
   const shifts = {} as SnowflakeShifts;
   const keys: (keyof SnowflakeParts)[] = ['sequence', 'place_id', 'timestamp'];
 
@@ -48,8 +48,8 @@ export class Snowflake {
   private readonly epoch: number;
   private sequence: number;
   private last_timestamp: number;
-  private readonly anybase_encode: (anybase: string) => string;
-  private readonly anybase_decode: (anybase: string) => string;
+  private readonly anybaseEncode: (anybase: string) => string;
+  private readonly anybaseDecode: (anybase: string) => string;
 
   public constructor(options: SnowflakeOptions = SnowflakeOptionsDefault) {
     this.options = merge({}, SnowflakeOptionsDefault, options);
@@ -67,8 +67,8 @@ export class Snowflake {
     this.sequence = 0;
     this.last_timestamp = -1;
 
-    this.anybase_encode = Anybase(Anybase.DEC, this.options.charset ?? '');
-    this.anybase_decode = Anybase(this.options.charset ?? '', Anybase.DEC);
+    this.anybaseEncode = Anybase(Anybase.DEC, this.options.charset ?? '');
+    this.anybaseDecode = Anybase(this.options.charset ?? '', Anybase.DEC);
   }
 
   private currentTimestamp() {
@@ -98,13 +98,13 @@ export class Snowflake {
 
     let id = String((BigInt(current_timestamp) << BigInt(shifts.timestamp)) | (BigInt(this.options.place_id ?? 0) << BigInt(shifts.place_id)) | BigInt(this.sequence));
 
-    if (this.options.format === 'symbolic') id = this.anybase_encode(id);
+    if (this.options.format === 'symbolic') id = this.anybaseEncode(id);
 
     return id;
   }
 
   public resolve(id: string): SnowflakeResolve {
-    if (this.options.format === 'symbolic') id = this.anybase_decode(id);
+    if (this.options.format === 'symbolic') id = this.anybaseDecode(id);
 
     const bigint_id = BigInt(id);
 
