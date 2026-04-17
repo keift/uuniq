@@ -10,5 +10,5 @@
 /src
 /tests
 /tsconfig.json
-/tsup.config.ts
+/tsdown.config.ts
 /types
