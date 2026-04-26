@@ -28,10 +28,10 @@ export class Increment {
 
     this.anybase_encode = Anybase(Anybase.DEC, this.options.charset ?? '');
 
-    void this.initial();
+    void this.init();
   }
 
-  private async initial() {
+  private async init() {
     this.sequence = (await this.store.get<number>(`increment_sequence--place_id:${String(this.options.place_id)}`)) ?? (this.options.initial !== undefined ? this.options.initial - 1 : 0);
   }
 
