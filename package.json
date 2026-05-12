@@ -27,7 +27,8 @@
     "keyv": "latest",
     "prettier": "latest",
     "rulint": "latest",
-    "tsdown": "latest"
+    "tsdown": "latest",
+    "unrun": "latest"
   },
   "repository": {
     "type": "git",

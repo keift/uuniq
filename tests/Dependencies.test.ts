@@ -1,9 +1,18 @@
 import Package from '../package.json';
 
-if (Package.devDependencies['@keyv/mongo'] !== 'latest') throw new Error('❌ Error: @keyv/mongo');
-if (Package.devDependencies.keyv !== 'latest') throw new Error('❌ Error: keyv');
-if (Package.devDependencies.prettier !== 'latest') throw new Error('❌ Error: prettier');
-if (Package.devDependencies.rulint !== 'latest') throw new Error('❌ Error: rulint');
-if (Package.devDependencies.tsdown !== 'latest') throw new Error('❌ Error: tsdown');
+const dev_dependencies = {
+  '@keyv/mongo': 'latest',
+  keyv: 'latest',
+  prettier: 'latest',
+  rulint: 'latest',
+  tsdown: 'latest',
+  unrun: 'latest'
+};
+
+for (const [_dependency, version] of Object.entries(dev_dependencies)) {
+  const dependency = _dependency as keyof typeof dev_dependencies;
+
+  if (Package.devDependencies[dependency] !== version) throw new Error(`❌ Error: ${dependency}`);
+}
 
 console.log('✅ Success');
