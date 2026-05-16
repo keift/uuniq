@@ -1,11 +1,11 @@
-[SnowflakeOptionsDefault]: ./src/defaults/SnowflakeOptions.default.ts
-[IncrementOptionsDefault]: ./src/defaults/IncrementOptions.default.ts
+[SnowflakeOptionsDefault]: ./src/defaults/snowflake-options.ts
+[IncrementOptionsDefault]: ./src/defaults/increment-options.ts
 
 <!---->
 
-[SnowflakeOptions]: ./src/types/SnowflakeOptions.type.ts
-[SnowflakeResolve]: ./src/types/SnowflakeResolve.type.ts
-[IncrementOptions]: ./src/types/IncrementOptions.type.ts
+[SnowflakeOptions]: ./src/types/snowflake-options.ts
+[SnowflakeResolve]: ./src/types/snowflake-resolve.ts
+[IncrementOptions]: ./src/types/increment-options.ts
 
 <div align="center">
   <br/>
