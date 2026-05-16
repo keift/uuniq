@@ -1,15 +1,3 @@
-[String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
-[Boolean]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
-[Date]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
-[Buffer]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer
-[Promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-[Void]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined
-[Null]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/null
-[Undefined]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined
-
-<!---->
-
 [SnowflakeOptionsDefault]: ./src/defaults/SnowflakeOptions.default.ts
 [IncrementOptionsDefault]: ./src/defaults/IncrementOptions.default.ts
 
@@ -161,7 +149,7 @@ Generate Snowflake IDs.
 > | --------- | ---- | ------- | ----------- |
 > |           |      |         |             |
 >
-> returns [String]
+> returns String
 >
 > Example:
 >
@@ -182,9 +170,9 @@ Generate Snowflake IDs.
 
 Resolve the previously generated Snowflake ID. For this, the `format`, `epoch` and `place_id` values ​​in the Constructor must be correct.
 
-> | Parameter | Type     | Default | Description        |
-> | --------- | -------- | ------- | ------------------ |
-> | `id`      | [String] |         | ID to be resolved. |
+> | Parameter | Type   | Default | Description        |
+> | --------- | ------ | ------- | ------------------ |
+> | `id`      | String |         | ID to be resolved. |
 >
 > returns [SnowflakeResolve]
 >
@@ -223,7 +211,7 @@ Generate Increment IDs that increase each time they are generated.
 > | --------- | ---- | ------- | ----------- |
 > |           |      |         |             |
 >
-> returns [Promise]<[String]>
+> returns Promise<String>
 >
 > Example:
 >

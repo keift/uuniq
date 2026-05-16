@@ -1,4 +1,4 @@
-import type { IncrementOptions } from '../types/IncrementOptions.type';
+import type { IncrementOptions } from '../types/increment-options';
 
 export const IncrementOptionsDefault: IncrementOptions = {
   format: 'numeric',

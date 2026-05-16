@@ -1,4 +1,4 @@
-import type { SnowflakeOptions } from '../types/SnowflakeOptions.type';
+import type { SnowflakeOptions } from '../types/snowflake-options';
 
 export const SnowflakeOptionsDefault: SnowflakeOptions = {
   format: 'numeric',

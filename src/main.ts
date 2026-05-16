@@ -1,4 +1,4 @@
-export { Snowflake } from './Snowflake.class';
-export { Increment } from './Increment.class';
+export { Snowflake } from './snowflake';
+export { Increment } from './increment';
 
-export type * from './exports/Types.export';
+export type * from './exports/types';
