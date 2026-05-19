@@ -1,13 +1,13 @@
 import Anybase from 'any-base';
 import merge from 'lodash.merge';
 
-import { SnowflakeOptionsDefault } from './defaults/snowflake-options';
+import { SnowflakeOptionsDefault } from './defaults/snowflake_options';
 
-import type { SnowflakeLimits } from './types/snowflake-limits';
-import type { SnowflakeOptions } from './types/snowflake-options';
-import type { SnowflakeParts } from './types/snowflake-parts';
-import type { SnowflakeResolve } from './types/snowflake-resolve';
-import type { SnowflakeShifts } from './types/snowflake-shifts';
+import type { SnowflakeLimits } from './types/snowflake_limits';
+import type { SnowflakeOptions } from './types/snowflake_options';
+import type { SnowflakeParts } from './types/snowflake_parts';
+import type { SnowflakeResolve } from './types/snowflake_resolve';
+import type { SnowflakeShifts } from './types/snowflake_shifts';
 
 const parts: SnowflakeParts = {
   timestamp: 53,
@@ -15,7 +15,7 @@ const parts: SnowflakeParts = {
   sequence: 10
 };
 
-const calculateLimits = (parts: SnowflakeParts) => {
+const calculate_limits = (parts: SnowflakeParts) => {
   const limits = {} as SnowflakeLimits;
   const keys: (keyof SnowflakeParts)[] = ['sequence', 'place_id', 'timestamp'];
 
@@ -24,7 +24,7 @@ const calculateLimits = (parts: SnowflakeParts) => {
   return limits;
 };
 
-const calculateShifts = (parts: SnowflakeParts) => {
+const calculate_shifts = (parts: SnowflakeParts) => {
   const shifts = {} as SnowflakeShifts;
   const keys: (keyof SnowflakeParts)[] = ['sequence', 'place_id', 'timestamp'];
 
@@ -38,8 +38,8 @@ const calculateShifts = (parts: SnowflakeParts) => {
   return shifts;
 };
 
-const limits = calculateLimits(parts);
-const shifts = calculateShifts(parts);
+const limits = calculate_limits(parts);
+const shifts = calculate_shifts(parts);
 
 const place_ids_used = new Set<number>();
 
@@ -48,8 +48,8 @@ export class Snowflake {
   private readonly epoch: number;
   private sequence: number;
   private last_timestamp: number;
-  private readonly anybaseEncode: (anybase: string) => string;
-  private readonly anybaseDecode: (anybase: string) => string;
+  private readonly anybase_encode: (anybase: string) => string;
+  private readonly anybase_decode: (anybase: string) => string;
 
   public constructor(options: SnowflakeOptions = SnowflakeOptionsDefault) {
     this.options = merge({}, SnowflakeOptionsDefault, options);
@@ -67,44 +67,44 @@ export class Snowflake {
     this.sequence = 0;
     this.last_timestamp = -1;
 
-    this.anybaseEncode = Anybase(Anybase.DEC, this.options.charset ?? '');
-    this.anybaseDecode = Anybase(this.options.charset ?? '', Anybase.DEC);
+    this.anybase_encode = Anybase(Anybase.DEC, this.options.charset ?? '');
+    this.anybase_decode = Anybase(this.options.charset ?? '', Anybase.DEC);
   }
 
-  private currentTimestamp() {
+  private current_timestamp() {
     return Date.now() - this.epoch;
   }
 
-  private waitForNextTime(last_timestamp: number) {
-    let current_timestamp = this.currentTimestamp();
+  private wait_for_next_time(last_timestamp: number) {
+    let current_timestamp = this.current_timestamp();
 
-    while (last_timestamp >= current_timestamp) current_timestamp = this.currentTimestamp();
+    while (last_timestamp >= current_timestamp) current_timestamp = this.current_timestamp();
 
     return current_timestamp;
   }
 
   public generate(): string {
-    let current_timestamp = this.currentTimestamp();
+    let current_timestamp = this.current_timestamp();
 
     if (current_timestamp < this.last_timestamp) throw new Error('Clock moved backwards');
 
     if (current_timestamp === this.last_timestamp) {
       this.sequence = (this.sequence + 1) & Number(limits.sequence);
 
-      if (this.sequence === 0) current_timestamp = this.waitForNextTime(this.last_timestamp);
+      if (this.sequence === 0) current_timestamp = this.wait_for_next_time(this.last_timestamp);
     } else this.sequence = 0;
 
     this.last_timestamp = current_timestamp;
 
     let id = String((BigInt(current_timestamp) << BigInt(shifts.timestamp)) | (BigInt(this.options.place_id ?? 0) << BigInt(shifts.place_id)) | BigInt(this.sequence));
 
-    if (this.options.format === 'symbolic') id = this.anybaseEncode(id);
+    if (this.options.format === 'symbolic') id = this.anybase_encode(id);
 
     return id;
   }
 
   public resolve(id: string): SnowflakeResolve {
-    if (this.options.format === 'symbolic') id = this.anybaseDecode(id);
+    if (this.options.format === 'symbolic') id = this.anybase_decode(id);
 
     const bigint_id = BigInt(id);
 

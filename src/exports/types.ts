@@ -1,3 +1,3 @@
-export type { SnowflakeOptions } from '../types/snowflake-options';
-export type { SnowflakeResolve } from '../types/snowflake-resolve';
-export type { IncrementOptions } from '../types/increment-options';
+export type { SnowflakeOptions } from '../types/snowflake_options';
+export type { SnowflakeResolve } from '../types/snowflake_resolve';
+export type { IncrementOptions } from '../types/increment_options';

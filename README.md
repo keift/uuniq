@@ -1,11 +1,11 @@
-[SnowflakeOptionsDefault]: ./src/defaults/snowflake-options.ts
-[IncrementOptionsDefault]: ./src/defaults/increment-options.ts
+[SnowflakeOptionsDefault]: ./src/defaults/snowflake_options.ts
+[IncrementOptionsDefault]: ./src/defaults/increment_options.ts
 
 <!---->
 
-[SnowflakeOptions]: ./src/types/snowflake-options.ts
-[SnowflakeResolve]: ./src/types/snowflake-resolve.ts
-[IncrementOptions]: ./src/types/increment-options.ts
+[SnowflakeOptions]: ./src/types/snowflake_options.ts
+[SnowflakeResolve]: ./src/types/snowflake_resolve.ts
+[IncrementOptions]: ./src/types/increment_options.ts
 
 <div align="center">
   <br/>
@@ -157,11 +157,11 @@ Generate Snowflake IDs.
 > const NumericSnowflakeIDs = new Snowflake({ format: 'numeric', place_id: 0 });
 > const SymbolicSnowflakeIDs = new Snowflake({ format: 'symbolic', place_id: 1 });
 >
-> NumericSnowflakeIDs.generate(); // "102604921389056"
-> NumericSnowflakeIDs.generate(); // "102604921389057"
+> NumericSnowflakeIDs.generate(); // '102604921389056'
+> NumericSnowflakeIDs.generate(); // '102604921389057'
 >
-> SymbolicSnowflakeIDs.generate(); // "T8Qu56ki"
-> SymbolicSnowflakeIDs.generate(); // "T8Qu56kj"
+> SymbolicSnowflakeIDs.generate(); // 'T8Qu56ki'
+> SymbolicSnowflakeIDs.generate(); // 'T8Qu56kj'
 > ```
 
 <br/>
@@ -185,7 +185,7 @@ Resolve the previously generated Snowflake ID. For this, the `format`, `epoch` a
 > NumericSnowflakeIDs.resolve('102604921389056');
 > /*
 >   {
->     created_at: "2025-03-14T11:35:07.409Z",
+>     created_at: '2025-03-14T11:35:07.409Z',
 >     place_id: 0,
 >     sequence: 0
 >   }
@@ -194,7 +194,7 @@ Resolve the previously generated Snowflake ID. For this, the `format`, `epoch` a
 > SymbolicSnowflakeIDs.resolve('T8Qu56ki');
 > /*
 >   {
->     created_at: "2025-03-14T11:36:05.528Z",
+>     created_at: '2025-03-14T11:36:05.528Z',
 >     place_id: 0,
 >     sequence: 0
 >   }
@@ -219,11 +219,11 @@ Generate Increment IDs that increase each time they are generated.
 > const NumericIncrementIDs = new Increment({ format: 'numeric', place_id: 0, store: UuniqStore });
 > const SymbolicIncrementIDs = new Increment({ format: 'symbolic', place_id: 1, store: UuniqStore });
 >
-> await NumericIncrementIDs.generate(); // "10000001"
-> await NumericIncrementIDs.generate(); // "10000002"
+> await NumericIncrementIDs.generate(); // '10000001'
+> await NumericIncrementIDs.generate(); // '10000002'
 >
-> await SymbolicIncrementIDs.generate(); // "fxSL"
-> await SymbolicIncrementIDs.generate(); // "fxSM"
+> await SymbolicIncrementIDs.generate(); // 'fxSL'
+> await SymbolicIncrementIDs.generate(); // 'fxSM'
 > ```
 
 ### Types

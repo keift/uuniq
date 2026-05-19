@@ -2,9 +2,9 @@ import Anybase from 'any-base';
 import merge from 'lodash.merge';
 import throttle from 'lodash.throttle';
 
-import { IncrementOptionsDefault } from './defaults/increment-options';
+import { IncrementOptionsDefault } from './defaults/increment_options';
 
-import type { IncrementOptions } from './types/increment-options';
+import type { IncrementOptions } from './types/increment_options';
 import type { Store } from './types/store';
 
 const place_ids_used = new Set<number>();
@@ -35,7 +35,7 @@ export class Increment {
     this.sequence = (await this.store.get<number>(`increment_sequence--place_id:${String(this.options.place_id)}`)) ?? (this.options.initial !== undefined ? this.options.initial - 1 : 0);
   }
 
-  private readonly syncSequence = throttle(
+  private readonly sync_sequence = throttle(
     () => {
       if (this.sequence === null) return;
 
@@ -52,7 +52,7 @@ export class Increment {
 
         this.sequence++;
 
-        this.syncSequence();
+        this.sync_sequence();
 
         let id = String(this.sequence);
 
