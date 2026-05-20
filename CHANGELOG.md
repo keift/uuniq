@@ -18,4 +18,4 @@
 
 ## v1.1.0
 
-No information
+No information.
