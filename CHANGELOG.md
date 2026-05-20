@@ -1,14 +1,21 @@
 # Change Log
 
-## v1.2.27 → v1.3.0
+## v1.3.0
 
-- Added:
-  - **Increment IDs.** Unique IDs that only increase when generated.
+### Added
 
-- Removed:
-  - **Another way to use Symbolic IDs.** Instead, use `new Snowflake({ format: 'symbolic' })` or `new Increment({ format: 'symbolic' })`.
+- **Increment IDs.** Unique IDs that only increase when generated.
 
-## v1.1.5 → v1.2.0
+### Removed
 
-- Added:
-  - **TypeScript Support.** Modern and compatible library with TypeScript support.
+- **Another way to use Symbolic IDs.** Instead, use `new Snowflake({ format: 'symbolic' })` or `new Increment({ format: 'symbolic' })`.
+
+## v1.2.0
+
+### Added
+
+- **TypeScript Support.** Modern and compatible library with TypeScript support.
+
+## v1.1.0
+
+No information

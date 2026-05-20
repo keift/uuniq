@@ -1,0 +1,28 @@
+name: Release
+
+on:
+  release:
+    types: [created]
+
+permissions:
+  contents: write
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Create release note
+        run: sed -n "/^## /,/^## /{ /^## /d; p; }" CHANGELOG.md | sed -z "s/^[[:space:]]*//; s/[[:space:]]*\$//" > RELEASE_NOTE.md
+
+      - name: Update release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ github.ref_name }}
+          body_path: ./RELEASE_NOTE.md
