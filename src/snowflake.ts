@@ -1,4 +1,4 @@
-import Anybase from 'any-base';
+import anybase from 'any-base';
 import merge from 'lodash.merge';
 
 import { SnowflakeOptionsDefault } from './defaults/snowflake_options';
@@ -67,8 +67,8 @@ export class Snowflake {
     this.sequence = 0;
     this.last_timestamp = -1;
 
-    this.anybase_encode = Anybase(Anybase.DEC, this.options.charset ?? '');
-    this.anybase_decode = Anybase(this.options.charset ?? '', Anybase.DEC);
+    this.anybase_encode = anybase(anybase.DEC, this.options.charset ?? '');
+    this.anybase_decode = anybase(this.options.charset ?? '', anybase.DEC);
   }
 
   private current_timestamp() {

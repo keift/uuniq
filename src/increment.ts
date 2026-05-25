@@ -1,4 +1,4 @@
-import Anybase from 'any-base';
+import anybase from 'any-base';
 import merge from 'lodash.merge';
 import throttle from 'lodash.throttle';
 
@@ -26,7 +26,7 @@ export class Increment {
 
     this.store = options.store as Store;
 
-    this.anybase_encode = Anybase(Anybase.DEC, this.options.charset ?? '');
+    this.anybase_encode = anybase(anybase.DEC, this.options.charset ?? '');
 
     void this.init();
   }

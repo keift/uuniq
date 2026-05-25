@@ -1,4 +1,4 @@
-import Package from '../package.json';
+import _package from '../package.json';
 
 const dev_dependencies = {
   '@keyv/mongo': 'latest',
@@ -12,7 +12,7 @@ const dev_dependencies = {
 for (const [_dependency, version] of Object.entries(dev_dependencies)) {
   const dependency = _dependency as keyof typeof dev_dependencies;
 
-  if (Package.devDependencies[dependency] !== version) throw new Error(`❌ Error: ${dependency}`);
+  if (_package.devDependencies[dependency] !== version) throw new Error(`❌ Error: ${dependency}`);
 }
 
 console.log('✅ Success');
