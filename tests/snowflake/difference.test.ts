@@ -9,7 +9,12 @@ const symbolic_resolve = SymbolicSnowflakeIDs.resolve('T8Qu56ki');
 console.log(JSON.stringify(numeric_resolve));
 console.log(JSON.stringify(symbolic_resolve));
 
-if (numeric_resolve.created_at !== '2025-03-14T11:35:07.409Z') throw new Error('❌ Error: Numeric');
-if (symbolic_resolve.created_at !== '2025-03-14T11:36:05.528Z') throw new Error('❌ Error: Symbolic');
+if (numeric_resolve.created_at !== '2025-03-14T11:35:07.409Z') {
+  throw new Error('❌ Error: Numeric');
+}
+
+if (symbolic_resolve.created_at !== '2025-03-14T11:36:05.528Z') {
+  throw new Error('❌ Error: Symbolic');
+}
 
 console.log('✅ Success');

@@ -20,7 +20,9 @@ export class Increment {
 
     this.options.place_id = this.options.place_id ?? 0;
 
-    if (place_ids_used.has(this.options.place_id)) throw new Error(`Place ID ${String(this.options.place_id)} already in use`);
+    if (place_ids_used.has(this.options.place_id)) {
+      throw new Error(`Place ID ${String(this.options.place_id)} already in use`);
+    }
 
     place_ids_used.add(this.options.place_id);
 
@@ -37,7 +39,9 @@ export class Increment {
 
   private readonly sync_sequence = throttle(
     () => {
-      if (this.sequence === null) return;
+      if (this.sequence === null) {
+        return;
+      }
 
       void this.store.set(`increment_sequence--place_id:${String(this.options.place_id)}`, this.sequence);
     },
@@ -48,7 +52,13 @@ export class Increment {
   public generate(): Promise<string> {
     return new Promise((resolve) => {
       const wait = () => {
-        if (this.sequence === null) return setTimeout(() => wait(), 1000);
+        if (this.sequence === null) {
+          setTimeout(() => {
+            wait();
+          }, 1000);
+
+          return;
+        }
 
         this.sequence++;
 
@@ -56,7 +66,9 @@ export class Increment {
 
         let id = String(this.sequence);
 
-        if (this.options.format === 'symbolic') id = this.anybase_encode(id);
+        if (this.options.format === 'symbolic') {
+          id = this.anybase_encode(id);
+        }
 
         resolve(id);
       };

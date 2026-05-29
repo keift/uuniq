@@ -19,7 +19,9 @@ const calculate_limits = (parts: SnowflakeParts) => {
   const limits = {} as SnowflakeLimits;
   const keys: (keyof SnowflakeParts)[] = ['sequence', 'place_id', 'timestamp'];
 
-  for (const key of keys) limits[key] = (BigInt(1) << BigInt(parts[key])) - BigInt(1);
+  for (const key of keys) {
+    limits[key] = (BigInt(1) << BigInt(parts[key])) - BigInt(1);
+  }
 
   return limits;
 };
@@ -56,11 +58,15 @@ export class Snowflake {
 
     this.epoch = new Date(this.options.epoch ?? '').getTime();
 
-    if ((this.options.place_id ?? 0) < 0 || (this.options.place_id ?? 0) > limits.place_id) throw new Error(`Field place_id must be between 0 and ${String(limits.place_id)}`);
+    if ((this.options.place_id ?? 0) < 0 || (this.options.place_id ?? 0) > limits.place_id) {
+      throw new Error(`Field place_id must be between 0 and ${String(limits.place_id)}`);
+    }
 
     this.options.place_id = (this.options.place_id ?? 0) & Number(limits.place_id);
 
-    if (place_ids_used.has(this.options.place_id)) throw new Error(`Place ID ${String(this.options.place_id)} already in use`);
+    if (place_ids_used.has(this.options.place_id)) {
+      throw new Error(`Place ID ${String(this.options.place_id)} already in use`);
+    }
 
     place_ids_used.add(this.options.place_id);
 
@@ -78,7 +84,9 @@ export class Snowflake {
   private wait_for_next_time(last_timestamp: number) {
     let current_timestamp = this.current_timestamp();
 
-    while (last_timestamp >= current_timestamp) current_timestamp = this.current_timestamp();
+    while (last_timestamp >= current_timestamp) {
+      current_timestamp = this.current_timestamp();
+    }
 
     return current_timestamp;
   }
@@ -86,25 +94,35 @@ export class Snowflake {
   public generate(): string {
     let current_timestamp = this.current_timestamp();
 
-    if (current_timestamp < this.last_timestamp) throw new Error('Clock moved backwards');
+    if (current_timestamp < this.last_timestamp) {
+      throw new Error('Clock moved backwards');
+    }
 
     if (current_timestamp === this.last_timestamp) {
       this.sequence = (this.sequence + 1) & Number(limits.sequence);
 
-      if (this.sequence === 0) current_timestamp = this.wait_for_next_time(this.last_timestamp);
-    } else this.sequence = 0;
+      if (this.sequence === 0) {
+        current_timestamp = this.wait_for_next_time(this.last_timestamp);
+      }
+    } else {
+      this.sequence = 0;
+    }
 
     this.last_timestamp = current_timestamp;
 
     let id = String((BigInt(current_timestamp) << BigInt(shifts.timestamp)) | (BigInt(this.options.place_id ?? 0) << BigInt(shifts.place_id)) | BigInt(this.sequence));
 
-    if (this.options.format === 'symbolic') id = this.anybase_encode(id);
+    if (this.options.format === 'symbolic') {
+      id = this.anybase_encode(id);
+    }
 
     return id;
   }
 
   public resolve(id: string): SnowflakeResolve {
-    if (this.options.format === 'symbolic') id = this.anybase_decode(id);
+    if (this.options.format === 'symbolic') {
+      id = this.anybase_decode(id);
+    }
 
     const bigint_id = BigInt(id);
 

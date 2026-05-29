@@ -7,6 +7,8 @@ const resolve = SnowflakeIDs.resolve(id);
 
 console.log(id, JSON.stringify(resolve));
 
-if (resolve.place_id !== 3) throw new Error('❌ Error');
+if (resolve.place_id !== 3) {
+  throw new Error('❌ Error');
+}
 
 console.log('✅ Success');
