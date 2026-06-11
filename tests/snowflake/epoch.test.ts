@@ -1,9 +1,9 @@
 import { Snowflake } from '../../src/main';
 
-const SnowflakeIDs = new Snowflake({ epoch: '2007-05-05', place_id: 2 });
+const snowflake = new Snowflake({ epoch: '2007-05-05', place_id: 2 });
 
-const id = SnowflakeIDs.generate();
-const resolve = SnowflakeIDs.resolve(id);
+const id = snowflake.generate();
+const resolve = snowflake.resolve(id);
 
 console.log(id, JSON.stringify(resolve));
 

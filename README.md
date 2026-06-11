@@ -115,7 +115,7 @@ Snowflake IDs are timestamp based identifiers. Each ID consists of numbers that 
 > Example:
 >
 > ```typescript
-> const SnowflakeIDs = new Snowflake();
+> const snowflake = new Snowflake();
 > ```
 
 <br/>
@@ -134,9 +134,9 @@ Increment IDs that increase each time they are generated. Sequences are kept in 
 > import Keyv from 'keyv';
 > import KeyvMongo from '@keyv/mongo';
 >
-> const UuniqStore = new Keyv(new KeyvMongo('mongodb+srv://...@...mongodb.net/app', { collection: 'uuniq' }));
+> const uuniq_store = new Keyv(new KeyvMongo('mongodb+srv://...@...mongodb.net/app', { collection: 'uuniq' }));
 >
-> const IncrementIDs = new Increment({ store: UuniqStore });
+> const increment = new Increment({ store: uuniq_store });
 > ```
 
 ### Methods
@@ -154,14 +154,14 @@ Generate Snowflake IDs.
 > Example:
 >
 > ```typescript
-> const NumericSnowflakeIDs = new Snowflake({ format: 'numeric', place_id: 0 });
-> const SymbolicSnowflakeIDs = new Snowflake({ format: 'symbolic', place_id: 1 });
+> const numeric_snowflake = new Snowflake({ format: 'numeric', place_id: 0 });
+> const symbolic_snowflake = new Snowflake({ format: 'symbolic', place_id: 1 });
 >
-> NumericSnowflakeIDs.generate(); // '102604921389056'
-> NumericSnowflakeIDs.generate(); // '102604921389057'
+> numeric_snowflake.generate(); // '102604921389056'
+> numeric_snowflake.generate(); // '102604921389057'
 >
-> SymbolicSnowflakeIDs.generate(); // 'T8Qu56ki'
-> SymbolicSnowflakeIDs.generate(); // 'T8Qu56kj'
+> symbolic_snowflake.generate(); // 'T8Qu56ki'
+> symbolic_snowflake.generate(); // 'T8Qu56kj'
 > ```
 
 <br/>
@@ -179,10 +179,10 @@ Resolve the previously generated Snowflake ID. For this, the `format`, `epoch` a
 > Example:
 >
 > ```typescript
-> const NumericSnowflakeIDs = new Snowflake({ format: 'numeric', place_id: 0 });
-> const SymbolicSnowflakeIDs = new Snowflake({ format: 'symbolic', place_id: 1 });
+> const numeric_snowflake = new Snowflake({ format: 'numeric', place_id: 0 });
+> const symbolic_snowflake = new Snowflake({ format: 'symbolic', place_id: 1 });
 >
-> NumericSnowflakeIDs.resolve('102604921389056');
+> numeric_snowflake.resolve('102604921389056');
 > /*
 >   {
 >     created_at: '2025-03-14T11:35:07.409Z',
@@ -191,7 +191,7 @@ Resolve the previously generated Snowflake ID. For this, the `format`, `epoch` a
 >   }
 > */
 >
-> SymbolicSnowflakeIDs.resolve('T8Qu56ki');
+> symbolic_snowflake.resolve('T8Qu56ki');
 > /*
 >   {
 >     created_at: '2025-03-14T11:36:05.528Z',
@@ -216,14 +216,14 @@ Generate Increment IDs that increase each time they are generated.
 > Example:
 >
 > ```typescript
-> const NumericIncrementIDs = new Increment({ format: 'numeric', place_id: 0, store: UuniqStore });
-> const SymbolicIncrementIDs = new Increment({ format: 'symbolic', place_id: 1, store: UuniqStore });
+> const numeric_increment = new Increment({ format: 'numeric', place_id: 0, store: uuniq_store });
+> const symbolic_increment = new Increment({ format: 'symbolic', place_id: 1, store: uuniq_store });
 >
-> await NumericIncrementIDs.generate(); // '10000001'
-> await NumericIncrementIDs.generate(); // '10000002'
+> await numeric_increment.generate(); // '10000001'
+> await numeric_increment.generate(); // '10000002'
 >
-> await SymbolicIncrementIDs.generate(); // 'fxSL'
-> await SymbolicIncrementIDs.generate(); // 'fxSM'
+> await symbolic_increment.generate(); // 'fxSL'
+> await symbolic_increment.generate(); // 'fxSM'
 > ```
 
 ### Types

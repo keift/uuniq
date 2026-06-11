@@ -1,11 +1,11 @@
 import { Snowflake } from '../../src/main';
 
-const SnowflakeIDs = new Snowflake({ place_id: 4 });
+const snowflake = new Snowflake({ place_id: 4 });
 
-const id_0 = SnowflakeIDs.generate();
-const id_1 = SnowflakeIDs.generate();
-const resolve_0 = SnowflakeIDs.resolve(id_0);
-const resolve_1 = SnowflakeIDs.resolve(id_1);
+const id_0 = snowflake.generate();
+const id_1 = snowflake.generate();
+const resolve_0 = snowflake.resolve(id_0);
+const resolve_1 = snowflake.resolve(id_1);
 
 console.log(id_0, JSON.stringify(resolve_0));
 console.log(id_1, JSON.stringify(resolve_1));

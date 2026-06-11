@@ -1,10 +1,10 @@
 import { Snowflake } from '../../src/main';
 
-const NumericSnowflakeIDs = new Snowflake({ format: 'numeric', place_id: 0 });
-const SymbolicSnowflakeIDs = new Snowflake({ format: 'symbolic', place_id: 1 });
+const numeric_snowflake = new Snowflake({ format: 'numeric', place_id: 0 });
+const symbolic_snowflake = new Snowflake({ format: 'symbolic', place_id: 1 });
 
-const numeric_resolve = NumericSnowflakeIDs.resolve('102604921389056');
-const symbolic_resolve = SymbolicSnowflakeIDs.resolve('T8Qu56ki');
+const numeric_resolve = numeric_snowflake.resolve('102604921389056');
+const symbolic_resolve = symbolic_snowflake.resolve('T8Qu56ki');
 
 console.log(JSON.stringify(numeric_resolve));
 console.log(JSON.stringify(symbolic_resolve));
