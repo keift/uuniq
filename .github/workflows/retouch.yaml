@@ -20,7 +20,7 @@ jobs:
         run: bun install
 
       - name: Run Prettier
-        run: prettier --write ./
+        run: bun run prettier
 
       - name: Configure Git
         run: |
