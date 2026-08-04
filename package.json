@@ -10,6 +10,7 @@
   "types": "./dist/main.d.mts",
   "scripts": {
     "tests": "bun run lint && bun test",
+    "retouch": "bun run prettier",
     "build": "tsdown",
     "prettier": "prettier --write ./",
     "lint": "eslint ./"
