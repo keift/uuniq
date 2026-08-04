@@ -16,8 +16,8 @@ jobs:
       - name: Set up Bun
         uses: oven-sh/setup-bun@v2
 
-      - name: Install Prettier
-        run: bun add -g prettier
+      - name: Install dependencies
+        run: bun install
 
       - name: Run Prettier
         run: prettier --write ./
