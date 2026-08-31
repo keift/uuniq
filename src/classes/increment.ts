@@ -2,10 +2,10 @@ import anybase from 'any-base';
 import merge from 'lodash.merge';
 import throttle from 'lodash.throttle';
 
-import { increment_options } from './defaults/increment_options';
+import { increment_options } from '../defaults/increment_options';
 
-import type { IncrementOptions } from './types/increment_options';
-import type { Store } from './types/store';
+import type { IncrementOptions } from '../types/increment_options';
+import type { Store } from '../types/store';
 
 const place_ids_used = new Set<number>();
 

@@ -1,13 +1,13 @@
 import anybase from 'any-base';
 import merge from 'lodash.merge';
 
-import { snowflake_options } from './defaults/snowflake_options';
+import { snowflake_options } from '../defaults/snowflake_options';
 
-import type { SnowflakeLimits } from './types/snowflake_limits';
-import type { SnowflakeOptions } from './types/snowflake_options';
-import type { SnowflakeParts } from './types/snowflake_parts';
-import type { SnowflakeResolve } from './types/snowflake_resolve';
-import type { SnowflakeShifts } from './types/snowflake_shifts';
+import type { SnowflakeLimits } from '../types/snowflake_limits';
+import type { SnowflakeOptions } from '../types/snowflake_options';
+import type { SnowflakeParts } from '../types/snowflake_parts';
+import type { SnowflakeResolve } from '../types/snowflake_resolve';
+import type { SnowflakeShifts } from '../types/snowflake_shifts';
 
 const parts: SnowflakeParts = {
   timestamp: 53,
