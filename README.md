@@ -1,5 +1,5 @@
-[SnowflakeOptionsDefault]: ./src/defaults/snowflake_options.ts
-[IncrementOptionsDefault]: ./src/defaults/increment_options.ts
+[snowflake_options]: ./src/defaults/snowflake_options.ts
+[increment_options]: ./src/defaults/increment_options.ts
 
 <!---->
 
@@ -110,9 +110,9 @@ import { Snowflake, Increment } from 'uuniq';
 
 Snowflake IDs are timestamp based identifiers. Each ID consists of numbers that are quite unique from the previous ones. Unique IDs can be generated in distributed systems by specifying Place IDs.
 
-> | Parameter  | Type               | Default                   | Description            |
-> | ---------- | ------------------ | ------------------------- | ---------------------- |
-> | `options?` | [SnowflakeOptions] | [SnowflakeOptionsDefault] | Constructor's options. |
+> | Parameter  | Type               | Default             | Description            |
+> | ---------- | ------------------ | ------------------- | ---------------------- |
+> | `options?` | [SnowflakeOptions] | [snowflake_options] | Constructor's options. |
 >
 > Example:
 >
@@ -126,9 +126,9 @@ Snowflake IDs are timestamp based identifiers. Each ID consists of numbers that 
 
 Increment IDs that increase each time they are generated. Sequences are kept in the database. You can create a free database from [MongoDB Cloud](https://cloud.mongodb.com). Storing sequences requires tools that include `set(key, value)` and `get(key)`. We recommend [Keyv](https://npmjs.com/package/keyv). Sequences can be parsed by specifying Place IDs.
 
-> | Parameter | Type               | Default                   | Description            |
-> | --------- | ------------------ | ------------------------- | ---------------------- |
-> | `options` | [IncrementOptions] | [IncrementOptionsDefault] | Constructor's options. |
+> | Parameter | Type               | Default             | Description            |
+> | --------- | ------------------ | ------------------- | ---------------------- |
+> | `options` | [IncrementOptions] | [increment_options] | Constructor's options. |
 >
 > Example:
 >

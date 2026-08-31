@@ -1,7 +1,7 @@
 import anybase from 'any-base';
 import merge from 'lodash.merge';
 
-import { SnowflakeOptionsDefault } from './defaults/snowflake_options';
+import { snowflake_options } from './defaults/snowflake_options';
 
 import type { SnowflakeLimits } from './types/snowflake_limits';
 import type { SnowflakeOptions } from './types/snowflake_options';
@@ -53,8 +53,8 @@ export class Snowflake {
   private readonly anybase_encode: (anybase: string) => string;
   private readonly anybase_decode: (anybase: string) => string;
 
-  public constructor(options: SnowflakeOptions = SnowflakeOptionsDefault) {
-    this.options = merge({}, SnowflakeOptionsDefault, options);
+  public constructor(options: SnowflakeOptions = snowflake_options) {
+    this.options = merge({}, snowflake_options, options);
 
     this.epoch = new Date(this.options.epoch ?? '').getTime();
 

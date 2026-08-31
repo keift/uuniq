@@ -2,7 +2,7 @@ import anybase from 'any-base';
 import merge from 'lodash.merge';
 import throttle from 'lodash.throttle';
 
-import { IncrementOptionsDefault } from './defaults/increment_options';
+import { increment_options } from './defaults/increment_options';
 
 import type { IncrementOptions } from './types/increment_options';
 import type { Store } from './types/store';
@@ -16,7 +16,7 @@ export class Increment {
   private readonly anybase_encode: (anybase: string) => string;
 
   public constructor(options: IncrementOptions) {
-    this.options = merge({}, IncrementOptionsDefault, options);
+    this.options = merge({}, increment_options, options);
 
     this.options.place_id = this.options.place_id ?? 0;
 
