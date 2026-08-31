@@ -85,9 +85,11 @@ uuniq
 │   ├── generate()
 │   └── resolve(id)
 │
-├── new Increment(options)
-│   │
-│   └── generate()
+└── new Increment(options)
+    │
+    └── generate()
+
+uuniq/types
 │
 ├── type SnowflakeOptions
 ├── type SnowflakeResolve

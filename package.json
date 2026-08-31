@@ -5,9 +5,18 @@
   "license": "MIT",
   "homepage": "https://github.com/keift/uuniq",
   "bugs": "https://github.com/keift/uuniq/issues",
-  "main": "./dist/main.cjs",
-  "module": "./dist/main.mjs",
-  "types": "./dist/main.d.mts",
+  "exports": {
+    ".": {
+      "import": "./dist/main.mjs",
+      "require": "./dist/main.cjs",
+      "types": "./dist/main.d.mts"
+    },
+    "./types": {
+      "import": "./dist/types.mjs",
+      "require": "./dist/types.cjs",
+      "types": "./dist/types.d.mts"
+    }
+  },
   "scripts": {
     "tests": "bun run lint && bun test",
     "retouch": "bun run prettier",
