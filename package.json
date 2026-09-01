@@ -1,10 +1,17 @@
 {
   "name": "uuniq",
-  "version": "1.3.25",
+  "version": "1.3.26",
   "description": "Short yet unique IDs.",
   "license": "MIT",
   "homepage": "https://github.com/keift/uuniq",
   "bugs": "https://github.com/keift/uuniq/issues",
+  "scripts": {
+    "tests": "bun run lint && bun test",
+    "retouch": "bun run prettier",
+    "build": "tsdown",
+    "lint": "eslint ./",
+    "prettier": "prettier --write ./"
+  },
   "exports": {
     ".": {
       "import": "./dist/main.mjs",
@@ -14,13 +21,6 @@
       "import": "./dist/types.mjs",
       "types": "./dist/types.d.mts"
     }
-  },
-  "scripts": {
-    "tests": "bun run lint && bun test",
-    "retouch": "bun run prettier",
-    "build": "tsdown",
-    "lint": "eslint ./",
-    "prettier": "prettier --write ./"
   },
   "dependencies": {
     "@types/any-base": "^1.1.3",
