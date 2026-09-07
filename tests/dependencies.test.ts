@@ -1,7 +1,6 @@
 import _package from '../package.json';
 
 const dev_dependencies = {
-  '@keyv/mongo': 'latest',
   keyv: 'latest',
   prettier: 'latest',
   rulint: 'latest',

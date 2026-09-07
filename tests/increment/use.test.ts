@@ -1,8 +1,8 @@
 import { Increment } from '../../src/main';
 import Keyv from 'keyv';
-import KeyvMongo from '@keyv/mongo';
+import KeyvSqlite from '@keyv/sqlite';
 
-const uuniq_store = new Keyv(new KeyvMongo('mongodb+srv://admin:0fdZV10ZcQoI4I10@cluster0.nastr0b.mongodb.net/app', { collection: 'uuniq' }));
+const uuniq_store = new Keyv(new KeyvSqlite('sqlite://tests/increment/database.sqlite'));
 
 const increment = new Increment({ place_id: 0, store: uuniq_store });
 
