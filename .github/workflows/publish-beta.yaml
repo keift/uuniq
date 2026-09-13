@@ -1,4 +1,4 @@
-name: Publish
+name: Publish Beta
 
 on:
   release:
@@ -34,6 +34,11 @@ jobs:
 
       - name: Build it
         run: bun run build
+
+      - name: Set the version
+        run: |
+          version=$(node -p "require('./package.json').version")
+          npm version --no-git-tag-version "${version}"-beta.${{ github.run_number }}
 
       - name: Publish to the NPM
         run: npm publish --tag beta
