@@ -24,7 +24,6 @@
     }
   },
   "dependencies": {
-    "@keyv/sqlite": "^4.0.8",
     "@types/any-base": "^1.1.3",
     "@types/lodash.merge": "^4.6.9",
     "@types/lodash.throttle": "^4.1.9",
@@ -33,6 +32,7 @@
     "lodash.throttle": "^4.1.1"
   },
   "devDependencies": {
+    "@keyv/sqlite": "latest",
     "keyv": "latest",
     "prettier": "latest",
     "rulint": "latest",

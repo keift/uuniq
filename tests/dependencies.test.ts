@@ -1,6 +1,7 @@
 import _package from '../package.json';
 
 const dev_dependencies = {
+  '@keyv/sqlite': 'latest',
   keyv: 'latest',
   prettier: 'latest',
   rulint: 'latest',
