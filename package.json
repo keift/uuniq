@@ -12,7 +12,6 @@
     "lint": "eslint ./",
     "prettier": "prettier --write ./"
   },
-  "types": "./dist/main.d.mts",
   "exports": {
     ".": {
       "import": "./dist/main.mjs",
