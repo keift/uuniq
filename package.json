@@ -4,7 +4,7 @@
   "description": "Short yet unique IDs.",
   "license": "MIT",
   "homepage": "https://github.com/keift/uuniq",
-  "bugs": "https://github.com/keift/uuniq/issues",
+  "repository": "https://github.com/keift/uuniq",
   "scripts": {
     "tests": "bun run lint && bun test",
     "retouch": "bun run prettier",
@@ -37,10 +37,6 @@
     "rulint": "latest",
     "tsdown": "latest",
     "unrun": "latest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/keift/uuniq"
   },
   "keywords": [
     "id",
