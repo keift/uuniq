@@ -5,8 +5,7 @@ const dev_dependencies = {
   keyv: 'latest',
   prettier: 'latest',
   rulint: 'latest',
-  tsdown: 'latest',
-  unrun: 'latest'
+  tsdown: 'latest'
 };
 
 for (const [_dependency, version] of Object.entries(dev_dependencies)) {
