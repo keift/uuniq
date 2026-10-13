@@ -6,7 +6,7 @@
   "homepage": "https://github.com/keift/uuniq",
   "repository": "https://github.com/keift/uuniq",
   "scripts": {
-    "tests": "bun run lint && bun test",
+    "tests": "bun check && bun run lint && bun test",
     "retouch": "bun run prettier",
     "build": "tsdown",
     "lint": "eslint ./",
